@@ -12,9 +12,14 @@ import org.springframework.web.multipart.MultipartFile;
 public class VpsFileUploadApiController {
 
 	
-	public static final String ANNOUNCE_IMAGES_PATH="E:\\E-Com\\BestTea\\src\\main\\webapp\\resources\\assets\\images\\restaurant\\800x975\\";
+	public static final String ANNOUNCE_IMAGES_PATH="/usr/local/tomcat/apache-tomcat-8.5.35/webapps/kvnimages/";
 	
-	public static final String EVENT_IMAGES_PATH="E:\\E-Com\\BestTea\\src\\main\\webapp\\resources\\assets\\images\\restaurant\\800x975\\";
+	public static final String EVENT_IMAGES_PATH="/usr/local/tomcat/apache-tomcat-8.5.35/webapps/kvnimages/";
+	
+	public static final String NOTICE_IMAGES_PATH="/usr/local/tomcat/apache-tomcat-8.5.35/webapps/kvnimages/";
+	//public static final String NOTICE_IMAGES_PATH="E:\\";
+
+	
 	
 	/*
 	 * String UPLOAD_DIR = "C://uploads//";
@@ -63,6 +68,9 @@ public class VpsFileUploadApiController {
 		} else if(imageType == 2) {
 			
 			path = Paths.get(EVENT_IMAGES_PATH+ imageName);
+		}else if(imageType==3) {
+			
+			path = Paths.get(NOTICE_IMAGES_PATH+ imageName);
 		}
 		
 		try {

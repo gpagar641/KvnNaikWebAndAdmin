@@ -13,7 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.ganesh.admin.dbmodel.Announcement;
 import com.ganesh.admin.dbmodel.DepartmentDetails;
@@ -88,7 +90,7 @@ model.addAttribute("announcementList", announcementList);
 	
 	
 	@RequestMapping(value="/submitNotice", method=RequestMethod.POST)
-	public String submitNotice(HttpServletRequest request, Model model)   
+	public String submitNotice(HttpServletRequest request, Model model,@RequestParam("file") MultipartFile file)   
 	{ 
 		Notice notice=new Notice();
 		
@@ -98,6 +100,18 @@ model.addAttribute("announcementList", announcementList);
 		notice.setTitle(request.getParameter("title"));
 		notice.setStatus(0);
 		notice.setDelStatus(0);
+		
+	try {
+			
+			String fileName=file.getOriginalFilename();
+			VpsFileUploadApiController vpsImageUpload=new VpsFileUploadApiController();
+			vpsImageUpload.uploadFile(file,fileName,3);
+
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+		
 		HttpSession session=request.getSession();
 		DepartmentDetails departmentDetails=(DepartmentDetails)session.getAttribute("departmentDetails");
 		notice.setDeptId(departmentDetails.getDeptId());
