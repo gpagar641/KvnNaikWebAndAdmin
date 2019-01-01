@@ -54,7 +54,7 @@ public class MasterController {
 		DepartmentDetails departmentDetails=departmentDetailsRepository.findByEmailAndPasswordAndDelStatus(email, password, 0);
 		if(departmentDetails==null) {
 			msg="Please Enter valid Credential";
-			url="/";
+			url="/admin";
 		}
 		else
 		{

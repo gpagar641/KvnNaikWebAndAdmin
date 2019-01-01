@@ -62,7 +62,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 </head>
 
-  <c:url var="getNoticeToDept" value="/getNoticeToDept"></c:url>
+  <c:url var="getNotice" value="/getNotice"></c:url>
   <c:url var="approveNotice" value="/approveNotice"></c:url>
 
 
@@ -90,20 +90,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 						data-example-id="contextual-table">
 						<h4>Notice Board</h4>
 						
-						<div class="form-group">
-									<label for="selector1" class="col-sm-2 control-label">Select Department</label>
-									<div class="col-sm-8"> 
-										<select id="deptId" name="deptId" onchange="getAnnouncement()" class="form-control1">
-						<option value="" disabled="disabled" selected="selected">Select Department</option>
-							<c:forEach var="departmentDetails" items="${departmentDetailslist}" varStatus="count">
-							<option value="${departmentDetails.deptId}">${departmentDetails.deptName }</option>
-							</c:forEach>
-						</select>
-									</div>
-								</div>
-								<br>
-						 
-							<hr>
+					 
 						 
 						<table class="table" id="table1">
 							<thead>
@@ -114,7 +101,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 									<th width="400px">Short Description</th>
 									<th>Full Description</th>
 									<th>Attachment</th>
-									<th>Action</th>
+									 <th>Approval</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -126,23 +113,16 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 									<td>${announcement.date}</td>
 									<td>${announcement.shortDesc}</td>
 									<td><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc(\'${announcement.date}')">View Full Details</a></td>
-<td><a href="${pageContext.request.contextPath}/upcommingEventImages/${announcement.file}" download>${announcement.file}</a></td>								<c:choose>
+<td><a href="${pageContext.request.contextPath}/upcommingEventImages/${announcement.file}" download>${announcement.file}</a></td>								 
+								
+								<c:choose>
 								<c:when test="${announcement.status==0}">
-								 
-								
-								<td><a href='#' onclick='aprove(${announcement.id})' class='action_btn'>  Approve</a></td>
-								
-			 	 </c:when>
-			 	 <c:when test="${announcement.status==3}">
-								 
-								
-								<td><td><a href='#' onclick='aprove(${announcement.id})' class='action_btn'>Reactive</a></td></td>
-								
-			 	 </c:when>
-								
+								<td>Not Approve</td>
+								</c:when>
 								<c:otherwise>
 								<td>Approved</td>
 								</c:otherwise>
+								
 								</c:choose>
 								</tr>
 								 </c:forEach>  
@@ -258,7 +238,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
                         	$('#table1 td').remove();
                         	
-    						$.getJSON('${getNoticeToDept}', {
+    						$.getJSON('${getNotice}', {
 
     							deptId : deptId,
 

@@ -62,6 +62,29 @@ model.addAttribute("announcementList", announcementList);
 		return "noticeBoard/viewNotice";
 		 
 	}
+@RequestMapping(value="/showViewNoticeByDeptId", method=RequestMethod.GET)
+	
+	public String showViewNoticeByDeptId(HttpServletRequest request, Model model)   
+	{ 
+	
+	 
+try {
+	HttpSession session=request.getSession();
+	DepartmentDetails departmentDetails=(DepartmentDetails)session.getAttribute("departmentDetails");
+			List<Notice> announcementList= noticeRepository.findByDeptIdAndDelStatusOrderByIdDesc(departmentDetails.getDeptId(),0);
+model.addAttribute("announcementList", announcementList);
+			}
+			catch (Exception e) {
+				// TODO: handle exception
+			}
+		
+		 
+		model.addAttribute("msg",msg);
+		msg="";
+		return "noticeBoard/viewNoticeToDept";
+		 
+	}
+
 	
 	
 	@RequestMapping(value="/submitNotice", method=RequestMethod.POST)
@@ -81,7 +104,7 @@ model.addAttribute("announcementList", announcementList);
 		try {
 			noticeRepository.save(notice);
 			if(departmentDetails.getDeptId()!=1) {
-				return "redirect:/showViewNotice";
+				return "redirect:/showViewNoticeByDeptId";
 			}
 		}
 		catch (Exception e) {
@@ -102,6 +125,26 @@ model.addAttribute("announcementList", announcementList);
 				
 		try {
 			
+			noticeList= noticeRepository.findByDeptIdAndStatusAndDelStatusOrderByIdDesc(deptId,1,0);
+
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+		model.addAttribute("msg",msg);
+		msg="";
+		return noticeList;
+		
+	}
+
+	@RequestMapping(value="/getNoticeToDept", method=RequestMethod.GET)
+	public @ResponseBody List<Notice> getNoticeToDept(HttpServletRequest request, Model model)   
+	{ 
+		int deptId=Integer.parseInt(request.getParameter("deptId"));
+		List<Notice> noticeList=new ArrayList<Notice>();
+				
+		try {
+			
 			noticeList= noticeRepository.findByDeptIdAndDelStatusOrderByIdDesc(deptId,0);
 
 		}
@@ -113,6 +156,7 @@ model.addAttribute("announcementList", announcementList);
 		return noticeList;
 		
 	}
+	
 	
 	
 	@RequestMapping(value="/approveNotice", method=RequestMethod.GET)
