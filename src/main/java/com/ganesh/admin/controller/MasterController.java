@@ -19,13 +19,13 @@ public class MasterController {
 	DepartmentDetailsRepository departmentDetailsRepository;
 	
 	String msg;
-	@RequestMapping(value="/htmlView", method=RequestMethod.GET)
+	@RequestMapping(value="/admin", method=RequestMethod.GET)
 
 	public String htmlView(HttpServletRequest request, Model model)   
 	{ 
 		model.addAttribute("msg",msg);
 		msg="";
-		return "aa";
+		return "loginPage";
 		
 	}
 	
@@ -36,7 +36,7 @@ public class MasterController {
 	{ 
 		model.addAttribute("msg",msg);
 		msg="";
-		return "loginPage";
+		return "home";
 		
 	}
 	
@@ -94,6 +94,28 @@ public class MasterController {
 	}
 	
 	
+	@RequestMapping(value="/showChangePassword", method=RequestMethod.GET)
+
+	public String showChangePassword(HttpServletRequest request, Model model)   
+	{ 
+		model.addAttribute("msg",msg);
+		msg="";
+		return "master/changePassword";
+		
+	}
+	
+	@RequestMapping(value="/submitChangePassword", method=RequestMethod.POST)
+
+	public String submitChangePassword(HttpServletRequest request)   
+	{ 
+		String password=request.getParameter("password");
+		HttpSession session=request.getSession();
+		DepartmentDetails departmentDetails=(DepartmentDetails)session.getAttribute("departmentDetails");
+		departmentDetailsRepository.changePassword(departmentDetails.getDeptId(),password);
+		
+		return "redirect:/";
+	}
+	
 	@RequestMapping(value="/submitAddDept", method=RequestMethod.POST)
 
 	public String submitAddDept(HttpServletRequest request)   
@@ -131,4 +153,28 @@ public class MasterController {
 		return "master/showAllDept";
 		
 	}
+	
+	@RequestMapping(value="/logout", method=RequestMethod.GET)
+
+	public String logout(HttpSession session, Model model)   
+	{ 
+		model.addAttribute("msg","Logout");
+		msg="";
+	 
+			System.out.println("User Logout");
+
+			session.invalidate();
+		return "loginPage";
+		
+		
+	}
+	@RequestMapping(value = "/sessionTimeOut", method = RequestMethod.GET)
+	public String sessionTimeOut(HttpSession session, Model model) {
+		System.out.println("User sessionTimeOut");
+		model.addAttribute("msg","User sessionTimeOut");
+		msg="";
+		session.invalidate();
+		return "loginPage";
+	}
+	
 }

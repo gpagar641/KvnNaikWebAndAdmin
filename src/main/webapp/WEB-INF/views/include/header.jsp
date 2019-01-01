@@ -140,9 +140,9 @@
 								</div>	
 							</a>
 							<ul class="dropdown-menu drp-mnu">
-							<!-- 	<li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li> 
-								<li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li>  -->
-								<li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
+							<!-- 	<li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li>  -->
+								<li> <a href="${pageContext.request.contextPath}/showChangePassword"><i class="fa fa-user"></i> Change Password</a> </li> 
+								<li> <a href="${pageContext.request.contextPath}/logout"><i class="fa fa-sign-out"></i> Logout</a> </li>
 							</ul>
 						</li>
 					</ul>

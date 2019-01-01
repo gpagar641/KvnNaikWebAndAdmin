@@ -13,8 +13,8 @@ import com.ganesh.admin.dbmodel.Announcement;
 
 public interface AnnouncementRepository extends JpaRepository<Announcement, Integer>{
 
-	List<Announcement> findByDeptIdAndDelStatus(int deptId, int delStatus);
-	
+	List<Announcement> findByDeptIdAndDelStatusOrderByIdDesc(int deptId, int delStatus);
+	List<Announcement> findTop10IdAndByDelStatusOrderByIdDesc( int delStatus);
 	Announcement findById(int id);
 	
 	@Modifying

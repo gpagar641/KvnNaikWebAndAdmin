@@ -32,7 +32,7 @@ public class RestController {
 				
 		try {
 			
-		 announcementList= announcementRepository.findByDeptIdAndDelStatus(deptId,0);
+		 announcementList= announcementRepository.findByDeptIdAndDelStatusOrderByIdDesc(deptId,0);
 
 		}
 		catch (Exception e) {

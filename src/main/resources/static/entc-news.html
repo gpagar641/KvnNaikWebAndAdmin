@@ -635,7 +635,14 @@ $(document).ready(function(){
 function getData() {
 	
 	
-	 $.getJSON("http://localhost:8083/KvnAdmin/getAnnouncement?deptId=1", function(result){
+	// $.getJSON("http://localhost:8083/KvnAdmin/getAnnouncement?deptId=5", 
+			 $
+			  .getJSON(
+			  		'getAnnouncement',
+			  		{
+			  			deptId : 5,
+			  			ajax : 'true',
+			  		}, function(result){
 	      $.each(result, function(i, field){
 	    	  
 
@@ -654,7 +661,15 @@ function getData() {
 	      });  
 	      
 	    });
-	 $.getJSON("http://localhost:8083/KvnAdmin/getNotice?deptId=1", function(result){
+	// $.getJSON("http://localhost:8083/KvnAdmin/getNotice?deptId=5", 
+			 $
+			  .getJSON(
+			  		'getNotice',
+			  		{
+			  			deptId : 5,
+			  			ajax : 'true',
+			  		}, 
+			  		function(result){
 	      $.each(result, function(i, field){
 	    	  
 
@@ -673,7 +688,13 @@ function getData() {
 	      });  
 	      
 	    });
-	 $.getJSON("http://localhost:8083/KvnAdmin/getEvent?deptId=1", function(result){
+	  $
+	  .getJSON(
+	  		'getEvent',
+	  		{
+	  			deptId : 5,
+	  			ajax : 'true',
+	  		}, function(result){
 	      $.each(result, function(i, field){
 	    	  
 

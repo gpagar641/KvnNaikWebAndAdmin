@@ -8,7 +8,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,42 +16,29 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ganesh.admin.dbmodel.Announcement;
 import com.ganesh.admin.dbmodel.DepartmentDetails;
-import com.ganesh.admin.repository.AnnouncementRepository;
-import com.ganesh.admin.repository.DepartmentDetailsRepository;
 
 @Controller
-public class AnnouncementController {
+public class UpcommingEventsController {
 
 	String msg;
-	@Autowired
-	AnnouncementRepository announcementRepository;
-	@Autowired
-	DepartmentDetailsRepository departmentDetailsRepository;
 	
-	@RequestMapping(value="/showPostAnnouncement", method=RequestMethod.GET)
-	public String showPostAnnouncement(HttpServletRequest request, Model model)   
+	
+	@RequestMapping(value="/showPostUpcommingEvent", method=RequestMethod.GET)
+	public String showPostUpcommingEvent(HttpServletRequest request, Model model)   
 	{ 
 		model.addAttribute("msg",msg);
 		msg="";
-		return "announcement/postAnnouncement";
+		return "upcommngEvent/postUpcommingEvent";
 		
 	}
 	
+/*
 	
-	@RequestMapping(value="/showViewAnnouncement", method=RequestMethod.GET)
+	@RequestMapping(value="/showViewUpcammingEvent", method=RequestMethod.GET)
 	
-	public String submitAnnouncement(HttpServletRequest request, Model model)   
+	public String showViewUpcammingEvent(HttpServletRequest request, Model model)   
 	{ 
 		List<DepartmentDetails> departmentDetailslist=departmentDetailsRepository.findByDelStatus(0);
-		try {
-			
-			List<Announcement> announcementList= announcementRepository.findTop10IdAndByDelStatusOrderByIdDesc(0);
-model.addAttribute("announcementList", announcementList);
-			}
-			catch (Exception e) {
-				// TODO: handle exception
-			}
-		
 		model.addAttribute("departmentDetailslist",departmentDetailslist);
 		model.addAttribute("msg",msg);
 		msg="";
@@ -61,8 +47,8 @@ model.addAttribute("announcementList", announcementList);
 	}
 	
 	
-	@RequestMapping(value="/submitAnnouncement", method=RequestMethod.POST)
-	public String showViewAnnouncement(HttpServletRequest request, Model model)   
+	@RequestMapping(value="/submitUpcommingEvent", method=RequestMethod.POST)
+	public String submitUpcommingEvent(HttpServletRequest request, Model model)   
 	{ 
 		Announcement announcement=new Announcement();
 		
@@ -84,14 +70,10 @@ model.addAttribute("announcementList", announcementList);
 		}
 		try {
 		announcementRepository.save(announcement);
-		if(departmentDetails.getDeptId()!=1) {
-			return "redirect:/showPostAnnouncement";
-		}
 		}
 		catch (Exception e) {
 			System.out.println(e.getMessage());// TODO: handle exception
 		}
-		
 		model.addAttribute("msg",msg);
 		msg="";
 		return "redirect:/showViewAnnouncement";
@@ -99,15 +81,15 @@ model.addAttribute("announcementList", announcementList);
 		 
 	}
 	
-	@RequestMapping(value="/getAnnouncement", method=RequestMethod.GET)
-	public @ResponseBody List<Announcement> getAnnouncement(HttpServletRequest request, Model model)   
+	@RequestMapping(value="/getUpcommingEvent", method=RequestMethod.GET)
+	public @ResponseBody List<Announcement> getUpcommingEvent(HttpServletRequest request, Model model)   
 	{ 
 		int deptId=Integer.parseInt(request.getParameter("deptId"));
 		List<Announcement> announcementList=new ArrayList<Announcement>();
 				
 		try {
 			
-		 announcementList= announcementRepository.findByDeptIdAndDelStatusOrderByIdDesc(deptId,0);
+		 announcementList= announcementRepository.findByDeptIdAndDelStatus(deptId,0);
 
 		}
 		catch (Exception e) {
@@ -120,11 +102,12 @@ model.addAttribute("announcementList", announcementList);
 	}
 	
 	
-	@RequestMapping(value="/approveAnnouncement", method=RequestMethod.GET)
-	public @ResponseBody String approveAnnouncement(HttpServletRequest request, Model model)   
+	@RequestMapping(value="/approveUpcommingEvent", method=RequestMethod.GET)
+	public @ResponseBody String approveUpcommingEvent(HttpServletRequest request, Model model)   
 	{ 
 		int id=Integer.parseInt(request.getParameter("id"));
 	int res=	announcementRepository.approve(id);
 		return res+"";
 	}
+	*/
 }

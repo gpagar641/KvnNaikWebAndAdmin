@@ -118,7 +118,34 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 								</tr>
 							</thead>
 							<tbody>
-							 
+							 <c:forEach var="announcement" items="${announcementList}" varStatus="count">
+						 
+								<tr class="active">
+									<td scope="row">${count.index+1}</td>
+									<td>${announcement.title}</td>
+									<td>${announcement.date}</td>
+									<td>${announcement.shortDesc}</td>
+									<td><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc(\'${announcement.date}')">View Full Details</a></td>
+<td><a href="${pageContext.request.contextPath}/upcommingEventImages/${announcement.file}" download>${announcement.file}</a></td>								<c:choose>
+								<c:when test="${announcement.status==0}">
+								 
+								
+								<td><a href='#' onclick='aprove(${announcement.id})' class='action_btn'>  Approve</a></td>
+								
+			 	 </c:when>
+			 	 <c:when test="${announcement.status==3}">
+								 
+								
+								<td><td><a href='#' onclick='aprove(${announcement.id})' class='action_btn'>Reactive</a></td></td>
+								
+			 	 </c:when>
+								
+								<c:otherwise>
+								<td>Approved</td>
+								</c:otherwise>
+								</c:choose>
+								</tr>
+								 </c:forEach>  
 							<%-- <c:forEach var="deptList" items="${deptList}" varStatus="count">
 						 
 								<tr class="active">

@@ -13,8 +13,8 @@ import com.ganesh.admin.dbmodel.Notice;
 
 public interface NoticeRepository extends JpaRepository<Notice, Integer>{
 
-	List<Notice> findByDeptIdAndDelStatus(int deptId,int delSataus);
-	
+	List<Notice> findByDeptIdAndDelStatusOrderByIdDesc(int deptId,int delSataus);
+	List<Notice> findTop10IdAndByDelStatusOrderByIdDesc( int delStatus);
 	Notice findById(int id);
 	
 

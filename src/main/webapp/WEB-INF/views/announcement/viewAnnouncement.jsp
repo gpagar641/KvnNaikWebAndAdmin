@@ -119,15 +119,34 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 							</thead>
 							<tbody>
 							 
-							<%-- <c:forEach var="deptList" items="${deptList}" varStatus="count">
+							 <c:forEach var="announcement" items="${announcementList}" varStatus="count">
 						 
 								<tr class="active">
-									<th scope="row">${count.index+1}</th>
-									<td>${deptList.deptName}</td>
-									<td>${deptList.email}</td>
-									<td>${deptList.contactNo}</td>
+									<td scope="row">${count.index+1}</td>
+									<td>${announcement.title}</td>
+									<td>${announcement.date}</td>
+									<td>${announcement.shortDesc}</td>
+									<td><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc(\'${announcement.date}')">View Full Details</a></td>
+<td><a href="${pageContext.request.contextPath}/upcommingEventImages/${announcement.file}" download>${announcement.file}</a></td>								<c:choose>
+								<c:when test="${announcement.status==0}">
+								 
+								
+								<td><a href='#' onclick='aprove(${announcement.id})' class='action_btn'>  Approve</a></td>
+								
+			 	 </c:when>
+			 	 <c:when test="${announcement.status==3}">
+								 
+								
+								<td><td><a href='#' onclick='aprove(${announcement.id})' class='action_btn'>Reactive</a></td></td>
+								
+			 	 </c:when>
+								
+								<c:otherwise>
+								<td>Approved</td>
+								</c:otherwise>
+								</c:choose>
 								</tr>
-								 </c:forEach> --%>
+								 </c:forEach>  
 							</tbody>
 						</table>
 					</div>
@@ -252,10 +271,13 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 								tr.append($('<td></td>').html(list.shortDesc));
 								
 								tr.append($('<td></td>').html('<a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc(\''+list.fullDesc+'\')">View Full Details</a>'));
-								tr.append($('<td></td>').html('<a href="/images/'+list.file+'" download>'+list.file+'</a>'));
+								tr.append($('<td></td>').html('<a href="${pageContext.request.contextPath}/upcommingEventImages/'+list.file+'" download>'+list.file+'</a>'));
 
 								if(list.status==0){
 			 	tr.append($('<td ></td>').html("<a href='#' onclick='aprove("+list.id+")' class='action_btn'>  Approve</a> "));
+								}
+								else if(list.status==3){
+									tr.append($('<td></td>').html("<a href='#' onclick='aprove("+list.id+")' class='action_btn'>  Reactive</a>"));
 								}
 								else{
 									tr.append($('<td></td>').html('Approved'));

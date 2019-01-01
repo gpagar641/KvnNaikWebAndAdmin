@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ganesh.admin.dbmodel.Announcement;
 import com.ganesh.admin.dbmodel.DepartmentDetails;
+import com.ganesh.admin.dbmodel.Event;
 import com.ganesh.admin.dbmodel.Notice;
 import com.ganesh.admin.repository.AnnouncementRepository;
 import com.ganesh.admin.repository.DepartmentDetailsRepository;
@@ -46,6 +47,15 @@ public class NoticeController {
 	public String showViewNotice(HttpServletRequest request, Model model)   
 	{ 
 		List<DepartmentDetails> departmentDetailslist=departmentDetailsRepository.findByDelStatus(0);
+try {
+			
+			List<Notice> announcementList= noticeRepository.findTop10IdAndByDelStatusOrderByIdDesc(0);
+model.addAttribute("announcementList", announcementList);
+			}
+			catch (Exception e) {
+				// TODO: handle exception
+			}
+		
 		model.addAttribute("departmentDetailslist",departmentDetailslist);
 		model.addAttribute("msg",msg);
 		msg="";
@@ -70,6 +80,9 @@ public class NoticeController {
 		notice.setDeptId(departmentDetails.getDeptId());
 		try {
 			noticeRepository.save(notice);
+			if(departmentDetails.getDeptId()!=1) {
+				return "redirect:/showViewNotice";
+			}
 		}
 		catch (Exception e) {
 			System.out.println(e.getMessage());// TODO: handle exception
@@ -89,7 +102,7 @@ public class NoticeController {
 				
 		try {
 			
-			noticeList= noticeRepository.findByDeptIdAndDelStatus(deptId,0);
+			noticeList= noticeRepository.findByDeptIdAndDelStatusOrderByIdDesc(deptId,0);
 
 		}
 		catch (Exception e) {

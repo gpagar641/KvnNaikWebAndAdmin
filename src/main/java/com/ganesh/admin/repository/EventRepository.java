@@ -14,8 +14,9 @@ import com.ganesh.admin.dbmodel.Event;
 public interface EventRepository extends JpaRepository<Event, Integer>{
 
 	
-	List<Event> findByDeptIdAndDelStatus(int deptId,int delStatus);
-	
+	List<Event> findByDeptIdAndDelStatusOrderByIdDesc(int deptId,int delStatus);
+	 
+	List<Event> findTop10IdAndByDelStatusOrderByIdDesc( int delStatus);
 	Event findById(int id);
 	
 	@Modifying

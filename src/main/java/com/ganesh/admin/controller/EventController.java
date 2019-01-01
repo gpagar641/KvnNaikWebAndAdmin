@@ -48,6 +48,16 @@ public class EventController {
 	public String showViewEvent(HttpServletRequest request, Model model)   
 	{ 
 		List<DepartmentDetails> departmentDetailslist=departmentDetailsRepository.findByDelStatus(0);
+try {
+			
+			List<Event> announcementList= eventRepository.findTop10IdAndByDelStatusOrderByIdDesc(0);
+model.addAttribute("announcementList", announcementList);
+			}
+			catch (Exception e) {
+				// TODO: handle exception
+			}
+		
+
 		model.addAttribute("departmentDetailslist",departmentDetailslist);
 		model.addAttribute("msg",msg);
 		msg="";
@@ -72,6 +82,9 @@ public class EventController {
 		event.setDeptId(departmentDetails.getDeptId());
 		try {
 			eventRepository.save(event);
+			if(departmentDetails.getDeptId()!=1) {
+				return "redirect:/showViewEvent";
+			}
 		}
 		catch (Exception e) {
 			System.out.println(e.getMessage());// TODO: handle exception
@@ -91,7 +104,7 @@ public class EventController {
 				
 		try {
 			
-			noticeList= eventRepository.findByDeptIdAndDelStatus(deptId,0);
+			noticeList= eventRepository.findByDeptIdAndDelStatusOrderByIdDesc(deptId,0);
 
 		}
 		catch (Exception e) {

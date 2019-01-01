@@ -725,10 +725,16 @@ ul.breadcrumb li a:hover {
 	<script type="text/javascript">
 		function getData() {
 
-			$
+		/* 	$
 					.getJSON(
-							"http://localhost:8083/KvnAdmin/getAnnouncement?deptId=1",
-							function(result) {
+							"http://localhost:8083/KvnAdmin/getAnnouncement?deptId=2",
+			 */				 $
+							  .getJSON(
+							  		'getAnnouncement',
+							  		{
+							  			deptId : 2,
+							  			ajax : 'true',
+							  		},	function(result) {
 								$
 										.each(
 												result,
@@ -752,10 +758,16 @@ ul.breadcrumb li a:hover {
 												});
 
 							});
-			$
+			/* $
 					.getJSON(
-							"http://localhost:8083/KvnAdmin/getNotice?deptId=1",
-							function(result) {
+							"http://localhost:8083/KvnAdmin/getNotice?deptId=2",
+			 */				 $
+							  .getJSON(
+							  		'getNotice',
+							  		{
+							  			deptId : 2,
+							  			ajax : 'true',
+							  		},function(result) {
 								$
 										.each(
 												result,
@@ -780,10 +792,13 @@ ul.breadcrumb li a:hover {
 												});
 
 							});
-			$
-					.getJSON(
-							"http://localhost:8083/KvnAdmin/getEvent?deptId=1",
-							function(result) {
+			  $
+			  .getJSON(
+			  		'getEvent',
+			  		{
+			  			deptId : 2,
+			  			ajax : 'true',
+			  		},function(result) {
 								$
 										.each(
 												result,

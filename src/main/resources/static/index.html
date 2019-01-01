@@ -1089,8 +1089,8 @@
 				class="font-weight-bold">Events</span> <i
 				class="fas fa-graduation-cap"></i>
 		</h3>
-		<div class="container py-xl-5 py-lg-3">
-			<div class="row about-head-wthree-2"
+		<div class="container py-xl-5 py-lg-3" id="upcommingEvent">
+		<!-- 	<div class="row about-head-wthree-2"
 				style="border-radius: 10px 10px; border: 1px solid #ddd; -webkit-box-shadow: 10px 0px 15px 0px rgba(207, 207, 209, 1); -moz-box-shadow: 10px 0px 15px 0px rgba(207, 207, 209, 1); box-shadow: 10px 0px 15px 0px rgba(207, 207, 209, 1);">
 
 				<div class="col-lg-4 left-abw3ls text-lg-left text-center">
@@ -1106,7 +1106,7 @@
 					<p class="card-text">Morbi eget dui elit. In lectus eros,
 						convallis vel dolor vitae, semper sodales risus. Donec convallis
 						maximus neque vel cursus.</p>
-					<!--<a href="single.html" class="btn btn-primary blog-button mt-3">Read More</a>-->
+					<a href="single.html" class="btn btn-primary blog-button mt-3">Read More</a>
 
 				</div>
 
@@ -1128,7 +1128,7 @@
 					<p class="card-text">Morbi eget dui elit. In lectus eros,
 						convallis vel dolor vitae, semper sodales risus. Donec convallis
 						maximus neque vel cursus.</p>
-					<!--<a href="single.html" class="btn btn-primary blog-button mt-3">Read More</a>-->
+					<a href="single.html" class="btn btn-primary blog-button mt-3">Read More</a>
 
 				</div>
 
@@ -1150,11 +1150,11 @@
 					<p class="card-text">Morbi eget dui elit. In lectus eros,
 						convallis vel dolor vitae, semper sodales risus. Donec convallis
 						maximus neque vel cursus.</p>
-					<!--<a href="single.html" class="btn btn-primary blog-button mt-3">Read More</a>-->
-
+				 
 				</div>
 
 			</div>
+			<br> -->
 		</div>
 	</div>
 
@@ -1545,7 +1545,15 @@
 function getData() {
 	
 	
-	 $.getJSON("http://localhost:8083/KvnAdmin/getAnnouncement?deptId=1", function(result){
+	// $.getJSON("http://localhost:8083/KvnAdmin/getAnnouncement?deptId=1", 
+			  $
+			  .getJSON(
+			  		'getAnnouncement',
+			  		{
+			  			deptId : 1,
+			  			ajax : 'true',
+			  		},
+			 function(result){
 	      $.each(result, function(i, field){
 	    	  
 
@@ -1564,7 +1572,14 @@ function getData() {
 	      });  
 	      
 	    });
-	 $.getJSON("http://localhost:8083/KvnAdmin/getNotice?deptId=1", function(result){
+	 
+	  $
+	  .getJSON(
+	  		'getNotice',
+	  		{
+	  			deptId : 1,
+	  			ajax : 'true',
+	  		},function(result){
 	      $.each(result, function(i, field){
 	    	  
 
@@ -1583,7 +1598,14 @@ function getData() {
 	      });  
 	      
 	    });
-	 $.getJSON("http://localhost:8083/KvnAdmin/getEvent?deptId=1", function(result){
+	 
+			  $
+			  .getJSON(
+			  		'getEvent',
+			  		{
+			  			deptId : 1,
+			  			ajax : 'true',
+			  		},function(result){
 	      $.each(result, function(i, field){
 	    	  
 
@@ -1605,6 +1627,38 @@ function getData() {
 
 	
 }
+ $
+		  .getJSON(
+			  		'getUpcommingEvent',
+			  		{
+			  			deptId : 1,
+			  			ajax : 'true',
+			  		}, function(result){
+    $.each(result, function(i, field){
+var myvar = '<div class="row about-head-wthree-2"'+
+'				style="border-radius: 10px 10px; border: 1px solid #ddd; -webkit-box-shadow: 10px 0px 15px 0px rgba(207, 207, 209, 1); -moz-box-shadow: 10px 0px 15px 0px rgba(207, 207, 209, 1); box-shadow: 10px 0px 15px 0px rgba(207, 207, 209, 1);">'+
+''+
+'				<div class="col-lg-4 left-abw3ls text-lg-left text-center">'+
+'					<img src="images/quiz.jpg" alt="" class="img-fluid">'+
+'				</div>'+
+'				<div class="col-lg-8 right-abw3ls my-lg-0 my-sm-5 my-4"'+
+'					style="background-color: #f0d47de6;">'+
+'					</br>'+
+'					<h5 class="card-title">'+
+'						<a href="single.html" class="text-dark">Blog title here</a>'+
+'					</h5>'+
+'					</br>'+
+'					<p class="card-text">Morbi eget dui elit. In lectus eros,'+
+'						convallis vel dolor vitae, semper sodales risus. Donec convallis'+
+'						maximus neque vel cursus.</p>'+
+'				 '+
+'				</div>'+
+''+
+'			</div>';
+$("#upcommingEvent").append(myvar);
+    });  
+    
+});
 
 
 function setFullDesc(data)
