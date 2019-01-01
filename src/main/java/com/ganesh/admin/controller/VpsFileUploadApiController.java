@@ -11,6 +11,11 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 public class VpsFileUploadApiController {
 
+	
+	public static final String ANNOUNCE_IMAGES_PATH="E:\\E-Com\\BestTea\\src\\main\\webapp\\resources\\assets\\images\\restaurant\\800x975\\";
+	
+	public static final String EVENT_IMAGES_PATH="E:\\E-Com\\BestTea\\src\\main\\webapp\\resources\\assets\\images\\restaurant\\800x975\\";
+	
 	/*
 	 * String UPLOAD_DIR = "C://uploads//";
 	 * 
@@ -40,7 +45,7 @@ public class VpsFileUploadApiController {
 	 * = inFile.getOriginalFilename().substring(inFile.getOriginalFilename().
 	 * lastIndexOf('.')); return fileExtention; }
 	 */
-	static String  announce="";
+	
 	public   static void uploadFile( MultipartFile file,
 			 String imageName,  int imageType) throws IOException {
 
@@ -53,43 +58,15 @@ public class VpsFileUploadApiController {
 
 		if (imageType == 1) {
 
-			path = Paths.get(announce + "/"+ imageName);
-			// path = Paths.get("\\images\\");
-		} /*else if (imageType == 2) {
-
-			path = Paths.get(ConstantFileUploadPath.PATIENT_PATH + userId + "/profile/" + imageName);
-		} else if (imageType == 3) {
-
-			path = Paths.get(ConstantFileUploadPath.PHARMACY_PATH + userId + "/profile/" + imageName);
+			path = Paths.get(ANNOUNCE_IMAGES_PATH+ imageName);
+			
+		} else if(imageType == 2) {
+			
+			path = Paths.get(EVENT_IMAGES_PATH+ imageName);
 		}
-
-		else if (imageType == 4) {
-
-			path = Paths.get(ConstantFileUploadPath.LAB_PATH + userId + "/profile/" + imageName);
-		}
-
-		else if (imageType == 5) {
-
-			path = Paths.get(ConstantFileUploadPath.PATIENT_PATH + userId + "/reports/" + imageName);
-			// path = Paths.get(patientImages+userId+"//reports//"+imageName);
-		} else if (imageType == 6) {
-
-			path = Paths.get(ConstantFileUploadPath.PHARMACY_PATH + userId + "/documents/" + imageName);
-		} else if (imageType == 7) {
-
-			path = Paths.get(ConstantFileUploadPath.DOCTOR_PATH + userId + "/documents/" + imageName);
-		} else if (imageType == 8) {
-
-			path = Paths.get(ConstantFileUploadPath.LAB_PATH + userId + "/documents/" + imageName);
-		}
-		
-		 else if (imageType == 10) {
-
-				path = Paths.get(ConstantFileUploadPath.DOCTOR_PATH + userId + "/signature/" + imageName);
-			}*/
 		
 		try {
-			//path = Paths.get("F:\\sts-bundle\\sts-3.9.3.RELEASE\\images\\"+imageName);
+			 
 			Files.write(path, bytes);
 			 
 		} catch (Exception e) {

@@ -13,7 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.ganesh.admin.dbmodel.Announcement;
 import com.ganesh.admin.dbmodel.DepartmentDetails;
@@ -66,8 +68,8 @@ model.addAttribute("announcementList", announcementList);
 	}
 	
 	
-	@RequestMapping(value="/submitEvent", method=RequestMethod.POST)
-	public String submitEvent(HttpServletRequest request, Model model)   
+	@RequestMapping(value="/submitEvent", method=RequestMethod.POST )
+	public String submitEvent(HttpServletRequest request, Model model,@RequestParam("file") MultipartFile file)   
 	{ 
 		Event event=new Event();
 		
@@ -77,6 +79,20 @@ model.addAttribute("announcementList", announcementList);
 		event.setTitle(request.getParameter("title"));
 		event.setStatus(0);
 		event.setDelStatus(0);
+		
+		
+		
+	try {
+			
+			String fileName=file.getOriginalFilename();
+			VpsFileUploadApiController vpsImageUpload=new VpsFileUploadApiController();
+			vpsImageUpload.uploadFile(file,fileName,2);
+
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+		
 		HttpSession session=request.getSession();
 		DepartmentDetails departmentDetails=(DepartmentDetails)session.getAttribute("departmentDetails");
 		event.setDeptId(departmentDetails.getDeptId());

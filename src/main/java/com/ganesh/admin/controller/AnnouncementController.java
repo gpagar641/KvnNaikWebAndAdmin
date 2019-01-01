@@ -13,12 +13,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.ganesh.admin.dbmodel.Announcement;
 import com.ganesh.admin.dbmodel.DepartmentDetails;
 import com.ganesh.admin.repository.AnnouncementRepository;
 import com.ganesh.admin.repository.DepartmentDetailsRepository;
+
 
 @Controller
 public class AnnouncementController {
@@ -47,7 +50,7 @@ public class AnnouncementController {
 		try {
 			
 			List<Announcement> announcementList= announcementRepository.findTop10IdAndByDelStatusOrderByIdDesc(0);
-model.addAttribute("announcementList", announcementList);
+			model.addAttribute("announcementList", announcementList);
 			}
 			catch (Exception e) {
 				// TODO: handle exception
@@ -62,7 +65,7 @@ model.addAttribute("announcementList", announcementList);
 	
 	
 	@RequestMapping(value="/submitAnnouncement", method=RequestMethod.POST)
-	public String showViewAnnouncement(HttpServletRequest request, Model model)   
+	public String showViewAnnouncement(HttpServletRequest request, Model model, @RequestParam("file") MultipartFile file)   
 	{ 
 		Announcement announcement=new Announcement();
 		
@@ -70,6 +73,18 @@ model.addAttribute("announcementList", announcementList);
 		announcement.setFullDesc(request.getParameter("full_desc"));
 		announcement.setShortDesc(request.getParameter("short_desc"));
 		announcement.setTitle(request.getParameter("title"));
+		
+		try {
+			
+			String fileName=file.getOriginalFilename();
+			VpsFileUploadApiController vpsImageUpload=new VpsFileUploadApiController();
+			vpsImageUpload.uploadFile(file,fileName,1);
+
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+		
 		
 		HttpSession session=request.getSession();
 		DepartmentDetails departmentDetails=(DepartmentDetails)session.getAttribute("departmentDetails");

@@ -95,7 +95,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="form-body">
 							
-								<form data-toggle="validator" method="post" action="${pageContext.request.contextPath}/submitEvent">
+								<form data-toggle="validator" method="post" action="${pageContext.request.contextPath}/submitEvent"  enctype="multipart/form-data">
 									<div class="form-group">
 										<input type="text" class="form-control" id="title" name="title"
 											placeholder="Department Name" required>
