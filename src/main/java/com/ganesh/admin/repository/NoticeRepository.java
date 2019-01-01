@@ -13,8 +13,11 @@ import com.ganesh.admin.dbmodel.Notice;
 
 public interface NoticeRepository extends JpaRepository<Notice, Integer>{
 
-	List<Notice> findByDeptIdAndDelStatusOrderByIdDesc(int deptId,int delSataus);
+	List<Notice> findByDeptIdAndStatusAndDelStatusOrderByIdDesc(int deptId,int status, int delSataus);
 	List<Notice> findTop10IdAndByDelStatusOrderByIdDesc( int delStatus);
+	
+	 
+	
 	Notice findById(int id);
 	
 
@@ -27,4 +30,6 @@ public interface NoticeRepository extends JpaRepository<Notice, Integer>{
 	@Transactional
 	@Query("update  Notice m set  m.delStatus=1 WHERE m.id=:id")
 	int delete(@Param("id")int id );
+	
+	List<Notice> findByDeptIdAndDelStatusOrderByIdDesc(int deptId, int i);
 }

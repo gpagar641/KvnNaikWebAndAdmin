@@ -52,6 +52,8 @@ System.out.println("URI  "+request.getRequestURI());
 				|| path.contains("/getEvent")
 				|| path.contains("/getNotice")
 				|| path.contains("error")
+				|| path.contains("admin")
+				
 				)
 			
 			
