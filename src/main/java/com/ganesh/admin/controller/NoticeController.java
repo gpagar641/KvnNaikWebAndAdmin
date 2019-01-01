@@ -101,7 +101,7 @@ model.addAttribute("announcementList", announcementList);
 		notice.setStatus(0);
 		notice.setDelStatus(0);
 		
-	try {
+	try {    
 			
 			String fileName=file.getOriginalFilename();
 			VpsFileUploadApiController vpsImageUpload=new VpsFileUploadApiController();
