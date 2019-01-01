@@ -80,7 +80,7 @@ model.addAttribute("announcementList", announcementList);
 		event.setStatus(0);
 		event.setDelStatus(0);
 		
-		
+		   
 		
 	try {
 			
