@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 public class VpsFileUploadApiController {
 
-	
+	   
 	public static final String ANNOUNCE_IMAGES_PATH="/usr/local/tomcat/apache-tomcat-8.5.35/webapps/kvnimages/";
 	
 	public static final String EVENT_IMAGES_PATH="/usr/local/tomcat/apache-tomcat-8.5.35/webapps/kvnimages/";
