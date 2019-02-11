@@ -46,7 +46,7 @@ function includeHTML() {
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
     
-    file = elmnt.getAttribute("w3-include-html");
+    file = elmnt.getAttribute("log-include-html");
     if (file) {
       
       xhttp = new XMLHttpRequest();
@@ -55,7 +55,7 @@ function includeHTML() {
           if (this.status == 200) {elmnt.innerHTML = this.responseText;}
           if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
          
-          elmnt.removeAttribute("w3-include-html");
+          elmnt.removeAttribute("log-include-html");
           includeHTML();
         }
       }      
@@ -96,7 +96,7 @@ ul.breadcrumb li a:hover {
 <body>
 
 
-	<div w3-include-html="header.html">
+<div log-include-html="header.html">
 	
 </div>
 <script>
@@ -105,79 +105,16 @@ ul.breadcrumb li a:hover {
 	<!-- header -->
 	
 		<!-- top header -->
-		<!--
-		<div class="middle-w3ls-nav py-2">
-			<div class="container">
-				<div class="row">
-					
-					<div class="col-lg-8 right-info-agiles mt-lg-0 mt-sm-3 mt-1">
-						<div class="row">
-							<div class="col-sm-4 nav-middle">
-								<i class="far fa-envelope-open text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">kvnnaik@gmail.com</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 nav-middle mt-sm-0 mt-2">
-								<i class="fas fa-phone-volume text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">0253 - 2576692</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 top-login-butt text-right mt-sm-2">
-								<a href="login.html" class="button-head-mow3 text-white">Login</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>-->
+		
 		<!-- //middle header -->
 						
-					
-	
-
-
-	<div class="banner-agile-2">
-	<!--<div class="hero-text">
-    <h1>Association</h1>
- 		<ul class="breadcrumb">
-  			<li><a href="#">Home</a></li>
-  				<li><a href="#">Association</a></li>
-  				
-  			
-		</ul>
--->
-   
- <!--<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index.html">Home</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">About</li>
-		</ol>
-	</nav>-->
- </div>
-			<!-- navigation -->
+		<!-- navigation -->
 		
 		<!-- //navigation -->
 		
-	</div>
+	
 	<!-- breadcrumb -->
-	<!--<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index.html">Home</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">Faculty</li>
-		</ol>
-	</nav>-->
+	
 	<!-- breadcrumb -->
 	<!-- //banner -->
 	<!-- //banner -->
@@ -191,337 +128,141 @@ ul.breadcrumb li a:hover {
 			<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5"><i class="fas fa-graduation-cap"></i>Our 
 				<span class="font-weight-bold">Association</span><i class="fas fa-graduation-cap"></i>
 			</h3>
-			<div class="row inst-grids pt-md-4">
-				<div class="col-md-3 col-6 blog-gd-w3ls">
-					<img src="images/team1.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Michael King</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls">
-					<img src="images/team2.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Katherin Tresa</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls  last mt-md-0 mt-sm-5 mt-4">
-					<img src="images/team3.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Steven Monroe</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls last mt-md-0 mt-sm-5 mt-4">
-					<img src="images/team4.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Khamok Mokai</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-	
-
-			<div class="row inst-grids pt-md-4">
-				<div class="col-md-3 col-6 blog-gd-w3ls">
-					<img src="images/team1.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Michael King</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls">
-					<img src="images/team2.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Katherin Tresa</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls  last mt-md-0 mt-sm-5 mt-4">
-					<img src="images/team3.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Steven Monroe</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls last mt-md-0 mt-sm-5 mt-4">
-					<img src="images/team4.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Khamok Mokai</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			
+			<div class="container" id="my-table" >
+									<div class="table-responsive">
+											<table class="table" align="center" id="customers"  >
+											<thead>
+										  
+										    <th style="width:5%">Sr.No.</th>
+										    <th style="width:10%">Designation</th>
+										    <th style="width:30%">Student Name</th>
+										    <th style="width:5%">Class</th>
+										    <th style="width:20%">Mobile no</th>
+										    <th style="width:30%">Email id</th>
+										  </thead>
+										  <tbody>
+										    <tr>
+										      <td>1</td>
+										      <td>President</td>
+										      <td>Mr.Prasad S. Kulkarni</td>
+										      <td>B.E</td>
+										      <td>7798874329</td>
+										      <td>prasadmanoraj1997@gmail.com</td>
+										    </tr>
+										    <tr>
+										      <td>2</td>
+										      <td>Vice President</td>
+										      <td>Mr.Akshay U. Jadhav</td>
+										      <td>T.E</td>
+										      <td>7030445388</td>
+										      <td>akshay.aaa143@gmail.com</td>
+										    </tr>
+										    <tr>
+										      <td>3</td>
+										      <td>Secretary</td>
+										      <td>Mr.Rajendra D. Donde</td>
+										      <td>B.E</td>
+										      <td>8793602312</td>
+										      <td>donderaju3@gmail.com</td>
+										    </tr>
+										    <tr>
+										      <td>4</td>
+										      <td>Joint Secretary</td>
+										      <td>Mr.Anuj M. Chakor</td>
+										      <td>T.E</td>
+										      <td>9421389107</td>
+										      <td>chakoranuj@gmail.com</td>
+										    </tr>
+										    <tr>
+										      <td>5</td>
+										      <td>Management Council Members</td>
+										      <td>
+										      	<div>Mr.Manoj G.  Avhad                                         </div>
+										      	<div>Mr.Rohit R. Shinde </div>                                          
+										      	<div>Mr.Laxman U. Pawar</div>
+										      	<div>Mr.Siyona S. Salvi</div>
+										      	<div>Mr.Chetan M. Vishwakarma</div>
+										      	<div>Mr.Harshal R. Khairnar</div>
+										      
+										      </td>
+										     <td>
+										      	<div>B.E</div>
+										      	<div>B.E</div>
+										      	<div>T.E</div>
+										        <div>T.E</div>
+										        <div>S.E</div>
+										        <div>S.E</div>
+										      </td>
+										      <td>
+										      	<div>9822589433</div>
+										      	<div>7738424716</div>
+										      	<div>9766803262</div>
+										      	<div>8421759106</div>
+										      	<div>9028174158</div>
+										      <div>8788195057</div>
+										      </td>
+										      <td>
+										      	<div>manojavhad61gmail.com</div>
+										      	<div>rohitshinde201997@gmail.com</div>
+										      	<div>laxmanpawar3262@gmail.com</div>
+										      	<div>siyona15@gmail.com</div>
+										      <div>hk8788195057@gmail.com</div>
+										      <div>hk8788195057@gmail.com</div>
+										      </td>
+										    </tr>
+										    <tr>
+										      <td>6</td>
+										      <td>Ladies Representative</td>
+										      <td>
+										      	<div>Ms.Unnati N. Patil</div>
+										      	<div>Ms.Amruta A. Deshpande</div>
+										      	
+										      
+										      </td>
+										     <td>
+										      	<div>B.E</div>
+										      	<div>T.E</div>
+										      	
+										      	
+										      
+										      </td>
+										      <td>
+										      	<div>9527909006</div>
+										      	<div>7776993562</div>
+										      	
+										      	
+										      
+										      </td>
+										      <td>
+										      	<div>unnatinpatil19@gmail.com</div>
+										      	<div>amrutad025@gmail.com</div>
+										      	
+										      
+										      </td>
+										    </tr>
+										  </tbody>
+											
+											</table>
+</div>
+													     
+</div>														 
+														 
+														
 
 
-			<div class="row inst-grids pt-md-4">
-				<div class="col-md-3 col-6 blog-gd-w3ls">
-					<img src="images/team1.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Michael King</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls">
-					<img src="images/team2.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Katherin Tresa</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls  last mt-md-0 mt-sm-5 mt-4">
-					<img src="images/team3.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Steven Monroe</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls last mt-md-0 mt-sm-5 mt-4">
-					<img src="images/team4.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Khamok Mokai</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
+
+
+														
+																											   
+ 
+
 </div>
 </div>
 	<!-- //team -->
 	
 <!-- footer -->
-	<div w3-include-html="footer.html">
+	<div log-include-html="footer.html">
 	
 </div>
 <script>
@@ -584,7 +325,7 @@ ul.breadcrumb li a:hover {
 	<script src="js/edulearn.js"></script>
 
 	<!-- //Js files -->
-	<script>
+<script>
 		$(document).ready(function(){
   			$(window).scroll(function(){
   				var scroll = $(window).scrollTop();
@@ -600,6 +341,9 @@ ul.breadcrumb li a:hover {
   				})
 		})
 </script>
+
+
+	
 	<script>
 		$(document).ready(function(){
   $(window).scroll(function(){
@@ -609,8 +353,8 @@ ul.breadcrumb li a:hover {
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  	
-		  $(".nav-item").css("color" , "#fff !important");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  	
+		  $(".nav-item").css("color" , "#f4e8c7 !important");  
 	  }
   })
 })
@@ -625,7 +369,7 @@ ul.breadcrumb li a:hover {
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  
 		 
 		/*   $("a").removeClass("text-white"); */
 		  //$(".nav-item").css("color" , "#000 !important");  

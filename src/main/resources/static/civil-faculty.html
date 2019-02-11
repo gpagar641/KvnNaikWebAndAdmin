@@ -46,7 +46,7 @@ function includeHTML() {
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
     
-    file = elmnt.getAttribute("w3-include-html");
+    file = elmnt.getAttribute("log-include-html");
     if (file) {
       
       xhttp = new XMLHttpRequest();
@@ -55,7 +55,7 @@ function includeHTML() {
           if (this.status == 200) {elmnt.innerHTML = this.responseText;}
           if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
          
-          elmnt.removeAttribute("w3-include-html");
+          elmnt.removeAttribute("log-include-html");
           includeHTML();
         }
       }      
@@ -95,7 +95,7 @@ ul.breadcrumb li a:hover {
 </style>
 <body>
 
-<div w3-include-html="header.html">
+<div log-include-html="header.html">
 	
 </div>
 <script>
@@ -104,79 +104,16 @@ ul.breadcrumb li a:hover {
 	<!-- header -->
 	
 		<!-- top header -->
-		<!--
-		<div class="middle-w3ls-nav py-2">
-			<div class="container">
-				<div class="row">
-					
-					<div class="col-lg-8 right-info-agiles mt-lg-0 mt-sm-3 mt-1">
-						<div class="row">
-							<div class="col-sm-4 nav-middle">
-								<i class="far fa-envelope-open text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">kvnnaik@gmail.com</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 nav-middle mt-sm-0 mt-2">
-								<i class="fas fa-phone-volume text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">0253 - 2576692</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 top-login-butt text-right mt-sm-2">
-								<a href="login.html" class="button-head-mow3 text-white">Login</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>-->
+		
 		<!-- //middle header -->
 						
-					
-	
-
-
-	<div class="banner-agile-2">
-	<!--<div class="hero-text">
-    <h1>Faculty</h1>
- 		<ul class="breadcrumb">
-  			<li><a href="#">Home</a></li>
-  				<li><a href="#">Faculty</a></li>
-  				
-  			
-		</ul>-->
-
-   
- <!--<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index.html">Home</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">About</li>
-		</ol>
-	</nav>-->
- </div>
-			<!-- navigation -->
+					<!-- navigation -->
 		
 		<!-- //navigation -->
 		
-	</div>
+	
 	<!-- breadcrumb -->
-	<!--<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index.html">Home</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">Faculty</li>
-		</ol>
-	</nav>-->
+	
 	<!-- breadcrumb -->
 	<!-- //banner -->
 	<!-- //banner -->
@@ -190,217 +127,229 @@ ul.breadcrumb li a:hover {
 			<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5"><i class="fas fa-graduation-cap"></i>Our 
 				<span class="font-weight-bold">Faculty</span><i class="fas fa-graduation-cap"></i>
 			</h3>
+
+		<!--	<div class="container" id="my-table" >
+										<div class="table-responsive">
+                                         <table class="table" align="center" id="customers" >
+											
+											
+													   <thead class="thead-dark">
+													    <tr>
+													      <th>Sr.No.</th>
+													      <th>Name</th>
+													      <th>ABR</th>
+													      <th>Designation</th>
+													       <th>Highest Qualification</th>
+													    
+													   
+													       
+													    </tr>
+													  </thead>
+													  <tbody>
+													    <tr>
+													    <td>1</td>
+													     <td>Prof. Sutar T. H.</td>
+													      <td>THS</td>
+													     <td>Vice Principal </td>
+													      <td>M.E (Bldg Sci & Tech)</td>
+													     
+													      
+													      
+													    </tr>
+													    <tr>
+													     <td>2</td>
+													     <td>Prof. Deore Y. D.</td>
+													      <td>YDD</td>
+													     <td>HOD & Asst. Professor</td>
+													      <td>M.E (Structures)</td>
+													    
+													     
+													     
+													    </tr>
+													    <tr>
+													       <td>3</td>
+
+													     <td>Prof. Bodke S. S.</td>
+													      <td>SSB</td>
+													     <td>Dean Infra & Asst. Professor</td>
+													      <td>M.Tech (Housing Planning)</td>
+													     
+													     
+													      
+													    </tr>
+													     <tr>
+													      <td>4</td>
+
+													      <td>Prof. Dhatrak A. N.</td>
+													       <td>AND</td>
+													      <td>Asst. Professor</td>
+													    
+													      <td>M.E (Structures)</td>
+													    
+													     
+													      
+													    </tr>
+													     <tr>
+													       <td>5</td>
+
+													     <td>Prof. Bhosale C. D.</td>
+													      <td>CDB</td>
+													     <td>Asst. Professor</td>
+													      <td>M.E (Constn Mgmt)</td>
+													   
+													     
+													      
+													    </tr>
+													     <tr>
+													       <td>6</td>
+
+													     <td>Prof. Desai B. M.</td>
+													      <td>BMD</td>
+													     <td>Asst. Professor</td>
+													      <td>M.E (Structures)</td>
+													   
+													     
+													      
+													    </tr>
+													     <tr>
+													       <td>7</td>
+
+													     <td>Prof. Sangai B. D.</td>
+													      <td>BDS</td>
+													     <td>Asst. Professor</td>
+													      <td>M.E (Structures)</td>
+													   
+													     
+													      
+													    </tr>
+													     <tr>
+													       <td>8</td>
+
+													     <td>Prof. Bedse(Patil) P. N.</td>
+													      <td>PNB</td>
+													     <td>Asst. Professor</td>
+													      <td>M.E (Bldg Sci & Tech)</td>
+													   
+													     
+													      
+													    </tr>
+													     <tr>
+													       <td>9</td>
+
+													     <td>Prof. Boraste  A. V.</td>
+													      <td>AVB</td>
+													     <td>Asst. Professor</td>
+													      <td>M.E (Constn Mgmt)</td>
+													   
+													     
+													      
+													    </tr>
+													     <tr>
+													       <td>10</td>
+
+													     <td>Prof. Kalekar D. B.</td>
+													      <td>DBK</td>
+													     <td>Asst. Professor</td>
+													      <td>M.E (Constn Mgmt)</td>
+													   
+													     
+													      
+													    </tr>
+													     <tr>
+													       <td>11</td>
+
+													     <td>Prof. Sangale S. V.</td>
+													      <td>SVS</td>
+													     <td>Asst. Professor</td>
+													      <td>M.E (Environmental Engg)</td>
+													   
+													     
+													      
+													    </tr>
+													     <tr>
+													       <td>12</td>
+
+													     <td>Prof. Naik V. P.</td>
+													      <td>VPN</td>
+													     <td>Asst. Professor</td>
+													      <td>M.E (Constn Mgmt) </td>
+													   
+													     
+													      
+													    </tr>
+													  </tbody>
+											</table><br><br>
+										</div>
+
+
+</div>-->
 			<div class="row inst-grids pt-md-4">
-				<div class="col-md-3 col-6 blog-gd-w3ls">
-					<img src="images/team1.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Michael King</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
+				<div class="col-md-3 col-6 blog-gd-logls">
+					<img src="images/THS.jpg" alt=" " class="img-fluid">
+					<div class="date-log">
+						<h5 class="management-title">Prof Sutar T H	</h5>
+						<p class="para-log-agile">Vice Principal	</p>
+						
 					</div>
 				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls">
-					<img src="images/team2.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Katherin Tresa</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
+				<div class="col-md-3 col-6 blog-gd-logls">
+					<img src="images/YDD.jpg" alt=" " class="img-fluid">
+					<div class="date-log">
+						<h5 class="management-title">Prof Deore Y D</h5>
+						<p class="para-log-agile">HOD & Assistant Professor	</p>
+						
 					</div>
 				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls  last mt-md-0 mt-sm-5 mt-4">
-					<img src="images/team3.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Steven Monroe</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
+				<div class="col-md-3 col-6 blog-gd-logls  last mt-md-0 mt-sm-5 mt-4">
+					<img src="images/SSB.jpg" alt=" " class="img-fluid">
+					<div class="date-log">
+						<h5 class="management-title">Prof Bodke S S	</h5>
+						<p class="para-log-agile">Dean Infra & Asst. Professor	</p>
+						
 					</div>
 				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls last mt-md-0 mt-sm-5 mt-4">
-					<img src="images/team4.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Khamok Mokai</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
+				<div class="col-md-3 col-6 blog-gd-logls last mt-md-0 mt-sm-5 mt-4">
+					<img src="images/AND.jpg" alt=" " class="img-fluid">
+					<div class="date-log">
+						<h5 class="management-title">Prof Dhatrak A N	</h5>
+						<p class="para-log-agile">Assistant Professor	</p>
+						
 					</div>
 				</div>
 			</div>
 	
 
 			<div class="row inst-grids pt-md-4">
-				<div class="col-md-3 col-6 blog-gd-w3ls">
-					<img src="images/team1.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Michael King</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
+				<div class="col-md-3 col-6 blog-gd-logls">
+					<img src="images/CDB.jpg" alt=" " class="img-fluid">
+					<div class="date-log">
+						<h5 class="management-title">Prof Bhosale C D</h5>
+						<p class="para-log-agile">Assistant Professor	</p>
+						
 					</div>
 				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls">
-					<img src="images/team2.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Katherin Tresa</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
+				<div class="col-md-3 col-6 blog-gd-logls">
+					<img src="images/BMD.jpg" alt=" " class="img-fluid">
+					<div class="date-log">
+						<h5 class="management-title">Prof Desai B M	</h5>
+						<p class="para-log-agile">Assistant Professor	</p>
+						
 					</div>
 				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls  last mt-md-0 mt-sm-5 mt-4">
-					<img src="images/team3.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Steven Monroe</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
+				<div class="col-md-3 col-6 blog-gd-logls  last mt-md-0 mt-sm-5 mt-4">
+					<img src="images/BDS.jpg" alt=" " class="img-fluid">
+					<div class="date-log">
+						<h5 class="management-title">Prof Sangai B D	</h5>
+						<p class="para-log-agile">Assistant Professor</p>
+						
 					</div>
 				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls last mt-md-0 mt-sm-5 mt-4">
-					<img src="images/team4.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Khamok Mokai</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
+				<div class="col-md-3 col-6 blog-gd-logls last mt-md-0 mt-sm-5 mt-4">
+					<img src="images/PNB.jpg" alt=" " class="img-fluid">
+					<div class="date-log">
+						<h5 class="management-title">Prof Bedse(Patil) P N</h5>
+						<p class="para-log-agile">Assistant Professor	</p>
+						
 					</div>
 				</div>
 			</div>
@@ -408,108 +357,38 @@ ul.breadcrumb li a:hover {
 
 
 			<div class="row inst-grids pt-md-4">
-				<div class="col-md-3 col-6 blog-gd-w3ls">
-					<img src="images/team1.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Michael King</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
+				<div class="col-md-3 col-6 blog-gd-logls">
+					<img src="images/AVB.jpg" alt=" " class="img-fluid">
+					<div class="date-log">
+						<h5 class="management-title">Prof Boraste A V</h5>
+						<p class="para-log-agile">Assistant Professor</p>
+						
 					</div>
 				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls">
-					<img src="images/team2.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Katherin Tresa</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
+				<div class="col-md-3 col-6 blog-gd-logls">
+					<img src="images/DBK.jpg" alt=" " class="img-fluid">
+					<div class="date-log">
+						<h5 class="management-title">Prof Kalekar D B</h5>
+						<p class="para-log-agile">Assistant Professor	</p>
+						
 					</div>
 				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls  last mt-md-0 mt-sm-5 mt-4">
-					<img src="images/team3.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Steven Monroe</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
+				<div class="col-md-3 col-6 blog-gd-logls  last mt-md-0 mt-sm-5 mt-4">
+					<img src="images/SSV.jpg" alt=" " class="img-fluid">
+					<div class="date-log">
+						<h5 class="management-title">Prof Sangale S V</h5>
+						<p class="para-log-agile">Assistant Professor		</p>
+						
 					</div>
 				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls last mt-md-0 mt-sm-5 mt-4">
-					<img src="images/team4.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Khamok Mokai</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
+
+			
+			<div class="col-md-3 col-6 blog-gd-logls last mt-md-0 mt-sm-5 mt-4">
+					<img src="images/VPN.jpg" alt=" " class="img-fluid">
+					<div class="date-log">
+						<h5 class="management-title">Prof Naik V P</h5>
+						<p class="para-log-agile">Assistant Professor	</p>
+						
 					</div>
 				</div>
 			</div>
@@ -520,7 +399,7 @@ ul.breadcrumb li a:hover {
 	<!-- //team -->
 	
 <!-- footer -->
-	<div w3-include-html="footer.html">
+	<div log-include-html="footer.html">
 	
 </div>
 <script>
@@ -599,6 +478,9 @@ ul.breadcrumb li a:hover {
   				})
 		})
 </script>
+
+
+	
 	<script>
 		$(document).ready(function(){
   $(window).scroll(function(){
@@ -608,8 +490,8 @@ ul.breadcrumb li a:hover {
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  	
-		  $(".nav-item").css("color" , "#fff !important");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  	
+		  $(".nav-item").css("color" , "#f4e8c7 !important");  
 	  }
   })
 })
@@ -624,7 +506,7 @@ ul.breadcrumb li a:hover {
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  
 		 
 		/*   $("a").removeClass("text-white"); */
 		  //$(".nav-item").css("color" , "#000 !important");  

@@ -4,8 +4,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Novus Admin Panel an Admin Panel Category Flat Bootstrap
-	Responsive Website Template | Validation :: w3layouts</title>
+<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/LOGMIEER PNG LOGO.png" />
+<title>Logmieer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords"
@@ -64,7 +64,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
   <c:url var="getNotice" value="/getNotice"></c:url>
   <c:url var="approveNotice" value="/approveNotice"></c:url>
-
+  <c:url var="getNoticeById" value="/getNoticeById"></c:url>
 
 
 <body class="cbp-spmenu-push">
@@ -112,8 +112,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 									<td>${announcement.title}</td>
 									<td>${announcement.date}</td>
 									<td>${announcement.shortDesc}</td>
-									<td><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc(\'${announcement.date}')">View Full Details</a></td>
-<td><a href="${pageContext.request.contextPath}/upcommingEventImages/${announcement.file}" download>${announcement.file}</a></td>								 
+									<td><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc(${announcement.id})">View Full Details</a></td>
+<td><a href="${pageContext.request.contextPath}/kvnimages/${announcement.file}" download>${announcement.file}</a></td>								 
 								
 								<c:choose>
 								<c:when test="${announcement.status==0}">
@@ -143,7 +143,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 								<div class="modal-content">
 									<div class="modal-header">
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-										<h4 class="modal-title" id="exampleModalLabel">New message</h4>
+										<h4 class="modal-title" id="exampleModalLabel"></h4>
 									</div>
 									<div class="modal-body">
 										<p id="fullDesc"></p>
@@ -258,8 +258,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 							  	tr.append($('<td></td>').html(list.date));
 								tr.append($('<td></td>').html(list.shortDesc));
 								
-								tr.append($('<td></td>').html('<a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc(\''+list.fullDesc+'\')">View Full Details</a>'));
-								tr.append($('<td></td>').html('<a href="/images/'+list.file+'" download>'+list.file+'</a>'));
+								tr.append($('<td></td>').html('<a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc('+list.id+')">View Full Details</a>'));
+								tr.append($('<td></td>').html('<a href="${pageContext.request.contextPath}/kvnimages/'+list.file+'" download>'+list.file+'</a>'));
 
 								if(list.status==0){
 			 	tr.append($('<td ></td>').html("<a href='#' onclick='aprove("+list.id+")' class='action_btn'>  Approve</a> "));
@@ -273,11 +273,30 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 						}
                         
                         
-                        function setFullDesc(data) {
-                         
-                        	 $("#fullDesc").text(data);
-						}
                         
+                        function setFullDesc(id) {
+                            
+                          	 
+                          	 
+                          	 $("#exampleModalLabel").text('');
+                          	 
+                           
+                          	 		document.getElementById('fullDesc').innerHTML = '';
+
+                          	 	 
+                          	 	  			$.getJSON('${getNoticeById}', {
+                          	 	  			id : id,
+                          	 	  			ajax : 'true',
+                          	 	  		},function(result){
+                          	 	  			
+                          	 	  		 $("#exampleModalLabel").text(result.title);
+                          	 	  			document.getElementById('fullDesc').innerHTML = result.fullDesc;
+                          	 	  			 
+                          	 	  			 
+                          	 	  		})
+                          	 	 
+                          	 			
+                          	 	}
         function aprove(id) {
 							
                         	$.getJSON('${approveNotice}', {

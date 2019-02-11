@@ -8344,7 +8344,7 @@ $.extend(Datepicker.prototype, {
 	RSS: 'D, d M y', // RFC 822
 	TICKS: '!',
 	TIMESTAMP: '@',
-	W3C: 'yy-mm-dd', // ISO 8601
+	logC: 'yy-mm-dd', // ISO 8601
 
 	_ticksTo1970: (((1970 - 1) * 365 + Math.floor(1970 / 4) - Math.floor(1970 / 100) +
 		Math.floor(1970 / 400)) * 24 * 60 * 60 * 10000000),

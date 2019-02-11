@@ -53,6 +53,8 @@ System.out.println("URI  "+request.getRequestURI());
 				|| path.contains("/getNotice")
 				|| path.contains("error")
 				|| path.contains("admin")
+				|| path.contains("kvnimages")
+				|| path.contains("staticFiles")
 				
 				)
 			

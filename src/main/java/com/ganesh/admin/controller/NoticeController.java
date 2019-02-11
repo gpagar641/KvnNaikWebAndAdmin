@@ -17,11 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.ganesh.admin.dbmodel.Announcement;
 import com.ganesh.admin.dbmodel.DepartmentDetails;
-import com.ganesh.admin.dbmodel.Event;
 import com.ganesh.admin.dbmodel.Notice;
-import com.ganesh.admin.repository.AnnouncementRepository;
 import com.ganesh.admin.repository.DepartmentDetailsRepository;
 import com.ganesh.admin.repository.NoticeRepository;
 
@@ -100,25 +97,39 @@ model.addAttribute("announcementList", announcementList);
 		notice.setTitle(request.getParameter("title"));
 		notice.setStatus(0);
 		notice.setDelStatus(0);
+		notice.setFile("");
+		
+		HttpSession session=request.getSession();
+		DepartmentDetails departmentDetails=(DepartmentDetails)session.getAttribute("departmentDetails");
 		
 	try {      
-			
-			String fileName=file.getOriginalFilename();
+		 if(file.getOriginalFilename().length()>0) {
+		//	String fileName=new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())+file.getOriginalFilename();
 			VpsFileUploadApiController vpsImageUpload=new VpsFileUploadApiController();
+			String fileName = new SimpleDateFormat("ddMMyyyyHHmmss").format(new Date())
+					+ departmentDetails.getDeptId()+VpsFileUploadApiController.getFileExtension(file);
 			vpsImageUpload.uploadFile(file,fileName,3);
-
+			notice.setFile(fileName);
+		 }
 			} catch (Exception e) {
 				// TODO: handle exception
 				e.printStackTrace();
 			}
-		
-		HttpSession session=request.getSession();
-		DepartmentDetails departmentDetails=(DepartmentDetails)session.getAttribute("departmentDetails");
+	
 		notice.setDeptId(departmentDetails.getDeptId());
+		notice.setDeptName(departmentDetails.getDeptName());
+		if(departmentDetails.getDeptId()==1) {
+			notice.setStatus(1);
+			}
 		try {
 			noticeRepository.save(notice);
 			if(departmentDetails.getDeptId()!=1) {
+			 
 				return "redirect:/showViewNoticeByDeptId";
+			}
+			else
+			{
+				notice.setStatus(1);
 			}
 		}
 		catch (Exception e) {
@@ -170,14 +181,39 @@ model.addAttribute("announcementList", announcementList);
 		return noticeList;
 		
 	}
-	
+	@RequestMapping(value="/getNoticeById", method=RequestMethod.GET)
+	public @ResponseBody Notice getNoticeById(HttpServletRequest request, Model model)   
+	{ 
+		int id=Integer.parseInt(request.getParameter("id"));
+		 	
+		try {
+			
+			Notice notice= noticeRepository.findById(id);
+			return notice;
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+		 
+		return null;
+		
+	}
 	
 	
 	@RequestMapping(value="/approveNotice", method=RequestMethod.GET)
 	public @ResponseBody String approveNotice(HttpServletRequest request, Model model)   
 	{ 
 		int id=Integer.parseInt(request.getParameter("id"));
-	int res=	noticeRepository.approve(id);
+	int res=	noticeRepository.approve(1,id);
 		return res+"";
 	}
+	
+	@RequestMapping(value="/deleteNotice", method=RequestMethod.GET)
+	public @ResponseBody String deleteNotice(HttpServletRequest request, Model model)   
+	{ 
+		int id=Integer.parseInt(request.getParameter("id"));
+	int res=	noticeRepository.approve(3,id);
+		return res+"";
+	}
+	
 }

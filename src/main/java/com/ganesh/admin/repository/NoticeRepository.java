@@ -23,8 +23,8 @@ public interface NoticeRepository extends JpaRepository<Notice, Integer>{
 
 	@Modifying
 	@Transactional
-	@Query("update  Notice m set  m.status=1 WHERE m.id=:id")
-	int approve(@Param("id")int id );
+	@Query("update  Notice m set  m.status=:status WHERE m.id=:id")
+	int approve(@Param("status")int status,@Param("id")int id );
 	
 	@Modifying
 	@Transactional

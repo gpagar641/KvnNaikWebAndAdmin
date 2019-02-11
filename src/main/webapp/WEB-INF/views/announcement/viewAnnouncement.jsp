@@ -4,8 +4,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Novus Admin Panel an Admin Panel Category Flat Bootstrap
-	Responsive Website Template | Validation :: w3layouts</title>
+<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/LOGMIEER PNG LOGO.png" />
+<title>Logmieer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords"
@@ -13,7 +13,9 @@
 SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript">
 	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
 
 </script>
 <!-- Bootstrap Core CSS -->
@@ -62,9 +64,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 </head>
 
-  <c:url var="getAnnouncement" value="/getAnnouncement"></c:url>
-  <c:url var="approveAnnouncement" value="/approveAnnouncement"></c:url>
-
+<c:url var="getAnnouncementDept" value="/getAnnouncementDept"></c:url>
+<c:url var="approveAnnouncement" value="/approveAnnouncement"></c:url>
+<c:url var="deleteAnnouncement" value="/deleteAnnouncement"></c:url>
+<c:url var="getAnnouncementById" value="/getAnnouncementById"></c:url>
 
 
 <body class="cbp-spmenu-push">
@@ -89,84 +92,122 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 					<div class="bs-example widget-shadow"
 						data-example-id="contextual-table">
 						<h4>Announcement</h4>
-						
+
 						<div class="form-group">
-									<label for="selector1" class="col-sm-2 control-label">Select Department</label>
-									<div class="col-sm-8"> 
-										<select id="deptId" name="deptId" onchange="getAnnouncement()" class="form-control1">
-						<option value="" disabled="disabled" selected="selected">Select Department</option>
-							<c:forEach var="departmentDetails" items="${departmentDetailslist}" varStatus="count">
-							<option value="${departmentDetails.deptId}">${departmentDetails.deptName }</option>
-							</c:forEach>
-						</select>
-									</div>
-								</div>
-								<br>
-						 
-							<hr>
-						 
+							<label for="selector1" class="col-sm-2 control-label">Select
+								Department</label>
+							<div class="col-sm-8">
+								<select id="deptId" name="deptId" onchange="getAnnouncement()"
+									class="form-control1">
+									<option value="" disabled="disabled" selected="selected">Select
+										Department</option>
+									<c:forEach var="departmentDetails"
+										items="${departmentDetailslist}" varStatus="count">
+										<option value="${departmentDetails.deptId}">${departmentDetails.deptName }</option>
+									</c:forEach>
+								</select>
+							</div>
+						</div>
+						<br>
+
+						<hr>
+
 						<table class="table" id="table1">
 							<thead>
 								<tr>
 									<th>#</th>
+									<th>Department</th>
 									<th>Title</th>
 									<th>Date</th>
 									<th width="400px">Short Description</th>
 									<th>Full Description</th>
 									<th>Attachment</th>
 									<th>Action</th>
+									<th>Delete</th>
 								</tr>
 							</thead>
 							<tbody>
-							 
-							 <c:forEach var="announcement" items="${announcementList}" varStatus="count">
-						 
-								<tr class="active">
-									<td scope="row">${count.index+1}</td>
-									<td>${announcement.title}</td>
-									<td>${announcement.date}</td>
-									<td>${announcement.shortDesc}</td>
-									<td><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc(\'${announcement.date}')">View Full Details</a></td>
-<td><a href="${pageContext.request.contextPath}/upcommingEventImages/${announcement.file}" download>${announcement.file}</a></td>								<c:choose>
-								<c:when test="${announcement.status==0}">
-								 
-								
-								<td><a href='#' onclick='aprove(${announcement.id})' class='action_btn'>  Approve</a></td>
-								
-			 	 </c:when>
-			 	 <c:when test="${announcement.status==3}">
-								 
-								
-								<td><td><a href='#' onclick='aprove(${announcement.id})' class='action_btn'>Reactive</a></td></td>
-								
-			 	 </c:when>
-								
-								<c:otherwise>
-								<td>Approved</td>
-								</c:otherwise>
-								</c:choose>
-								</tr>
-								 </c:forEach>  
+
+								<c:forEach var="announcement" items="${announcementList}"
+									varStatus="count">
+
+									<tr class="active">
+										<td scope="row">${count.index+1}</td>
+										<td>${announcement.deptName}</td>
+										<td>${announcement.title}</td>
+										<td>${announcement.date}</td>
+										<td>${announcement.shortDesc}</td>
+										<td><a href="#" data-toggle="modal"
+											data-target="#exampleModal" data-whatever="@mdo"
+											onclick="setFullDesc(${announcement.id})">View Full
+												Details</a></td>
+										<td><a
+											href="${pageContext.request.contextPath}/kvnimages/${announcement.file}"
+											download>${announcement.file}</a></td>
+										<c:choose>
+											<c:when test="${announcement.status==0}">
+
+
+												<td><a href='#' onclick='aprove(${announcement.id})'
+													class='action_btn'> Approve</a></td>
+
+											</c:when>
+											<c:when test="${announcement.status==3}">
+
+
+												 
+												<td><a href='#' onclick='aprove(${announcement.id})'
+													class='action_btn'>Reactive</a> 
+												</td>
+
+											</c:when>
+
+											<c:otherwise>
+												<td>Approved</td>
+											</c:otherwise>
+										</c:choose>
+										<c:choose>
+											<c:when test="${announcement.status==3}">
+
+
+												<td>Deleted</td>
+
+											</c:when>
+											 
+
+											<c:otherwise>
+												<td><a href='#' onclick='deleteCall(${announcement.id})'
+													class='action_btn'>Delete</a></td>
+											</c:otherwise>
+										</c:choose>
+
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>
-					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-							<div class="modal-dialog" role="document">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-										<h4 class="modal-title" id="exampleModalLabel">New message</h4>
-									</div>
-									<div class="modal-body">
-										<p id="fullDesc">dfgfg</p>
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-										<!-- <button type="button" class="btn btn-primary">Send message</button> -->
-									</div>
+					<div class="modal fade" id="exampleModal" tabindex="-1"
+						role="dialog" aria-labelledby="exampleModalLabel">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal"
+										aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+									<h4 class="modal-title" id="exampleModalLabel"></h4>
+								</div>
+								<div class="modal-body">
+									<p id="fullDesc"></p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default"
+										data-dismiss="modal">Close</button>
+									<!-- <button type="button" class="btn btn-primary">Send message</button> -->
 								</div>
 							</div>
 						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -242,15 +283,15 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     $('#messageAnimation').fadeOut('slow');
 }, 5000);
                         </script>
-                        
-                        <script type="text/javascript">
+
+	<script type="text/javascript">
                         function getAnnouncement() {
 							 
                         	var deptId=document.getElementById("deptId").value;
 
                         	$('#table1 td').remove();
                         	
-    						$.getJSON('${getAnnouncement}', {
+    						$.getJSON('${getAnnouncementDept}', {
 
     							deptId : deptId,
 
@@ -265,14 +306,17 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     							
     							var tr = $('<tr></tr>');
 							  	tr.append($('<td></td>').html(key+1));
-
+							  	tr.append($('<td></td>').html(list.deptName));
 							  	tr.append($('<td></td>').html(list.title));
 							  	tr.append($('<td></td>').html(list.date));
 								tr.append($('<td></td>').html(list.shortDesc));
 								
-								tr.append($('<td></td>').html('<a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc(\''+list.fullDesc+'\')">View Full Details</a>'));
-								tr.append($('<td></td>').html('<a href="${pageContext.request.contextPath}/upcommingEventImages/'+list.file+'" download>'+list.file+'</a>'));
-
+								tr.append($('<td></td>').html('<a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc('+list.id+')">View Full Details</a>'));
+								if(list.file){
+									tr.append($('<td></td>').html('<a href="${pageContext.request.contextPath}/kvnimages/'+list.file+'" download>'+list.file+'</a>'));
+								}else{
+									tr.append($('<td></td>').html(''));
+								}
 								if(list.status==0){
 			 	tr.append($('<td ></td>').html("<a href='#' onclick='aprove("+list.id+")' class='action_btn'>  Approve</a> "));
 								}
@@ -282,19 +326,49 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 								else{
 									tr.append($('<td></td>').html('Approved'));
 								}
+								
+								if(list.status!=3){
+								 	tr.append($('<td ></td>').html("<a href='#' onclick='deleteCall("+list.id+")' class='action_btn'>  Delete</a> "));
+													}
+												 
+													else{
+														tr.append($('<td></td>').html('Deleted'));
+													}
+								
 								$('#table1 tbody').append(tr);
     							  });
     						})
 						}
                         
                         
-                        function setFullDesc(data) {
+                        function setFullDesc(id) {
                          
-                        	 $("#fullDesc").text(data);
-						}
+                        	 
+                        	 
+                        	 $("#exampleModalLabel").text('');
+                        	 
+                         
+                        	 		document.getElementById('fullDesc').innerHTML = '';
+
+                        	 	 
+                        	 	  			$.getJSON('${getAnnouncementById}', {
+                        	 	  			id : id,
+                        	 	  			ajax : 'true',
+                        	 	  		},function(result){
+                        	 	  			
+                        	 	  		 $("#exampleModalLabel").text(result.title);
+                        	 	  			document.getElementById('fullDesc').innerHTML = result.fullDesc;
+                        	 	  			 
+                        	 	  			 
+                        	 	  		})
+                        	 	 
+                        	 			
+                        	 	}
+                        	 
+						 
                         
         function aprove(id) {
-							
+        	var deptId=document.getElementById("deptId").value;
                         	$.getJSON('${approveAnnouncement}', {
 
     							id : id,
@@ -304,9 +378,33 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     							ajax : 'true'
 
     						}, function(data) {
+    							if(deptId=="" || deptId==null)
+    							{
+    							location.reload();
+    							}else
     							getAnnouncement();
     						})
 						}
+        function deleteCall(id) {
+        	var deptId=document.getElementById("deptId").value;
+        	$.getJSON('${deleteAnnouncement}', {
+
+				id : id,
+
+				 
+
+				ajax : 'true'
+
+			}, function(data) {
+				if(deptId=="" || deptId==null)
+					{
+					location.reload();
+					}else
+				getAnnouncement();
+			})
+		}
+        
+        
                         </script>
 </body>
 </html>

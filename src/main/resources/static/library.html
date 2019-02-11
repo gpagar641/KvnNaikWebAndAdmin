@@ -47,7 +47,7 @@ function includeHTML() {
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
     
-    file = elmnt.getAttribute("w3-include-html");
+    file = elmnt.getAttribute("log-include-html");
     if (file) {
       
       xhttp = new XMLHttpRequest();
@@ -56,7 +56,7 @@ function includeHTML() {
           if (this.status == 200) {elmnt.innerHTML = this.responseText;}
           if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
          
-          elmnt.removeAttribute("w3-include-html");
+          elmnt.removeAttribute("log-include-html");
           includeHTML();
         }
       }      
@@ -97,176 +97,290 @@ ul.breadcrumb li a:hover {
 
 <body>
 
-	<div w3-include-html="header.html">
+	<div log-include-html="header.html">
 	
 </div>
 <script>
 	includeHTML();
 </script>
 	<!-- header -->
-	
-		<!-- top header -->
-		<!--
-		<div class="middle-w3ls-nav py-2">
-			<div class="container">
-				<div class="row">
-					
-					<div class="col-lg-8 right-info-agiles mt-lg-0 mt-sm-3 mt-1">
-						<div class="row">
-							<div class="col-sm-4 nav-middle">
-								<i class="far fa-envelope-open text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">kvnnaik@gmail.com</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 nav-middle mt-sm-0 mt-2">
-								<i class="fas fa-phone-volume text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">0253 - 2576692</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 top-login-butt text-right mt-sm-2">
-								<a href="login.html" class="button-head-mow3 text-white">Login</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>-->
-		<!-- //middle header -->
-						
-					
-	
-
-
+	<!-- top header -->
+	<!-- //middle header -->
 	<!-- banner -->
-	<div class="banner-agile-2">
-	<!--<div class="hero-text">
-    <h1>About</h1>
- 		<ul class="breadcrumb">
-  			<li><a href="#">Home</a></li>
-  				<li><a href="#">Library</a></li>
-  				
-  			
-		</ul>
-
-   -->
- <!--<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index.html">Home</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">About</li>
-		</ol>
-	</nav>-->
- </div>
-			<!-- navigation -->
-		
-		<!-- //navigation -->
-		
-	</div>
-	<!-- breadcrumb -->
-	<!--<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index.html">Home</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">Library</li>
-		</ol>
-	</nav>-->
+	<!-- navigation -->
+	<!-- //navigation -->
 	<!-- breadcrumb -->
 	<!-- //banner -->
 	<!-- //banner -->
-
 	<!-- history -->
 	<div class="about-page py-5">
 		<div class="container py-xl-5 py-lg-3">
-			<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5"> <i class="fas fa-graduation-cap"></i> Library <i class="fas fa-graduation-cap"></i>
-				
+			<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5"> <i class="fas fa-graduation-cap"></i> Our
+				<span class="font-weight-bold"> Library </span> <i class="fas fa-graduation-cap"></i>
 			</h3>
 			<div class="row about-head-wthree">
 				
-				<div class="col-lg-6 right-abw3ls mt-lg-0 mt-sm-5 mt-4">
-					<!--<h5 class="font-italic border-bottom text-center font-weight-bold pb-3 mb-4">Activities for students</h5>-->
-					<p>LoGMIEER is situated in Nashik in Maharashtra state of India. it is accredited from AICTE and it is affiliated to University of Pune. KVNNIEER, Nashik offers 5 courses across 1 streams namely Engineering and across 1 degrees like B.Tech.Hostel facility is not available for its students.  </p>
-					<p class="mt-3">Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi, Eiusmod tempor
-						incididunt ut labore et dolore magna aliqua. Ut enim ad.</p>
+				<div class="col-lg-6 right-ablogls mt-lg-0 mt-sm-5 mt-4">
+					
+					<p style="text-align: justify;">A Central Library of LoGMIEER, provides physical and digital access to different resource materials such as books, periodicals, journals, newspapers, conference proceedings, maps, prints, documents, microfilm, CDs, videotapes, DVDs, e-books, databases and other formats. The reference book section is a separate section in the library which includes the copies of all text books, reference books, project reports, dissertations, thesis and field reports.   </p>
+					<p class="mt-3" style="text-align: justify;">The library also includes study zone for students and is open for 12 hours in a day. Dedicated internet facility is available in ten PCs along with the reprographic equipments. The description of facilities available in the library is as under;</p>
 						
 </a>
 				</div>
-				<div class="col-lg-6 left-abw3ls mt-lg-0 mt-sm-5 mt-4">
+				<div class="col-lg-6 left-ablogls mt-lg-0 mt-sm-5 mt-4">
 					<img src="images/library.jpg" alt="" class="img-fluid" style="border-right: 5px solid #42a5f5;border-top:5px solid #42a5f5";>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- //history -->
-
-	<!-- mission -->
-						
-
-
-	
-	<!-- //mission -->
-	<!--Carousel Wrapper new-->
-	
-	<!--/.Carousel Wrapper-->
-	
 
 
 
-	
-	
-			
-
-<!--Counter -->
-
-		
-
-<div class="stats-w3layouts py-5">
+	<section class="gallery py-5">
 		<div class="container py-xl-5 py-lg-3">
-			<div class="stats-info">
-				<div class="row">
-					<div class="col-md-5 col-6 stats-grid-w3-agile text-center px-xl-5 px-3" style="border: 2px solid #fff; border-radius: 50px 0;">
-						<div class='numscroller font-weight-bold my-2' data-slno='1' data-min='0' data-max='920' data-delay='.5' data-increment="1">1500+</div>
-						<p class="text-uppercase text-white border-top pt-4 mt-3" style="font-weight: bold;">Available Books</p>
+			<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5"> <i class="fas fa-graduation-cap"></i> our
+				<span class="font-weight-bold"> gallery </span> <i class="fas fa-graduation-cap"></i>
+			</h3>
+			<div class="inner-sec pt-md-4" >
+				<div class="row proj_gallery_grid">
+					<div class="col-sm-4 section_1_gallery_grid">
+						<a href="images/library-01.png">
+							<div class="section_1_gallery_grid1" >
+								<img src="images/library-01.png" alt=" " class="img-fluid" id="my-gallery"/>
+								<!--<div class="proj_gallery_grid1_pos">
+									<h3>LoGMIEER</h3>
+									<p>Add some text here</p>
+								</div>-->
+							</div>
+						</a>
 					</div>
-					<div class="col-md-2 col-6 stats-grid-w3-agile text-center px-xl-5 px-3">
-						
+					<div class="col-sm-4 section_1_gallery_grid my-sm-0 my-4">
+						<a href="images/library-02.png">
+							<div class="section_1_gallery_grid1">
+								<img src="images/library-02.png" alt=" " class="img-fluid" id="my-gallery"/>
+								<!--<div class="proj_gallery_grid1_pos">
+									<h3>LoGMIEER</h3>
+									<p>Add some text here</p>
+								</div>-->
+							</div>
+						</a>
 					</div>
-					<div class="col-md-5 col-6 stats-grid-w3-agile text-center px-xl-5 px-3" style="border: 2px solid #fff; border-radius: 50px 0;">
-						<div class='numscroller font-weight-bold my-2' data-slno='1' data-min='0' data-max='920' data-delay='.5' data-increment="1">500+</div>
-						<p class="text-uppercase text-white border-top pt-4 mt-3" style="font-weight: bold;">Publish Paper</p>
+					<div class="col-sm-4 section_1_gallery_grid">
+						<a href="images/library-03.png">
+							<div class="section_1_gallery_grid1">
+								<img src="images/library-03.png" alt=" " class="img-fluid" id="my-gallery"/>
+								<!--<div class="proj_gallery_grid1_pos">
+									<h3>LoGMIEER</h3>
+									<p>Add some text here</p>
+								</div>-->
+							</div>
+						</a>
 					</div>
-					<!--<div class="col-md-3 col-6 stats-grid-w3-agile text-center mt-md-0 mt-5  px-xl-5 px-3">
-						<div class='numscroller font-weight-bold my-2' data-slno='1' data-min='0' data-max='1200' data-delay='.5' data-increment="1">1200</div>
-						<p class="text-uppercase text-white border-top pt-4 mt-3">certified teachers</p>
-					</div>
-					<div class="col-md-3 col-6 stats-grid-w3-agile text-center mt-md-0 mt-5  px-xl-5 px-3">
-						<div class='numscroller font-weight-bold my-2' data-slno='1' data-min='0' data-max='1200' data-delay='.5' data-increment="1">1200</div>
-						<p class="text-uppercase text-white border-top pt-4 mt-3">graduate students</p>
-					</div>-->
 				</div>
+				<div class="row proj_gallery_grid mt-4">
+					<div class="col-sm-4 section_1_gallery_grid">
+						<a href="images/library-04.png">
+							<div class="section_1_gallery_grid1">
+								<img src="images/library-04.png" alt=" " class="img-fluid" id="my-gallery"/>
+								<!--<div class="proj_gallery_grid1_pos">
+									<h3>LoGMIEER</h3>
+									<p>Add some text here</p>
+								</div>-->
+							</div>
+						</a>
+					</div>
+					<div class="col-sm-4 section_1_gallery_grid  my-sm-0 my-4">
+						<a href="images/cl-gal-05.png">
+							<div class="section_1_gallery_grid1">
+								<img src="images/cl-gal-05.png" alt=" " class="img-fluid" id="my-gallery"/>
+								<!--<div class="proj_gallery_grid1_pos">
+									<h3>LoGMIEER</h3>
+									<p>Add some text here</p>
+								</div>-->
+							</div>
+						</a>
+					</div>
+					<div class="col-sm-4 section_1_gallery_grid">
+						<a href="images/cl-gal-06.png">
+							<div class="section_1_gallery_grid1">
+								<img src="images/cl-gal-06.png" alt=" " class="img-fluid" id="my-gallery"/>
+								<!--<div class="proj_gallery_grid1_pos">
+									<h3>LoGMIEER</h3>
+									<p>Add some text here</p>
+								</div>-->
+							</div>
+						</a>
+					</div>
+				</div>
+				
 			</div>
 		</div>
-	</div>
+	</section>
+	<!-- //history -->
+	<!-- mission -->
+	<!-- //mission -->
+	<!--Carousel Wrapper new-->
+	<!--/.Carousel Wrapper-->
+	<!--Counter -->
+	<div class="container" id="my-table" >
+										
+										<div class="table-responsive">
+											<table class="table" align="center" id="customers" >
+											
+													   <thead class="thead-dark">
+													    <tr>
+													      <th >Sr.No.</th>
+													      <th >Description</th>
+													    
+													      <th >Nos.</th>
+													       
+													    </tr>
+													  </thead>
+													  <tbody>
+													    <tr>
+													    <td>1</td>
+
+													      <td>Text Books</td>
+													      <td>8788</td>
+													     
+													      
+													      
+													    </tr>
+													    <tr>
+													     <td>2</td>
+													      <td>Reference Books</td>
+													      <td>1445</td>
+													     
+													     
+													    </tr>
+													    <tr>
+													       <td>3</td>
+
+													      <td>E-Books </td>
+													      <td>445</td>
+													     
+													      
+													    </tr>
+													     <tr>
+													       <td>4</td>
+
+													      <td>Field Reports</td>
+													      <td>117</td>
+													     
+													      
+													    </tr>
+													     <tr>
+													       <td>5</td>
+
+													      <td>Project Reports</td>
+													      <td>112</td>
+													     
+													      
+													    </tr>
+													    <tr>
+													    	<td>6</td>
+													    	<td>Dissertations</td>
+													    	<td>40</td>
+													    </tr>
+													     <tr>
+													    	<td>7</td>
+													    	<td>National Journals </td>
+													    	<td>33</td>
+													    </tr>
+													     <tr>
+													    	<td>8</td>
+													    	<td>International Journals </td>
+													    	<td>5</td>
+													    </tr>
+													  </tbody>
+											</table>
+										</div>
+										
+<br>
+<br>
+</div>
+<h4 class="title text-capitalize font-weight-light text-dark text-center mb-5"> <i class="fas fa-graduation-cap"></i> Library
+				<span class="font-weight-bold"> In-Charge  </span> <i class="fas fa-graduation-cap"></i>
+			</h4>
+<div class="container" id="my-table" >
+										
+										<div class="table-responsive">
+											<table class="table" align="center" id="customers" >
+											
+													   <thead class="thead-dark">
+													    <tr>
+													      <th >Sr.No.</th>
+													      <th>Name</th>
+													      <th >Education</th>
+													    
+													      <th >Designation</th>
+													       
+													    </tr>
+													  </thead>
+													  <tbody>
+													    <tr>
+													    <td>1</td>
+													    <td>J.P. Shinde</td>
+													    <td>M.Lib.</td>
+													    <td>Librarian</td>
+													      </tr> 
+													       <tr>
+													    <td>2</td>
+													    <td>S.N.Gaidhani</td>
+													    <td>M.Lib.(SET)</td>
+													    <td>Asst.Librarian</td>
+													      </tr> 
+													       <tr>
+													    <td>3</td>
+													    <td>S.S. Matsagar</td>
+													    <td>B.Lib.</td>
+													    <td>Library Asst.</td>
+													      </tr> 
+													     </tbody>
+											</table>
+										</div>
+										
+<br>
+<br>
+</div>
+<h4 class="title text-capitalize font-weight-light text-dark text-center mb-5"> <i class="fas fa-graduation-cap"></i> Library
+				<span class="font-weight-bold"> Area  </span> <i class="fas fa-graduation-cap"></i>
+			</h4>
+<div class="container" id="my-table" >
+										
+										<div class="table-responsive">
+											<table class="table" align="center" id="customers" >
+											
+													   <thead class="thead-dark">
+													    <tr>
+													      <th >Sr.No.</th>
+													      <th>Location</th>
+													      <th >Area(SqM)</th>
+													    
+													      
+													       
+													    </tr>
+													  </thead>
+													  <tbody>
+													    <tr>
+													    <td>1</td>
+													    <td>224</td>
+													    <td>400</td>
+													    
+													      </tr> 
+													      
+													     </tbody>
+											</table>
+										</div>
+										
+<br>
+<br>
+</div>
+
 	</br>
-
-
-
-
-
-
-	<!--Counter contemt-->
-	
+<!--Counter contemt-->
 <!-- footer -->
-	<div w3-include-html="footer.html">
+	<div log-include-html="footer.html">
 	
 </div>
 <script>
@@ -287,8 +401,10 @@ ul.breadcrumb li a:hover {
 	<!-- Js files -->
 	<!-- JavaScript -->
 	<script src="js/jquery-2.2.3.min.js"></script>
+
 	<!-- Default-JavaScript-File -->
 	<script src="js/bootstrap.js"></script>
+	
 	<!-- Necessary-JavaScript-File-For-Bootstrap -->
 
 	<!-- testimonial-plugin -->
@@ -316,7 +432,13 @@ ul.breadcrumb li a:hover {
 		});
 	</script>
 	<!-- //testimonial-plugin -->
-
+<!-- simpleLightbox -->
+	<link href="css/simpleLightbox.css" rel='stylesheet' type='text/css' />
+	<script src="js/simpleLightbox.js"></script>
+	<script>
+		$('.proj_gallery_grid a').simpleLightbox();
+	</script>
+	<!-- //simpleLightbox -->
 	<!-- smooth scrolling -->
 	<script src="js/SmoothScroll.min.js"></script>
 	<!-- //smooth scrolling -->
@@ -345,6 +467,9 @@ ul.breadcrumb li a:hover {
   				})
 		})
 </script>
+
+
+	
 	<script>
 		$(document).ready(function(){
   $(window).scroll(function(){
@@ -354,8 +479,8 @@ ul.breadcrumb li a:hover {
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  	
-		  $(".nav-item").css("color" , "#fff !important");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  	
+		  $(".nav-item").css("color" , "#f4e8c7 !important");  
 	  }
   })
 })
@@ -370,7 +495,7 @@ ul.breadcrumb li a:hover {
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  
 		 
 		/*   $("a").removeClass("text-white"); */
 		  //$(".nav-item").css("color" , "#000 !important");  
@@ -379,6 +504,7 @@ ul.breadcrumb li a:hover {
   })
 })
 		</script>
+
 
 	
 </body>

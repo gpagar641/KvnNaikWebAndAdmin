@@ -19,12 +19,13 @@ public interface AnnouncementRepository extends JpaRepository<Announcement, Inte
 	
 	@Modifying
 	@Transactional
-	@Query("update  Announcement m set  m.status=1 WHERE m.id=:id")
-	int approve(@Param("id")int id );
+	@Query("update  Announcement m set  m.status=:status WHERE m.id=:id")
+	int approve(@Param("status")int status,@Param("id")int id );
 	
 	@Modifying
 	@Transactional
 	@Query("update  Announcement m set  m.delStatus=1 WHERE m.id=:id")
 	int delete(@Param("id")int id );
+	List<Announcement> findByDeptIdAndStatusAndDelStatusOrderByIdDesc(int deptId, int i, int j);
 	
 }

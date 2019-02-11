@@ -4,8 +4,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Novus Admin Panel an Admin Panel Category Flat Bootstrap
-	Responsive Website Template | Validation :: w3layouts</title>
+<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/LOGMIEER PNG LOGO.png" />
+<title>Logmieer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords"
@@ -62,9 +62,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 </head>
 
-  <c:url var="getEvent" value="/getEvent"></c:url>
+  <c:url var="getEventDept" value="/getEventDept"></c:url>
   <c:url var="approveEvent" value="/approveEvent"></c:url>
-
+    <c:url var="deleteEvent" value="/deleteEvent"></c:url>
+    <c:url var="getEventById" value="/getEventById"></c:url>
 
 
 <body class="cbp-spmenu-push">
@@ -109,12 +110,15 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 							<thead>
 								<tr>
 									<th>#</th>
+									
+									<th>Department</th>
 									<th>Title</th>
 									<th>Date</th>
 									<th width="400px">Short Description</th>
 									<th>Full Description</th>
 									<th>Attachment</th>
 									<th>Action</th>
+									<th>Delete</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -122,11 +126,12 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 						 
 								<tr class="active">
 									<td scope="row">${count.index+1}</td>
+									<td>${announcement.deptName}</td>
 									<td>${announcement.title}</td>
 									<td>${announcement.date}</td>
 									<td>${announcement.shortDesc}</td>
-									<td><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc(\'${announcement.date}')">View Full Details</a></td>
-									<td><a href="${pageContext.request.contextPath}/upcommingEventImages/${announcement.file}" download>${announcement.file}</a></td>
+									<td><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc(${announcement.id})">View Full Details</a></td>
+									<td><a href="${pageContext.request.contextPath}/kvnimages/${announcement.file}" download>${announcement.file}</a></td>
 								<c:choose>
 								<c:when test="${announcement.status==0}">
 								 
@@ -137,7 +142,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 			 	 <c:when test="${announcement.status==3}">
 								 
 								
-								<td><td><a href='#' onclick='aprove(${announcement.id})' class='action_btn'>Reactive</a></td></td>
+								<td> <a href='#' onclick='aprove(${announcement.id})' class='action_btn'>Reactive</a> </td>
 								
 			 	 </c:when>
 								
@@ -145,6 +150,22 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 								<td>Approved</td>
 								</c:otherwise>
 								</c:choose>
+								
+								<c:choose>
+								<c:when test="${announcement.status==3}">
+								 
+								
+								<td>Deleted</td>
+								
+			 	 </c:when>
+			 	 
+								
+								<c:otherwise>
+								<td><a href='#' onclick='deleteCall(${announcement.id})' class='action_btn'>Delete</a></td>
+								</c:otherwise>
+								</c:choose>
+								
+								
 								</tr>
 								 </c:forEach>  
 							<%-- <c:forEach var="deptList" items="${deptList}" varStatus="count">
@@ -164,7 +185,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 								<div class="modal-content">
 									<div class="modal-header">
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-										<h4 class="modal-title" id="exampleModalLabel">New message</h4>
+										<h4 class="modal-title" id="exampleModalLabel"></h4>
 									</div>
 									<div class="modal-body">
 										<p id="fullDesc"></p>
@@ -259,7 +280,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
                         	$('#table1 td').remove();
                         	
-    						$.getJSON('${getEvent}', {
+    						$.getJSON('${getEventDept}', {
 
     							deptId : deptId,
 
@@ -274,33 +295,69 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     							
     							var tr = $('<tr></tr>');
 							  	tr.append($('<td></td>').html(key+1));
-
+							  	tr.append($('<td></td>').html(list.deptName));
 							  	tr.append($('<td></td>').html(list.title));
 							  	tr.append($('<td></td>').html(list.date));
 								tr.append($('<td></td>').html(list.shortDesc));
 								
-								tr.append($('<td></td>').html('<a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc(\''+list.fullDesc+'\')">View Full Details</a>'));
-								tr.append($('<td></td>').html('<a href="/images/'+list.file+'" download>'+list.file+'</a>'));
-
+								tr.append($('<td></td>').html('<a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc('+list.id+')">View Full Details</a>'));
+								if(list.file)
+									tr.append($('<td></td>').html('<a href="${pageContext.request.contextPath}/kvnimages/'+list.file+'" download>'+list.file+'</a>'));
+								else{
+									tr.append($('<td></td>').html(''));
+								}
 								if(list.status==0){
 			 	tr.append($('<td ></td>').html("<a href='#' onclick='aprove("+list.id+")' class='action_btn'>  Approve</a> "));
 								}
-								else{
+								else if (list.status==3){
+									tr.append($('<td></td>').html("<a href='#' onclick='aprove("+list.id+")' class='action_btn'>  Reactive</a> "));
+								}
+								else  { 
 									tr.append($('<td></td>').html('Approved'));
 								}
+    							  
+								 if (list.status!=3){
+														tr.append($('<td></td>').html("<a href='#' onclick='deleteCall("+list.id+")' class='action_btn'>  Delete</a> "));
+													}
+													else  { 
+														tr.append($('<td></td>').html('Deleted'));
+													}
+					    							  
+								
+    							  
+								
 								$('#table1 tbody').append(tr);
     							  });
     						})
 						}
                         
                         
-                        function setFullDesc(data) {
-                         
-                        	 $("#fullDesc").text(data);
-						}
+                        function setFullDesc(id) {
+                            
+                       	 
+                       	 
+                       	 $("#exampleModalLabel").text('');
+                       	 
                         
+                       	 		document.getElementById('fullDesc').innerHTML = '';
+
+                       	 	 
+                       	 	  			$.getJSON('${getEventById}', {
+                       	 	  			id : id,
+                       	 	  			ajax : 'true',
+                       	 	  		},function(result){
+                       	 	  			
+                       	 	  		 $("#exampleModalLabel").text(result.title);
+                       	 	  			document.getElementById('fullDesc').innerHTML = result.fullDesc;
+                       	 	  			 
+                       	 	  			 
+                       	 	  		})
+                       	 	 
+                       	 			
+                       	 	}
+                       	 
         function aprove(id) {
-							
+        	 var deptId=document.getElementById("deptId").value;
                         	$.getJSON('${approveEvent}', {
 
     							id : id,
@@ -310,9 +367,33 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     							ajax : 'true'
 
     						}, function(data) {
+    							if(deptId=="" || deptId==null)
+    							{
+    							location.reload();
+    							}else
     							getAnnouncement();
     						})
 						}
+   function deleteCall(id) {
+	   var deptId=document.getElementById("deptId").value;
+        	$.getJSON('${deleteEvent}', {
+
+				id : id,
+
+				 
+
+				ajax : 'true'
+
+			}, function(data) {
+				if(deptId=="" || deptId==null)
+				{
+				location.reload();
+				}else
+				getAnnouncement();
+			})
+		}
+        
+   
                         </script>
 </body>
 </html>

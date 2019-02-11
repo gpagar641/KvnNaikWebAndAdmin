@@ -47,7 +47,7 @@ function includeHTML() {
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
     
-    file = elmnt.getAttribute("w3-include-html");
+    file = elmnt.getAttribute("log-include-html");
     if (file) {
       
       xhttp = new XMLHttpRequest();
@@ -56,7 +56,7 @@ function includeHTML() {
           if (this.status == 200) {elmnt.innerHTML = this.responseText;}
           if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
          
-          elmnt.removeAttribute("w3-include-html");
+          elmnt.removeAttribute("log-include-html");
           includeHTML();
         }
       }      
@@ -96,47 +96,14 @@ ul.breadcrumb li a:hover {
 </style>
 <body>
 
-	<div w3-include-html="header.html">
+	<div log-include-html="header.html">
 	
 </div>
 <script>
 	includeHTML();
 </script>
 	<!-- header -->
-	<!--
-		<div class="middle-w3ls-nav py-2">
-			<div class="container">
-				<div class="row">
-					
-					<div class="col-lg-8 right-info-agiles mt-lg-0 mt-sm-3 mt-1">
-						<div class="row">
-							<div class="col-sm-4 nav-middle">
-								<i class="far fa-envelope-open text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">kvnnaik@gmail.com</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 nav-middle mt-sm-0 mt-2">
-								<i class="fas fa-phone-volume text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">0253 - 2576692</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 top-login-butt text-right mt-sm-2">
-								<a href="login.html" class="button-head-mow3 text-white">Login</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>-->
-		<!-- //middle header -->
+	<!-- //middle header -->
 						
 					
 	
@@ -182,14 +149,14 @@ ul.breadcrumb li a:hover {
 	<!-- //banner -->
 
 	<!-- course-->
-	<div class="course-w3ls py-5">
+	<div class="course-logls py-5">
 		<div class="container py-xl-5 py-lg-3">
-			<h3 class="title text-capitalize font-weight-light text-dark text-center mb-sm-5 mb-4"> <i class="fas fa-graduation-cap"></i> course -
+			<h3 class="title text-capitalize font-weight-light text-dark text-center mb-sm-5 mb-4"> <i class="fas fa-graduation-cap"></i> Course -
 				<span class="font-weight-bold"> Photography </span> <i class="fas fa-graduation-cap"></i>
 			</h3>
 			<div class="row cource-list-agile pt-4">
 				<div class="col-lg-7 agile-course-main">
-					<div class="w3ls-cource-first">
+					<div class="logls-cource-first">
 						<img src="images/1.png" alt="" class="img-fluid img-poiscour mx-auto d-block mt-2"></img>
 						<div class="px-md-5 px-4  pb-md-5 pb-4">
 							<h3 class="text-dark">Digital Picture Of Photography</h3>
@@ -208,8 +175,8 @@ ul.breadcrumb li a:hover {
 				<div class="col-lg-5 agile-course-main-2 mt-4">
 					<img src="images/n1.jpg" alt="" class="img-fluid">
 				</div>
-				<div class="buttons-w3ls">
-					<a class="btn button-cour-w3ls text-white" href="course_details.html" role="button">Learn More</a>
+				<div class="buttons-logls">
+					<a class="btn button-cour-logls text-white" href="course_details.html" role="button">Learn More</a>
 					<a class="btn bg-dark text-white" href="form.html" role="button">Apply Now</a>
 				</div>
 			</div>
@@ -218,7 +185,7 @@ ul.breadcrumb li a:hover {
 					<img src="images/n2.jpg" alt="" class="img-fluid">
 				</div>
 				<div class="col-lg-7 agile-course-main text-right">
-					<div class="w3ls-cource-first">
+					<div class="logls-cource-first">
 						<img src="images/2.png" alt="" class="img-fluid img-poiscour mx-auto d-block mt-2"></img>
 						<div class="px-md-5 px-4  pb-md-5 pb-4">
 							<h3 class="text-dark">Landscape Of Photography</h3>
@@ -237,14 +204,14 @@ ul.breadcrumb li a:hover {
 						</div>
 					</div>
 				</div>
-				<div class="buttons-w3ls-2">
-					<a class="btn button-cour-w3ls text-white" href="course_details.html" role="button">Learn More</a>
+				<div class="buttons-logls-2">
+					<a class="btn button-cour-logls text-white" href="course_details.html" role="button">Learn More</a>
 					<a class="btn bg-dark text-white" href="form.html" role="button">Apply Now</a>
 				</div>
 			</div>
 			<div class="row cource-list-agile pt-4">
 				<div class="col-lg-7 agile-course-main">
-					<div class="w3ls-cource-first">
+					<div class="logls-cource-first">
 						<img src="images/1.png" alt="" class="img-fluid img-poiscour mx-auto d-block mt-2"></img>
 						<div class="px-md-5 px-4  pb-md-5 pb-4">
 							<h3 class="text-dark">Large Format Of Photography Photo</h3>
@@ -263,8 +230,8 @@ ul.breadcrumb li a:hover {
 				<div class="col-lg-5 agile-course-main-2 mt-4">
 					<img src="images/n3.jpg" alt="" class="img-fluid">
 				</div>
-				<div class="buttons-w3ls">
-					<a class="btn button-cour-w3ls text-white" href="course_details.html" role="button">Learn More</a>
+				<div class="buttons-logls">
+					<a class="btn button-cour-logls text-white" href="course_details.html" role="button">Learn More</a>
 					<a class="btn bg-dark text-white" href="form.html" role="button">Apply Now</a>
 				</div>
 			</div>
@@ -273,7 +240,7 @@ ul.breadcrumb li a:hover {
 					<img src="images/am1.jpg" alt="" class="img-fluid">
 				</div>
 				<div class="col-lg-7 agile-course-main text-right">
-					<div class="w3ls-cource-first">
+					<div class="logls-cource-first">
 						<img src="images/2.png" alt="" class="img-fluid img-poiscour mx-auto d-block mt-2"></img>
 						<div class="px-md-5 px-4  pb-md-5 pb-4">
 							<h3 class="text-dark">Color Plending For Photography</h3>
@@ -292,14 +259,14 @@ ul.breadcrumb li a:hover {
 						</div>
 					</div>
 				</div>
-				<div class="buttons-w3ls-2">
-					<a class="btn button-cour-w3ls text-white" href="course_details.html" role="button">Learn More</a>
+				<div class="buttons-logls-2">
+					<a class="btn button-cour-logls text-white" href="course_details.html" role="button">Learn More</a>
 					<a class="btn bg-dark text-white" href="form.html" role="button">Apply Now</a>
 				</div>
 			</div>
 			<div class="row cource-list-agile pt-4">
 				<div class="col-lg-7 agile-course-main">
-					<div class="w3ls-cource-first">
+					<div class="logls-cource-first">
 						<img src="images/1.png" alt="" class="img-fluid img-poiscour mx-auto d-block mt-2"></img>
 						<div class="px-md-5 px-4  pb-md-5 pb-4">
 							<h3 class="text-dark">Night Background Of Photography</h3>
@@ -318,8 +285,8 @@ ul.breadcrumb li a:hover {
 				<div class="col-lg-5 agile-course-main-2 mt-4">
 					<img src="images/am2.jpg" alt="" class="img-fluid">
 				</div>
-				<div class="buttons-w3ls">
-					<a class="btn button-cour-w3ls text-white" href="course_details.html" role="button">Learn More</a>
+				<div class="buttons-logls">
+					<a class="btn button-cour-logls text-white" href="course_details.html" role="button">Learn More</a>
 					<a class="btn bg-dark text-white" href="form.html" role="button">Apply Now</a>
 				</div>
 			</div>
@@ -328,7 +295,7 @@ ul.breadcrumb li a:hover {
 					<img src="images/am3.jpg" alt="" class="img-fluid">
 				</div>
 				<div class="col-lg-7 agile-course-main text-right">
-					<div class="w3ls-cource-first">
+					<div class="logls-cource-first">
 						<img src="images/2.png" alt="" class="img-fluid img-poiscour mx-auto d-block mt-2"></img>
 						<div class="px-md-5 px-4  pb-md-5 pb-4">
 							<h3 class="text-dark">Conceptation Of Photography</h3>
@@ -347,8 +314,8 @@ ul.breadcrumb li a:hover {
 						</div>
 					</div>
 				</div>
-				<div class="buttons-w3ls-2">
-					<a class="btn button-cour-w3ls text-white" href="course_details.html" role="button">Learn More</a>
+				<div class="buttons-logls-2">
+					<a class="btn button-cour-logls text-white" href="course_details.html" role="button">Learn More</a>
 					<a class="btn bg-dark text-white" href="form.html" role="button">Apply Now</a>
 				</div>
 			</div>
@@ -363,7 +330,7 @@ ul.breadcrumb li a:hover {
 
 	
 	<!-- footer -->
-	<div w3-include-html="footer.html">
+	<div log-include-html="footer.html">
 	
 </div>
 <script>
@@ -420,6 +387,9 @@ ul.breadcrumb li a:hover {
   				})
 		})
 </script>
+
+
+	
 	<script>
 		$(document).ready(function(){
   $(window).scroll(function(){
@@ -429,8 +399,8 @@ ul.breadcrumb li a:hover {
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  	
-		  $(".nav-item").css("color" , "#fff !important");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  	
+		  $(".nav-item").css("color" , "#f4e8c7 !important");  
 	  }
   })
 })
@@ -445,7 +415,7 @@ ul.breadcrumb li a:hover {
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  
 		 
 		/*   $("a").removeClass("text-white"); */
 		  //$(".nav-item").css("color" , "#000 !important");  

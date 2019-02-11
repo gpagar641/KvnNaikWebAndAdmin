@@ -65,9 +65,27 @@ model.addAttribute("announcementList", announcementList);
 		msg="";
 		return "event/viewEvent";
 		 
+	}@RequestMapping(value="/showViewEventDept", method=RequestMethod.GET)
+	
+	public String showViewEventDept(HttpServletRequest request, Model model)   
+	{ 
+		try {
+			HttpSession session=request.getSession();
+			DepartmentDetails departmentDetails=(DepartmentDetails)session.getAttribute("departmentDetails");
+	 
+			List<Event> announcementList= eventRepository.findByDeptIdAndDelStatusOrderByIdDesc(departmentDetails.getDeptId(),0);
+model.addAttribute("announcementList", announcementList);
+			}
+			catch (Exception e) {
+				// TODO: handle exception
+			}
+		
+
+ 		model.addAttribute("msg",msg);
+		msg="";
+		return "event/viewEventDept";
+		 
 	}
-	
-	
 	@RequestMapping(value="/submitEvent", method=RequestMethod.POST )
 	public String submitEvent(HttpServletRequest request, Model model,@RequestParam("file") MultipartFile file)   
 	{ 
@@ -79,27 +97,38 @@ model.addAttribute("announcementList", announcementList);
 		event.setTitle(request.getParameter("title"));
 		event.setStatus(0);
 		event.setDelStatus(0);
-		
-		   
+		event.setFile("");
+		HttpSession session=request.getSession();
+		DepartmentDetails departmentDetails=(DepartmentDetails)session.getAttribute("departmentDetails");
 		
 	try {
-			
-			String fileName=file.getOriginalFilename();
+		 if(file.getOriginalFilename().length()>0) {
+		//	String fileName=new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())+file.getOriginalFilename();
 			VpsFileUploadApiController vpsImageUpload=new VpsFileUploadApiController();
+			
+			String fileName = new SimpleDateFormat("ddMMyyyyHHmmss").format(new Date())
+					+ departmentDetails.getDeptId()+VpsFileUploadApiController.getFileExtension(file);
+			
 			vpsImageUpload.uploadFile(file,fileName,2);
-
+			event.setFile(fileName);
+		 }
 			} catch (Exception e) {
 				// TODO: handle exception
 				e.printStackTrace();
 			}
 		
-		HttpSession session=request.getSession();
-		DepartmentDetails departmentDetails=(DepartmentDetails)session.getAttribute("departmentDetails");
+		
 		event.setDeptId(departmentDetails.getDeptId());
+		event.setDeptName(departmentDetails.getDeptName());
+		if(departmentDetails.getDeptId()==1) {
+			event.setStatus(1);
+			
+		}
+		
 		try {
 			eventRepository.save(event);
 			if(departmentDetails.getDeptId()!=1) {
-				return "redirect:/showViewEvent";
+				return "redirect:/showViewEventDept";
 			}
 		}
 		catch (Exception e) {
@@ -120,6 +149,26 @@ model.addAttribute("announcementList", announcementList);
 				
 		try {
 			
+			noticeList= eventRepository.findByDeptIdAndStatusAndDelStatusOrderByIdDesc(deptId,1,0);
+
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+		model.addAttribute("msg",msg);
+		msg="";
+		return noticeList;
+		
+	}
+	
+	@RequestMapping(value="/getEventDept", method=RequestMethod.GET)
+	public @ResponseBody List<Event> getEventDept(HttpServletRequest request, Model model)   
+	{ 
+		int deptId=Integer.parseInt(request.getParameter("deptId"));
+		List<Event> noticeList=new ArrayList<Event>();
+				
+		try {
+			
 			noticeList= eventRepository.findByDeptIdAndDelStatusOrderByIdDesc(deptId,0);
 
 		}
@@ -132,12 +181,38 @@ model.addAttribute("announcementList", announcementList);
 		
 	}
 	
+	@RequestMapping(value="/getEventById", method=RequestMethod.GET)
+	public @ResponseBody Event getEventById(HttpServletRequest request, Model model)   
+	{ 
+		int id=Integer.parseInt(request.getParameter("id"));
+		 	
+		try {
+			
+			Event event= eventRepository.findById(id);
+			return event;
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+		 
+		return null;
+		
+	}
+	
 	
 	@RequestMapping(value="/approveEvent", method=RequestMethod.GET)
 	public @ResponseBody String approveEvent(HttpServletRequest request, Model model)   
 	{ 
 		int id=Integer.parseInt(request.getParameter("id"));
-	int res=	eventRepository.approve(id);
+	int res=	eventRepository.approve(1,id);
+		return res+"";
+	}
+	
+	@RequestMapping(value="/deleteEvent", method=RequestMethod.GET)
+	public @ResponseBody String deleteEvent(HttpServletRequest request, Model model)   
+	{ 
+		int id=Integer.parseInt(request.getParameter("id"));
+	int res=	eventRepository.approve(3,id);
 		return res+"";
 	}
 }

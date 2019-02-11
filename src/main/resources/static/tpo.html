@@ -46,7 +46,7 @@ function includeHTML() {
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
     
-    file = elmnt.getAttribute("w3-include-html");
+    file = elmnt.getAttribute("log-include-html");
     if (file) {
       
       xhttp = new XMLHttpRequest();
@@ -55,7 +55,7 @@ function includeHTML() {
           if (this.status == 200) {elmnt.innerHTML = this.responseText;}
           if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
          
-          elmnt.removeAttribute("w3-include-html");
+          elmnt.removeAttribute("log-include-html");
           includeHTML();
         }
       }      
@@ -67,6 +67,7 @@ function includeHTML() {
   }
 };
 </script>
+
 
 </head>
 <style>
@@ -95,360 +96,60 @@ ul.breadcrumb li a:hover {
 </style>
 <body>
 
-<div w3-include-html="header.html">
+<div log-include-html="header.html">
 	
 </div>
 <script>
 	includeHTML();
 </script>
 	<!-- header -->
-	
-		<!-- top header -->
-		<!--
-		<div class="middle-w3ls-nav py-2">
-			<div class="container">
-				<div class="row">
-					
-					<div class="col-lg-8 right-info-agiles mt-lg-0 mt-sm-3 mt-1">
-						<div class="row">
-							<div class="col-sm-4 nav-middle">
-								<i class="far fa-envelope-open text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">kvnnaik@gmail.com</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 nav-middle mt-sm-0 mt-2">
-								<i class="fas fa-phone-volume text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">0253 - 2576692</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 top-login-butt text-right mt-sm-2">
-								<a href="login.html" class="button-head-mow3 text-white">Login</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>-->
-		<!-- //middle header -->
-						
-					
-	
-
-
+	<!-- top header -->
+	<!-- //middle header -->
 	<!-- banner -->
 	<!-- banner -->
-	<div class="banner-agile-2">
-	<!--<div class="hero-text">
-    <h1>Training and placement</h1>
- 		<ul class="breadcrumb">
-  			<li><a href="#">Home</a></li>
-  				<li><a href="#">Training and placement</a></li>
-  				
-  			
-		</ul>
--->
-   
- <!--<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index.html">Home</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">About</li>
-		</ol>
-	</nav>-->
- </div>
-			<!-- navigation -->
-		
-		<!-- //navigation -->
-		
-	</div>
+	<!-- navigation -->
+	<!-- //navigation -->
 	<!-- breadcrumb -->
-	<!--<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index.html">Home</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">About</li>
-		</ol>
-	</nav>-->
 	<!-- breadcrumb -->
 	<!-- //banner -->
 	<!-- //banner -->
-
 	<!-- history -->
-	<div class="about-page py-5">
+	
+<div class="about-page py-5">
 		<div class="container py-xl-5 py-lg-3">
-			<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5"> <i class="fas fa-graduation-cap"></i> TPO Message
-				<i class="fas fa-graduation-cap"></i>
+			
+			<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5"> <i class="fas fa-graduation-cap"></i> TPO's
+				<span class="font-weight-bold"> Message </span> <i class="fas fa-graduation-cap"></i>
 			</h3>
 			<div class="row about-head-wthree">
-				<div class="col-lg-6 left-abw3ls">
-					<img src="images/ap-11.jpg" alt="" class="img-fluid">
-				</div>
-				<div class="col-lg-6 right-abw3ls mt-lg-0 mt-sm-5 mt-4">
-					<!--<h4 class="title text-capitalize font-weight-light text-dark text-center mb-5">our
-						<span class="font-weight-bold">History</span>
-					</h4>-->
-					<!--<h4 class="font-italic border-bottom text-center font-weight-bold pb-3 mb-4">Our History</h4>-->
-					<p>LoGMIEER is situated in Nashik in Maharashtra state of India. it is accredited from AICTE and it is affiliated to University of Pune. KVNNIEER, Nashik offers 5 courses across 1 streams namely Engineering and across 1 degrees like B.Tech.Hostel facility is not available for its students.  </p>
-					<p class="mt-3">Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi, Eiusmod tempor
-						incididunt ut labore et dolore magna aliqua. Ut enim ad.</p>
-				</div>
-			</div>
-		</div>
-		</div>
-
-		<div class="container py-xl-5 py-lg-3">
-			<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5"> <i class="fas fa-graduation-cap"></i> T&P Department Co-ordinator
-				<i class="fas fa-graduation-cap"></i>
-			</h3>
-			
-										<table class="table table-bordered">
-											
-													   <thead class="thead-dark">
-													    <tr>
-													      <th scope="col">Sr.No.</th>
-													      <th scope="col">Name</th>
-													
-													      <th scope="col">Department</th>
-													       
-													    </tr>
-													  </thead>
-													  <tbody>
-													    <tr>
-													    <td>1</td>
-
-													      <td>Mark</td>
-													      <td>Civil</td>
-													     
-													      
-													      
-													    </tr>
-													    <tr>
-													     <td>2</td>
-													      <td>Jacob</td>
-													      <td>Computer</td>
-													     
-													     
-													    </tr>
-													    <tr>
-													       <td>3</td>
-
-													      <td>Larry the Bird</td>
-													      <td>Electrical</td>
-													     
-													      
-													    </tr>
-													    <tr>
-													       <td>4</td>
-
-													      <td>Larry the Bird</td>
-													      <td>Electronics & Telecommunication</td>
-													     
-													      
-													    </tr>
-													    <tr>
-													       <td>5</td>
-
-													      <td>Larry the Bird</td>
-													      <td>Mechanical</td>
-													     
-													      
-													    </tr>
-													  </tbody>
-											</table>
-										
-		</div>
-
-
-
-
-		
-
-	<!-- //history -->
-
-	<!-- mission -->
-	<!--
-	<div class="about-page-2 py-5">
-		<div class="container-fluid py-xl-5 py-lg-3">
-			<div class="row about-head-wthree-2">
-				<div class="col-lg-4 left-abw3ls text-lg-left text-center">
-					<img src="images/ap-22.jpg" alt="" class="img-fluid">
-				</div>
-				<div class="col-lg-4 right-abw3ls my-lg-0 my-sm-5 my-4">
-					<h4 class="font-italic border-bottom text-center font-weight-bold pb-3 mb-4">Our Mission</h4>
-					<p>“Provide infrastructure with all modern facilities with stress free and productive academic environment for teaching and learning, strategic extension, field action and advocacy through training and capacity building for students & faculty” </p>
+				<div class="col-lg-12 right-ablogls mt-lg-0 mt-sm-5 mt-4">
 					
-				</div>
-				<div class="col-lg-4 left-abw3ls text-lg-left text-center">
-					<img src="images/ap-33.jpg" alt="" class="img-fluid">
-				</div>
-			</div>
-		</div>
-	</div>-->
-	<!-- //mission -->
-<!--<div class="about-page-2 py-5" style="background-color:#ddd; ">
-		<div class="container-fluid py-xl-5 py-lg-3">
-			<div class="row about-head-wthree-2">
+					<img src="images/tpo-officer.jpg" alt="" class="img-fluid" width="200" height="200" style="border: 2px double #8f8484; border-radius: 8px;">
 
-				<div class="col-lg-4 left-abw3ls text-lg-left text-center">
-					<img src="images/ap-22.jpg" alt="" class="img-fluid" style="border-top: 5px solid #000;border-left: 5px solid #000;border-radius: 10px;">
+       
+					
+						
 				</div>
-				<div class="col-lg-8 right-abw3ls my-lg-0 my-sm-5 my-4">
+
+				<div class="col-lg-12 right-ablogls mt-lg-0 mt-sm-5 mt-4">
 					
-					<h4 class="title text-capitalize font-weight-light text-dark text-center mb-5"><i class="fas fa-graduation-cap"></i> Our <span class="font-weight-bold"> Mission </span> <i class="fas fa-graduation-cap"></i>
-			</h4></br>
-					<p>“Provide infrastructure with all modern facilities with stress free and productive academic environment for teaching and learning, strategic extension, field action and advocacy through training and capacity building for students & faculty” </p>
+					<p class="pre-desk"><b> My Dear Students, </b><br>
+
+        The T&P department of the Institute is being looked after by full time Training & Placement Officer and support staff. LoGMIEER is the member of Consortium of engineering colleges at Nasik for T&P called NECC. The One third of students from E&TC, Computer, Electrical, Civil & Mechanical Engineering Departments were selected by CMS- Kalyan, Opulent - Pune, Tribro - Pune, General Motors - Pune, Chande builders - Nashik, Siemens - Pune, Syntel - Akurdi, Avegatesta -Nashik,Inteledemics-Nashik, Vivekananda infotech-Pune,BOSCH-CHAKAN,Bizmatics-Mumbai and manny more have visited the campus for recruitment in the year 2016-2017. ACE Computers-Mumbai and Opulent -Pune have signed MoU with college for their final year project sponsorship and for the placement there after. The Institute has signed MoU with Skill Bridger, Bangalore for e-Learning, Communication Skill and career development. Some of the renowned companies are expected to visit the Institute in this year for campus interview and placement. The T&P cell frequently arranges workshops and expert lectures for guiding the students for their career. The T&P Cell is as under;   </p>
 					
+						<p class="pre-desk">The Training and Placement Cell is an epicenter of LoGMIEER Institute which is mentored by eminent personalities from industry as well as academicians from top notch institutes. Guest lectures,technical Workshops, Team Building activities and co-curricular activities help to nutrure over all development.The Placement Cell functions with the coordination of faculty members and student coordinators from all streams.  </p><br>
+                        <h5 class="pre-title">Ms. R.K. Malhotra </h5>
 				</div>
 				
 			</div>
 		</div>
 	</div>
-	<div class="about-page-2 py-5" style="background-color:#ddd; ">
-		<div class="container-fluid py-xl-5 py-lg-3">
-			<div class="row about-head-wthree-2">
-				<div class="col-lg-8 right-abw3ls my-lg-0 my-sm-5 my-4">
-					
-
-					<h4 class="title text-capitalize font-weight-light text-dark text-center mb-5"><i class="fas fa-graduation-cap"></i> Our <span class="font-weight-bold"> Vision </span> <i class="fas fa-graduation-cap"></i>
-			</h4>
-					<p>“Provide infrastructure with all modern facilities with stress free and productive academic environment for teaching and learning, strategic extension, field action and advocacy through training and capacity building for students & faculty” </p>
-					</div>
-					<div class="col-lg-4 left-abw3ls text-lg-left text-center">
-						<img src="images/ap-22.jpg" alt="" class="img-fluid" style="border-bottom: 5px solid #000;border-right: 5px solid #000;border-radius: 10px;">
-					</div>
-				
-				
-			</div>
-		</div>
-	</div>-->
-	<!-- team -->
-	<!--
-	<div class="team py-5">
-		<div class="container py-xl-5 py-lg-3">
-			<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5"> <i class="fas fa-graduation-cap"></i> Meet Our <span class="font-weight-bold"> Staff </span> <i class="fas fa-graduation-cap"></i>
-			</h3>
-			<div class="row inst-grids pt-md-4">
-				<div class="col-md-3 col-6 blog-gd-w3ls">
-					<img src="images/team1.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Michael King</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls">
-					<img src="images/team2.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Katherin Tresa</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls  last mt-md-0 mt-sm-5 mt-4">
-					<img src="images/team3.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Steven Monroe</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-6 blog-gd-w3ls last mt-md-0 mt-sm-5 mt-4">
-					<img src="images/team4.jpg" alt=" " class="img-fluid">
-					<div class="date-w3">
-						<h4>Khamok Mokai</h4>
-						<p class="para-w3-agile">Phasellus sed iaculis</p>
-						<div class="agileinfo-social-grids">
-							<ul>
-								<li>
-									<a href="#">
-										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="fas fa-rss"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>-->
-	<!-- //team -->
-	
+<!-- //history -->
+<!-- mission -->
+<!-- team -->
+<!-- //team -->
 <!-- footer -->
-	<div w3-include-html="footer.html">
+	<div log-include-html="footer.html">
 	
 </div>
 <script>
@@ -527,6 +228,9 @@ ul.breadcrumb li a:hover {
   				})
 		})
 </script>
+
+
+	
 	<script>
 		$(document).ready(function(){
   $(window).scroll(function(){
@@ -536,8 +240,8 @@ ul.breadcrumb li a:hover {
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  	
-		  $(".nav-item").css("color" , "#fff !important");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  	
+		  $(".nav-item").css("color" , "#f4e8c7 !important");  
 	  }
   })
 })
@@ -552,7 +256,7 @@ ul.breadcrumb li a:hover {
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  
 		 
 		/*   $("a").removeClass("text-white"); */
 		  //$(".nav-item").css("color" , "#000 !important");  
@@ -561,7 +265,6 @@ ul.breadcrumb li a:hover {
   })
 })
 		</script>
-
 
 </body>
 

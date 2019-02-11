@@ -47,7 +47,7 @@ function includeHTML() {
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
     
-    file = elmnt.getAttribute("w3-include-html");
+    file = elmnt.getAttribute("log-include-html");
     if (file) {
       
       xhttp = new XMLHttpRequest();
@@ -56,7 +56,7 @@ function includeHTML() {
           if (this.status == 200) {elmnt.innerHTML = this.responseText;}
           if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
          
-          elmnt.removeAttribute("w3-include-html");
+          elmnt.removeAttribute("log-include-html");
           includeHTML();
         }
       }      
@@ -98,7 +98,7 @@ ul.breadcrumb li a:hover {
 <body>
 
 
-<div w3-include-html="header.html">
+<div log-include-html="header.html">
 	
 </div>
 <script>
@@ -107,81 +107,14 @@ ul.breadcrumb li a:hover {
 	<!-- header -->
 	
 		<!-- top header -->
-		<!--
-		<div class="middle-w3ls-nav py-2">
-			<div class="container">
-				<div class="row">
-					
-					<div class="col-lg-8 right-info-agiles mt-lg-0 mt-sm-3 mt-1">
-						<div class="row">
-							<div class="col-sm-4 nav-middle">
-								<i class="far fa-envelope-open text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">kvnnaik@gmail.com</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 nav-middle mt-sm-0 mt-2">
-								<i class="fas fa-phone-volume text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">0253 - 2576692</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 top-login-butt text-right mt-sm-2">
-								<a href="login.html" class="button-head-mow3 text-white">Login</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>-->
+		
 		<!-- //middle header -->
-						
-					
-	
-
-
-	<!-- banner -->
-	<div class="banner-agile-2">
-	<!--<div class="hero-text">
-    <h1>Committees</h1>
- 		<ul class="breadcrumb">
-  			<li><a href="#">Home</a></li>
-  				<li><a href="#">Committees</a></li>
-  				
-  			
-		</ul>
-
-   -->
- <!--<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index.html">Home</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">About</li>
-		</ol>
-	</nav>-->
- </div>
-			<!-- navigation -->
-		
+		<!-- banner -->
+		<!-- navigation -->
 		<!-- //navigation -->
-		
-	</div>
-	<!-- breadcrumb -->
-	<!--<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index.html">Home</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">Placement</li>
-		</ol>
-	</nav>-->
-	<!-- breadcrumb -->
+		<!-- breadcrumb -->
+		<!-- breadcrumb -->
+	
 	<!-- //banner -->
 	<!-- //banner -->
 
@@ -207,18 +140,20 @@ ul.breadcrumb li a:hover {
 			
 
 <!-- -->
-<div class="about-page py-5">
+
 		<div class="container py-xl-5 py-lg-3">
 <h3 class="title text-capitalize font-weight-light text-dark text-center mb-5"> <i class="fas fa-graduation-cap"></i>  Committees   <i class="fas fa-graduation-cap"></i>
 			</h3>
 			</div>
-			</div>
-		
+			
 
-										<div class="container" id="my-table" >
-											<!--<table class="table table-bordered">-->
-											<table align="center" id="customers" >
-											<h3>1. Anti Ragging Committee:</h3><br>
+
+<div class="container-fluid" id="mytable1">
+  <div class="row">
+    <div class="col-md-4" >
+	<div class="table-responsive">
+    	<table class="table" align="center" id="customers" >
+     	<h5 align="center"><b>Right To Information Cell</b></h5><br>
 													  
 													    <tr>
 													      <th >Sr.No.</th>
@@ -232,38 +167,291 @@ ul.breadcrumb li a:hover {
 													    <tr>
 													    <td>1</td>
 
-													      <td>Mark</td>
-													      <td>Mark</td>
+													      <td>Prof.Sutar T.H.</td>
+													      <td>Appellate Officer</td>
 													     
 													      
 													      
 													    </tr>
 													    <tr>
 													     <td>2</td>
-													      <td>Jacob</td>
-													      <td>Thornton</td>
+													      <td>Mr.Kulkarni A.B.</td>
+													      <td>Information Officer</td>
 													     
 													     
 													    </tr>
 													    <tr>
 													       <td>3</td>
 
-													      <td>Larry the Bird</td>
-													      <td>@twitter</td>
+													      <td>Mr.Wankhede G.M.</td>
+													      <td>Assistant Info Officer</td>
 													     
 													      
 													    </tr>
 													  </tbody>
 											</table>
-										<br>
-										<table align="center" id="customers" >
-											<h3>2. Student Grievance Cell:</h3><br>
+										</div>
+    
+										
+    </div>
+    <div class="col-md-4" >
+    <div class="table-responsive">
+     <table class="table" align="center" id="customers" >
+											<h5 align="center"><b>Staff Grievance Cell</b> </h5><br>
 													 
 													    <tr>
 													      <th >Sr.No.</th>
 													      <th >Name</th>
+													    <th >Designation</th>
+													      
+													       
+													    </tr>
+													  </thead>
+													  <tbody>
+													    <tr>
+													    <td>1</td>
+														<td>Prof.Chakule R.R.</td>
+													      <td>Chairman</td>
+													     
+													     </tr>
+													  <tr>
+													    <td>2</td>
+														<td>Prof.Ugale K.V.</td>
+													      <td>Member </td>
+													     
+													     </tr>
+													      <tr>
+													    <td>3</td>
+														<td>Prof.Deshmukh S.S.</td>
+													      <td>Member </td>
+													     
+													     </tr>
+													  <tr>
+													    <td>4</td>
+														<td>Prof.Kapde N.V.</td>
+													      <td>Member </td>
+													     
+													     </tr>
+													     <tr>
+													    <td>5</td>
+														<td>Prof.Mrs.Sonawane R.R.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>6</td>
+														<td>Prof.Miss.Bire S.R.</td>
+													      <td>Member</td>
+													     
+													     </tr>
 													    
-													      <th >Designation</th>
+													  </tbody>
+											</table>
+										</div>
+    </div>
+    <div class="col-md-4" >
+    <div class="table-responsive">
+      <table class="table" align="center" id="customers" >
+											<h5 align="center"><b>Women's Grievance Cell</b></h5><br>
+													 
+													    <tr>
+													      <th >Sr.No.</th>
+													      <th >Name</th>
+													    <th >Designation</th>
+													      
+													       
+													    </tr>
+													  </thead>
+													  <tbody>
+													    <tr>
+													    <td>1</td>
+														<td>DR.Ms.Ugale S.</td>
+													      <td>Presiding Officer</td>
+													     
+													     </tr>
+													  <tr>
+													    <td>2</td>
+														<td>Prof.Ms.Sonawane P.S.</td>
+													      <td>Co-Presiding Officer</td>
+													     
+													     </tr>
+													      <tr>
+													    <td>3</td>
+														<td>Prof.Pawar Y.S.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													  <tr>
+													    <td>4</td>
+														<td>Prof.Patil B.J.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>5</td>
+														<td>Prof.Wankhede G.M.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>6</td>
+														<td>Prof.Shinde J.P.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     
+													  </tbody>
+											</table>
+										</div>
+  </div>
+</div>
+	</div>								
+<div class="container" id="mytable1" >
+  <div class="row">
+    <div class="col-md-6" >
+    <div class="table-responsive">
+    <table class="table" align="center" id="customers"  >
+											<h5 align="center"><b>Committee For Reservation Cell</b></h5><br>
+													 
+													    <tr>
+													      <th >Sr.No.</th>
+													      <th >Name</th>
+													    <th >Designation</th>
+													      
+													       
+													    </tr>
+													  </thead>
+													  <tbody>
+													    <tr>
+													    <td>1</td>
+														<td>Prof.Sutar T.H.</td>
+													      <td>Chairman</td>
+													     
+													     </tr>
+													  <tr>
+													    <td>2</td>
+														<td>Prof.Kapade N.V.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													      <tr>
+													    <td>3</td>
+														<td>Prof.Pawar Y.S.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													  <tr>
+													    <td>4</td>
+														<td>Prof.Kherudkar S.R.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>5</td>
+														<td>Prof.Nagare S.U.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>6</td>
+														<td>Prof.Dhatrak A.N.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													      <tr>
+													    <td>7</td>
+														<td>Prof.Vinchu R.S.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>8</td>
+														<td>Prof.Malpure M.R.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													  </tbody>
+											</table>
+										</div>
+    </div>
+    <div class="col-md-6" >
+     <div class="table-responsive">
+	<table class="table" align="center" id="customers">
+											<h5 align="center"><b>Anti Ragging Committee</b></h5><br>
+													 
+													    <tr>
+													      <th >Sr.No.</th>
+													      <th >Name</th>
+													    <th >Designation</th>
+													      <th>Mobile No</th>
+													       
+													    </tr>
+													  </thead>
+													  <tbody>
+													    <tr>
+													    <td>1</td>
+														<td>Prof.Kherudkar S.R.</td>
+													      <td>Chairman</td>
+													      <td>8421678100</td>
+													     </tr>
+													  <tr>
+													    <td>2</td>
+														<td>Prof.Sutar T.H.</td>
+													      <td>Member</td>
+													      <td>9028926811</td>
+													     </tr>
+													   <tr>
+													    <td>3</td>
+														<td>Prof.Patil D.S.</td>
+													      <td>Member</td>
+													      <td>9890250045</td>
+													     </tr>
+													     <tr>
+													    <td>4</td>
+														<td>Prof.Sonawane P.S.</td>
+													      <td>Member</td>
+													      <td>9822531646</td>
+													     </tr>
+													     <tr>
+													    <td>5</td>
+														<td>Prof.Ugale K.V.</td>
+													      <td>Member</td>
+													      <td>8983086399</td>
+													     </tr>
+													     <tr>
+													    <td>6</td>
+														<td>Prof.Avhad C.K.</td>
+													      <td>Member</td>
+													      <td>8888549888</td>
+													     </tr>
+													     <tr>
+													    <td>7</td>
+														<td>Mr.Avhad Aakash</td>
+													      <td>St.Representative</td>
+													      <td>9527685588</td>
+													     </tr>
+													  </tbody>
+											</table>
+										</div>
+																			
+										
+    </div>
+     
+    
+  </div>
+</div>
+<!--
+<div class="container" id="mytable1">
+  <div class="row">
+    <div class="col-md-6" >
+     <table align="center" id="customers" >
+										<h5 align="center"><b>Right to information cell</b></h5><br>
+													  
+													    <tr>
+													      <th >Sr.No.</th>
+													      <th >Name</th>
+													    
+													      <th scope="col">Designation</th>
 													       
 													    </tr>
 													  </thead>
@@ -271,43 +459,531 @@ ul.breadcrumb li a:hover {
 													    <tr>
 													    <td>1</td>
 
-													      <td>Mark</td>
-													      <td>Mark</td>
+													      <td>Prof.Sutar T.H</td>
+													      <td>Appellate officer</td>
 													     
 													      
 													      
 													    </tr>
 													    <tr>
 													     <td>2</td>
-													      <td>Jacob</td>
-													      <td>Thornton</td>
+													      <td>Mr.Kulkarni A.B</td>
+													      <td>Information Officer</td>
 													     
 													     
 													    </tr>
 													    <tr>
 													       <td>3</td>
 
-													      <td>Larry the Bird</td>
-													      <td>@twitter</td>
+													      <td>Mr.Wankhede G.M</td>
+													      <td>Asst Info Officer</td>
 													     
 													      
 													    </tr>
 													  </tbody>
 											</table>
 										
+    </div>-->
+   
+
+
+<div class="container" id="mytable1">
+  <div class="row">
+    <div class="col-md-6" >
+    	<div class="table-responsive">
+     <table class="table" align="center" id="customers" >
+											<h5 align="center"><b>Examination Advisory Committee </b></h5><br>
+													 
+													    <tr>
+													      <th >Sr.No.</th>
+													      <th >Name</th>
+													    <th >Designation</th>
+													      
+													       
+													    </tr>
+													  </thead>
+													  <tbody>
+													    <tr>
+													    <td>1</td>
+														<td>Prof.Shaikh R.M.</td>
+													      <td>Chairman</td>
+													     
+													     </tr>
+													  <tr>
+													    <td>2</td>
+														<td>Prof.Sutar T.H.</td>
+													      <td>Vice Principal</td>
+													     
+													     </tr>
+													      <tr>
+													    <td>3</td>
+														<td>Prof.Kherudkar S.R.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													  <tr>
+													    <td>4</td>
+														<td>Prof.Deore Y.D.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>5</td>
+														<td>Prof.Bodke S.S.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>6</td>
+														<td>Prof.Punde S.S.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>7</td>
+														<td>Prof.Raut M.V.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>8</td>
+														<td>Prof.Kapade N.V.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>9</td>
+														<td>Prof.Patil D.S.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>10</td>
+														<td>Prof.Ms.Dhtrak A.N.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													      <tr>
+													    <td>11</td>
+														<td>Prof.Bhosale C.D.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													      <tr>
+													    <td>12</td>
+														<td>Prof.Agrawal S.K.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													  </tbody>
+											</table>
 										</div>
-										</br>
+    </div>
+    <div class="col-md-6" >
+    <div class="table-responsive">
+     <table align="center" id="customers" >
+											<h5 align="center"><b>Technical Advisory Board</b> </h5><br>
+													 
+													    <tr>
+													      <th >Sr.No.</th>
+													      <th >Name</th>
+													    <th >Designation</th>
+													      
+													       
+													    </tr>
+													  </thead>
+													  <tbody>
+													    <tr>
+													    <td>1</td>
+														<td>Shri.Bodke Jagannath R.</td>
+													      <td>Chairman</td>
+													     
+													     </tr>
+													  <tr>
+													    <td>2</td>
+														<td>Shri.Sanap Ashok L.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													      <tr>
+													    <td>3</td>
+														<td>Shri.Avhad Sandip</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													  <tr>
+													    <td>4</td>
+														<td>Shri.Avhad Chandrakant B.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>5</td>
+														<td>Shri.Pansare Sanjay</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>6</td>
+														<td>Shri.Thorat T.N.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>7</td>
+														<td>Shri.Sanap R.Y.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>8</td>
+														<td>Dr.Chandratre K.V.</td>
+													      <td>Principal(Co-Ordinator)</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>9</td>
+														<td>Prof.Bodke S.S.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>10</td>
+														<td>Miss.Malhotra Rashmeet</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     
+													  </tbody>
+											</table>
+										</div>
+										
+    </div>
+
+</div>
+</div>
+<div class="container" id="mytable1">
+  <div class="row">
+    <div class="col-md-6" >
+    <div class="table-responsive">
+     <table class="table" align="center" id="customers" >
+											<h5 align="center"><b>Student Grievance Redressal Cell </b></h5><br>
+													 
+													    <tr>
+													      <th >Sr.No.</th>
+													      <th >Name</th>
+													    <th >Designation</th>
+													      
+													       
+													    </tr>
+													  </thead>
+													  <tbody>
+													    <tr>
+													    <td>1</td>
+														<td>Prof.Pawar Y.S.</td>
+													      <td>Chairman</td>
+													     
+													     </tr>
+													  <tr>
+													    <td>2</td>
+														<td>Prof.Ms.Ranmale N.H.</td>
+													      <td>Member </td>
+													     
+													     </tr>
+													      <tr>
+													    <td>3</td>
+														<td>Prof.Pawar S.P.</td>
+													      <td>Member </td>
+													     
+													     </tr>
+													  <tr>
+													    <td>4</td>
+														<td>Prof.Kapde N.V.</td>
+													      <td>Member </td>
+													     
+													     </tr>
+													     <tr>
+													    <td>5</td>
+														<td>Prof.Ms.Sindhi Y.G.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>6</td>
+														<td>Prof.Ms.Parihar B.U.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>7</td>
+														<td>Prof.Ms.Pandey N.R.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>8</td>
+														<td>Mr.Kulkarni A.B.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>9</td>
+														<td>Mr.Jagtap A.R.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>10</td>
+														<td>Secretary- Student Council</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													  </tbody>
+											</table>
+										</div>
+    </div>
+    <div class="col-md-6" >
+    <div class="table-responsive">
+     <table class="table" align="center" id="customers" >
+											<h5 align="center"><b>Library Advisory Committee</b> </h5><br>
+													 
+													    <tr>
+													      <th >Sr.No.</th>
+													      <th >Name</th>
+													    <th >Designation</th>
+													      
+													       
+													    </tr>
+													  </thead>
+													  <tbody>
+													    <tr>
+													    <td>1</td>
+														<td>Dr.Chandratre K.V.</td>
+													      <td>Chairman</td>
+													     
+													     </tr>
+													  <tr>
+													    <td>2</td>
+														<td>Prof.Kapade N.V.</td>
+													      <td>IN-Charge </td>
+													     
+													     </tr>
+													      <tr>
+													    <td>3</td>
+														<td>Mr.Kedar B.T.</td>
+													      <td>Secretary </td>
+													     
+													     </tr>
+													  <tr>
+													    <td>4</td>
+														<td>Prof.Ms.Dhatrak A.N.</td>
+													      <td>Member </td>
+													     
+													     </tr>
+													     <tr>
+													    <td>5</td>
+														<td>Prof.Ms.Bharambe V.R.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>6</td>
+														<td>Prof.Pawar B.G.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>7</td>
+														<td>Prof.Mrs.Gangurde A.V.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>8</td>
+														<td>Prof.Ms.Ranmale N.H.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>9</td>
+														<td>Mr.Vinchu R.S.</td>
+													      <td>Member</td>
+													     
+													     </tr>
+													    
+													  </tbody>
+											</table>
+										</div>
+										
+    </div>
+	</div>
+	</div>	
+   <!-- <div class="container" id="mytable1">
+  <div class="row">
+   <div class="table-responsive">
+    <table class="table" align="center" id="customers" >
 
 
+    										<h5 align="center"><b>List Of Students Participated In Inter-Collegiate/Inter-Zonal/Inter-University</b></h5><br>
+											
+													
+									<tr>
+							          	<th>Sr.No.</th>
+							          	<th>Year</th>
+							          	<th>Team Participation in inter-collegiate game</th>
+							          	<th>Total Strength</th>
+							         </tr>
+									 <tr>
+										  	<td>1</td>
+								          	<td>2016-17</td>
+								          	<td>1</td>
+
+										  <td>
+										     
+										     <table>
+										        <tr>
+										          <td>Inter-Collegiate</td>
+										          <td>Inter-Zonal</td>
+										           <td>Inter-University</td>
+										        </tr>
+										       
+										        <tr>
+										          <td>16</td>
+										          <td></td>
+										          <td></td>
+										        </tr>
+										         
+										      </table>
+										    </td>
+							          	
+									  </tr>
+									   <tr>
+									  		<td>2</td>
+							          		<td>2017-18</td>
+							          		<td>2</td>
+							          	 		<td>
+							          	 			<table>
+									        			<tr>
+												          <td style="width: 94px">36</td>
+												          <td style="width: 64px">1</td>
+												          <td style="width: 94px"></td>
+									        			</tr>
+									      			</table>
+									    		</td>
+									    </tr>
+							
+					</table>
+				</div>
 
 
+										
+    </div>
+   
+  </div>-->
+  <div class="container" id="my-table" style="margin-top: 40px;margin-bottom: 20px;">
+  	<div class="table-responsive">
+  	<table class="table" align="center" id="customers" >
+											<h5 align="center"><b>Governing Body Members</b> </h5><br>
+													 
+													    <tr>
+													      <th >Sr.No.</th>
+													      <th >Name</th>
+													    <th >Designation</th>
+													      
+													       
+													    </tr>
+													  </thead>
+													  <tbody>
+													    <tr>
+													    <td>1</td>
+														<td>Er.Hemant Haribhau Dhatrak</td>
+													      <td>Chairman</td>
+													     
+													     </tr>
+													  <tr>
+													    <td>2</td>
+														<td>Shri.Babusheth Bhagwan Nagargoje</td>
+													      <td>Member (Nominated by Trust)</td>
+													     
+													     </tr>
+													      <tr>
+													    <td>3</td>
+														<td>Shri.Uday Punjabhau Sangle</td>
+													      <td>Member (Nominated by Trust)</td>
+													     
+													     </tr>
+													  <tr>
+													    <td>4</td>
+														<td>Shri.Balasaheb Ramchandra Palve</td>
+													      <td>Member (Nominated by Trust)</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>5</td>
+														<td>Dr.Arun kumar Dwivedi</td>
+													      <td>Educationist</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>6</td>
+														<td>Prof.Bhabad Sanjivani S.</td>
+													      <td>Educationist</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>7</td>
+														<td>Shri.Pundlik Anand Dattatraya</td>
+													      <td>Industrialist</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>8</td>
+														<td>Shri.Sonawane Vijay Nivrutti</td>
+													      <td>Nominee of Savitribai Phule Pune University </td>
+													     
+													     </tr>
+													     <tr>
+													    <td>9</td>
+														<td>Western Regional Officer, AICTE</td>
+													      <td>Nominee of All India Council for Technical Education</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>10</td>
+														<td>Joint Director, DTE, Nasik Region</td>
+													      <td>Member Secretary</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>11</td>
+														<td>Prof.(Mrs.)Naphade K.V.</td>
+													      <td>Senior Faculty</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>12</td>
+														<td>Prof.Sutar T.H.</td>
+													      <td>Vice Principal</td>
+													     
+													     </tr>
+													     <tr>
+													    <td>13</td>
+														<td>Dr.Chandratre K.V.</td>
+													      <td>Member Secretary (Principal)</td>
+													     
+													     </tr>
+													  </tbody>
+											</table>
+										</div>
+   </div>
 
 
+		
 
 	<!--Actvities contemt-->
 	
 <!-- footer -->
-	<div w3-include-html="footer.html">
+	<div log-include-html="footer.html">
 	
 	</div>
 	<script>
@@ -386,6 +1062,9 @@ ul.breadcrumb li a:hover {
   				})
 		})
 </script>
+
+
+	
 	<script>
 		$(document).ready(function(){
   $(window).scroll(function(){
@@ -395,8 +1074,8 @@ ul.breadcrumb li a:hover {
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  	
-		  $(".nav-item").css("color" , "#fff !important");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  	
+		  $(".nav-item").css("color" , "#f4e8c7 !important");  
 	  }
   })
 })
@@ -411,7 +1090,7 @@ ul.breadcrumb li a:hover {
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  
 		 
 		/*   $("a").removeClass("text-white"); */
 		  //$(".nav-item").css("color" , "#000 !important");  

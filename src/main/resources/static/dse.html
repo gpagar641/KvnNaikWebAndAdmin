@@ -47,7 +47,7 @@ function includeHTML() {
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
     
-    file = elmnt.getAttribute("w3-include-html");
+    file = elmnt.getAttribute("log-include-html");
     if (file) {
       
       xhttp = new XMLHttpRequest();
@@ -56,7 +56,7 @@ function includeHTML() {
           if (this.status == 200) {elmnt.innerHTML = this.responseText;}
           if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
          
-          elmnt.removeAttribute("w3-include-html");
+          elmnt.removeAttribute("log-include-html");
           includeHTML();
         }
       }      
@@ -97,7 +97,7 @@ ul.breadcrumb li a:hover {
 
 <body>
 
-<div w3-include-html="header.html">
+<div log-include-html="header.html">
 	
 </div>
 <script>
@@ -106,112 +106,33 @@ ul.breadcrumb li a:hover {
 	<!-- header -->
 	
 		<!-- top header -->
-		<!--
-		<div class="middle-w3ls-nav py-2">
-			<div class="container">
-				<div class="row">
-					
-					<div class="col-lg-8 right-info-agiles mt-lg-0 mt-sm-3 mt-1">
-						<div class="row">
-							<div class="col-sm-4 nav-middle">
-								<i class="far fa-envelope-open text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">kvnnaik@gmail.com</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 nav-middle mt-sm-0 mt-2">
-								<i class="fas fa-phone-volume text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">0253 - 2576692</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 top-login-butt text-right mt-sm-2">
-								<a href="login.html" class="button-head-mow3 text-white">Login</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>-->
+		
 		<!-- //middle header -->
 						
-					
-	
-
-
-	<!-- banner -->
-	<div class="banner-agile-2">
-	<!--<div class="hero-text">
-    <h1>Direct Second Year Engineering
-
-</h1>
- 		<ul class="breadcrumb">
-  			<li><a href="#">Home</a></li>
-  				<li><a href="#">Direct Second Year Engineering</a></li>
-  				
-  			
-		</ul>
-
-   -->
- <!--<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index.html">Home</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">About</li>
-		</ol>
-	</nav>-->
- </div>
-			<!-- navigation -->
-		
+		<!-- banner -->
+	    <!-- navigation -->
 		<!-- //navigation -->
-		
-	</div>
-	<!-- breadcrumb -->
-	<!--<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index.html">Home</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">Placement</li>
-		</ol>
-	</nav>-->
+		<!-- breadcrumb -->
 	<!-- breadcrumb -->
 	<!-- //banner -->
 	<!-- //banner -->
-
 	<!-- history -->
 	
 	<!-- //history -->
 
 	<!-- mission -->
-						
-
-
-	
 	<!-- //mission -->
 	<!--Carousel Wrapper new-->
-	
 	<!--/.Carousel Wrapper-->
 	
-
-
-
-	
-	
-			
-
-<!-- -->
 <div class="about-page py-5">
 		<div class="container py-xl-5 py-lg-3">
-<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5"> <i class="fas fa-graduation-cap"></i> Direct Second Year Engineering   <i class="fas fa-graduation-cap"></i>
+
+
+<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5"> <i class="fas fa-graduation-cap"></i> Direct Second Year
+				<span class="font-weight-bold"> Engineering  </span> <i class="fas fa-graduation-cap"></i>
 			</h3>
+
 			</div>
 			</div>
 		
@@ -220,16 +141,16 @@ ul.breadcrumb li a:hover {
 										
 
 
-<h2>Eligibility Criteria</h2><br>
-
-<h4>Educational Qualification:</h4><br>
+<h6 class="title text-capitalize font-weight-light text-dark text-center mb-5">Eligibility Criteria</h6>
+<!--
+<h6 class="title text-capitalize font-weight-light text-dark text-center mb-5">Educational Qualification:</h6><br>-->
 <P>
-	The Candidate must be an Indian National and should have passed Post-SSC or Post-HSC Diploma Course in Engineering/Technology with at least 45 % marks (40 % marks in case of candidates of backward class categories and Persons with Disability belonging only to Maharashtra State) in appropriate branch of Engineering / Technology from an AICTE approved Institution with English as the medium of instruction at Diploma level.
+	The Candidate must be an Indian National and should have passed Post-SSC or Post-HSC Diploma Course in Engineering/Technology with at least 45% marks (40% marks in case of candidates of backward class categories and Persons with Disability belonging only to Maharashtra State) in appropriate branch of Engineering / Technology from an AICTE approved Institution with English as the medium of instruction at Diploma level.
 </P>
 <br>
-<h4>OR</h4><br>
+<b>OR</b><br>
 <p>
-  The Candidate must be an Indian National and should have passed B.Sc. Degree from a UGC / Association of Indian Universities recognized University with at least 45% marks (40 % marks in case of candidates of Backward class categories and Persons with Disability belonging only to Maharashtra State) and passed XII standard examination with Mathematics as the subject and with English as the medium of instruction at B.Sc. level.
+  The Candidate must be an Indian National and should have passed B.Sc. Degree from a UGC / Association of Indian Universities recognized University with at least 45% marks (40% marks in case of candidates of Backward class categories and Persons with Disability belonging only to Maharashtra State) and passed XII standard examination with Mathematics as the subject and with English as the medium of instruction at B.Sc. level.
 <br>These admissions are effected by the Directorate of Technical Education (M. S.) after declaration of F.E. results. College follows admission rules laid down by ‘Director of Technical Education,’ Maharashtra state . Please see the Government Website www.dte.org.in for Centralized Admission Procedure recently declared by Director of Technical Education for SE Direct Admission.</p>
 <br><br>
 
@@ -238,7 +159,7 @@ ul.breadcrumb li a:hover {
 	<!--Actvities contemt-->
 	
 <!-- footer -->
-	<div w3-include-html="footer.html">
+	<div log-include-html="footer.html">
 	
 </div>
 <script>
@@ -317,6 +238,9 @@ ul.breadcrumb li a:hover {
   				})
 		})
 </script>
+
+
+	
 	<script>
 		$(document).ready(function(){
   $(window).scroll(function(){
@@ -326,8 +250,8 @@ ul.breadcrumb li a:hover {
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  	
-		  $(".nav-item").css("color" , "#fff !important");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  	
+		  $(".nav-item").css("color" , "#f4e8c7 !important");  
 	  }
   })
 })
@@ -342,7 +266,7 @@ ul.breadcrumb li a:hover {
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  
 		 
 		/*   $("a").removeClass("text-white"); */
 		  //$(".nav-item").css("color" , "#000 !important");  

@@ -34,7 +34,7 @@
 }
 
 .mis-slider figcaption span:before {
-	content: "\f10d";
+	content: " ";
 	position: absolute;
 	left: 0%;
 	top: 0%;

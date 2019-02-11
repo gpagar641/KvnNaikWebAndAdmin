@@ -12,11 +12,15 @@ import org.springframework.web.multipart.MultipartFile;
 public class VpsFileUploadApiController {
 
 	   
-	public static final String ANNOUNCE_IMAGES_PATH="/usr/local/tomcat/apache-tomcat-8.5.35/webapps/kvnimages/";
+	public static final String ANNOUNCE_IMAGES_PATH="/usr/local/tomcat/apache-tomcat-8.5.35/webapps/KvnAdmin/kvnimages/";
 	
-	public static final String EVENT_IMAGES_PATH="/usr/local/tomcat/apache-tomcat-8.5.35/webapps/kvnimages/";
+	//public static final String ANNOUNCE_IMAGES_PATH="F:\\a\\";
 	
-	public static final String NOTICE_IMAGES_PATH="/usr/local/tomcat/apache-tomcat-8.5.35/webapps/kvnimages/";
+	public static final String EVENT_IMAGES_PATH="/usr/local/tomcat/apache-tomcat-8.5.35/webapps/KvnAdmin/kvnimages/";
+	
+	public static final String NOTICE_IMAGES_PATH="/usr/local/tomcat/apache-tomcat-8.5.35/webapps/KvnAdmin/kvnimages/";
+	public static final String FACULTY_IMAGES_PATH="/usr/local/tomcat/apache-tomcat-8.5.35/webapps/KvnAdmin/kvnimages/faculty/";
+	
 	//public static final String NOTICE_IMAGES_PATH="E:\\";
 
 	
@@ -71,6 +75,9 @@ public class VpsFileUploadApiController {
 		}else if(imageType==3) {
 			
 			path = Paths.get(NOTICE_IMAGES_PATH+ imageName);
+		}else if(imageType==4) {
+			
+			path = Paths.get(FACULTY_IMAGES_PATH+ imageName);
 		}
 		
 		try {
@@ -86,7 +93,7 @@ public class VpsFileUploadApiController {
 
 	}
 
-	private String getFileExtension(MultipartFile inFile) {
+	public static String getFileExtension(MultipartFile inFile) {
 		String fileExtention = inFile.getOriginalFilename().substring(inFile.getOriginalFilename().lastIndexOf('.'));
 		return fileExtention;
 	}

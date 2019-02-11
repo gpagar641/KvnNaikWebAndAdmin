@@ -4,8 +4,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Novus Admin Panel an Admin Panel Category Flat Bootstrap
-	Responsive Website Template | Validation :: w3layouts</title>
+<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/LOGMIEER PNG LOGO.png" />
+<title>Logmieer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords"
@@ -102,12 +102,12 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 									</div>
 									<div class="form-group has-feedback">
 									 
-									<textarea style="width: 100%;" placeholder="Short Describe here..." id="short_desc" name="short_desc"></textarea>
+									<textarea style="width: 100%;" placeholder="Short Describe here..." id="short_desc" name="short_desc" required></textarea>
 										 
 									</div>
 									<div class="form-group has-feedback">
 									 
-									<textarea style="width: 100%;" rows="4" placeholder="Full Describe here..." id="full_desc" name="full_desc"></textarea>
+									<textarea style="width: 100%;" rows="4" placeholder="Full Describe here..." id="full_desc" name="full_desc" required></textarea>
 										 
 									</div>
 									<div class="form-group">

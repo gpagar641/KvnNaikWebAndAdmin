@@ -17,4 +17,11 @@ public class SampleController {
 		return "sample_form";
 		
 	}	
+	@RequestMapping(value="/loginJsp", method=RequestMethod.GET)
+
+	public String loginJsp(HttpServletRequest request)   
+	{ 
+		return "login";
+		
+	}	
 }

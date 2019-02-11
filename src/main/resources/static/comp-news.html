@@ -50,7 +50,7 @@ function includeHTML() {
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
     
-    file = elmnt.getAttribute("w3-include-html");
+    file = elmnt.getAttribute("log-include-html");
     if (file) {
       
       xhttp = new XMLHttpRequest();
@@ -59,7 +59,7 @@ function includeHTML() {
           if (this.status == 200) {elmnt.innerHTML = this.responseText;}
           if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
          
-          elmnt.removeAttribute("w3-include-html");
+          elmnt.removeAttribute("log-include-html");
           includeHTML();
         }
       }      
@@ -99,7 +99,7 @@ ul.breadcrumb li a:hover {
 </style>
 
 <body onload="getData()">
-<div w3-include-html="header.html">
+<div log-include-html="header.html">
 	
 </div>
 <script>
@@ -108,84 +108,20 @@ ul.breadcrumb li a:hover {
 	<!-- header -->
 	
 		<!-- top header -->
-		<!--
-		<div class="middle-w3ls-nav py-2">
-			<div class="container">
-				<div class="row">
-					
-					<div class="col-lg-8 right-info-agiles mt-lg-0 mt-sm-3 mt-1">
-						<div class="row">
-							<div class="col-sm-4 nav-middle">
-								<i class="far fa-envelope-open text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">kvnnaik@gmail.com</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 nav-middle mt-sm-0 mt-2">
-								<i class="fas fa-phone-volume text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">0253 - 2576692</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 top-login-butt text-right mt-sm-2">
-								<a href="login.html" class="button-head-mow3 text-white">Login</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>-->
+		
 		<!-- //middle header -->
-						
-					
-	
-
-
-	<!-- banner -->
-	<div class="banner-agile-2">
-	<!--<div class="hero-text">
-    <h1>News & Events</h1>
- 		<ul class="breadcrumb">
-  			<li><a href="#">Home</a></li>
-  				<li><a href="#">News & Events
-
-</a></li>
-  				
-  			
-		</ul>-->
-
-   
- <!--<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index.html">Home</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">About</li>
-		</ol>
-	</nav>-->
- </div>
-
-		<!-- navigation -->
+		<!-- banner -->
+	<!-- navigation -->
 		
 		<!-- //navigation -->
+		<!-- //banner -->
 
-		
-
-	</div>
+	<!-- about -->
+	
 	<!-- //banner -->
 
 	<!-- about -->
-	</div>
-	<!-- //banner -->
-
-	<!-- about -->
-	<div class="about py-5" style="background-color: #eddddd">
+	<div class="about py-5" >
 		
 			
     
@@ -194,7 +130,7 @@ ul.breadcrumb li a:hover {
 			<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5"> <i class="fas fa-graduation-cap"></i> our lastest
 				<span class="font-weight-bold"> news </span> <i class="fas fa-graduation-cap"></i>
 			</h3>
-			<div class="row news-grids-w3l pt-md-4" >
+			<div class="row news-grids-logl pt-md-4" >
 				<div class="col-md-4 news-grid" >
 					<a href="blog.html">
 						<img src="images/ann.jpg" class="img-fluid" alt="" />
@@ -207,18 +143,12 @@ ul.breadcrumb li a:hover {
 							<div class="clearfix"></div>
 						</div>
 						<div class="detail-bottom">
-							<!-- <h6 class="my-3">
-								<a href="blog.html" class="text-dark">
-									Eiusmod tempor incididunt ut labore sed do eiusmod
-								</a>
-							</h6> -->
+							
 							<marquee direction="up" width="100%" BEHAVIOR="ALTERNATE"
 							 	onmouseover="stop();" onmouseout="start();" id="announcement">
 							 
 							</marquee>
 
-							<!--<marquee direction="up" width = "100%"><b style="background: red;text-align: center;">News2</b><p style="border-bottom: 2px solid red;">The Charge of Finance and Accounts Officer...</p></marquee>
-							<marquee direction="up" width = "100%"><b style="background: red;text-align: center;">News3</b><p style="border-bottom: 2px solid red;">Quotations are Invited For Impedance Analyzer_Physics Department.</p></marquee>-->
 						</div>
 					</div>
 				</div>
@@ -235,10 +165,7 @@ ul.breadcrumb li a:hover {
 								<div class="clearfix"></div>
 							</div>
 							<div class="detail-bottom">
-								<!-- <h6 class="my-3">
-									<a href="blog.html" class="text-dark"> Eiusmod tempor
-										incididunt ut labore sed do eiusmod </a>
-								</h6> -->
+								
 								<marquee direction="up" width="100%" BEHAVIOR="ALTERNATE"
 							 	onmouseover="stop();" onmouseout="start();" id="noticeBoard">
 							 
@@ -259,23 +186,19 @@ ul.breadcrumb li a:hover {
 							<div class="clearfix"></div>
 						</div>
 						<div class="detail-bottom">
-							<!-- <h6 class="my-3">
-								<a href="blog.html" class="text-dark">
-									Eiusmod tempor incididunt ut labore sed do eiusmod
-								</a>
-							</h6> -->
+						
 							<marquee direction="up" width="100%" BEHAVIOR="ALTERNATE"
 							 	onmouseover="stop();" onmouseout="start();" id="campEvent">
 							 
 							</marquee>
-							<!--<marquee direction="up" width = "100%"><b style="background: red;text-align: center;">News2</b><p style="border-bottom: 2px solid red;">The Charge of Finance and Accounts Officer...</p></marquee>
-							<marquee direction="up" width = "100%"><b style="background: red;text-align: center;">News3</b><p style="border-bottom: 2px solid red;">Quotations are Invited For Impedance Analyzer_Physics Department.</p></marquee>-->
+							
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 	<!-- //news -->
 	<!-- Stats-->
 	
@@ -288,207 +211,34 @@ ul.breadcrumb li a:hover {
 	<!-- what we do -->
 	
 	<!-- //what we do -->
-	<!--
-	<section>
-		<div class="container-fluid">
-		<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5">our
-						<span class="font-weight-bold">video</span>
-					</h3>
-					<iframe src="https://player.vimeo.com/video/58123228"></iframe>-->
-					<!--<iframe width="100%" height="315" src="https://www.youtube.com/embed/D-rh5Yf7QPE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		</div>
-	</section>
-
-
 	<!-- mission -->
-	<!--<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5"> <i class="fas fa-graduation-cap"></i> Upcoming
-						<span class="font-weight-bold">Events</span> <i class="fas fa-graduation-cap"></i>
-					</h3>-->
-	<!--<div class="about-page-2 py-5" >
-		<div class="container-fluid py-xl-5 py-lg-3">
-			<div class="row about-head-wthree-2">
-
-				<div class="col-lg-4 left-abw3ls text-lg-left text-center" >
-					<img src="images/event-01.jpg" alt="" class="img-fluid" >
-				</div>
-				<div class="col-lg-8 right-abw3ls my-lg-0 my-sm-5 my-4"></br></br></br>
-					<h5 class="card-title">
-								<a href="single.html" class="text-dark">Blog title here</a>
-							</h5></br>
-					<p class="card-text">Morbi eget dui elit. In lectus eros, convallis vel dolor vitae, semper sodales risus. Donec convallis maximus neque
-								vel cursus.</p>
-							<a href="single.html" class="btn btn-primary blog-button mt-3">Read More</a>
-					
-				</div>
-				
-			</div>
-		</div>
-	</div>-->
-	<div class="about-page-2 py-5" >
-	<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5"> <i class="fas fa-graduation-cap"></i> Upcoming
-						<span class="font-weight-bold">Events</span> <i class="fas fa-graduation-cap"></i>
-					</h3>
-		<div class="container py-xl-5 py-lg-3" >
-			<div class="row about-head-wthree-2"  style="border-radius:10px 10px;border:1px solid #ddd;-webkit-box-shadow: 10px 0px 15px 0px rgba(207,207,209,1);
--moz-box-shadow: 10px 0px 15px 0px rgba(207,207,209,1);
-box-shadow: 10px 0px 15px 0px rgba(207,207,209,1);">
-
-				<div class="col-lg-4 left-abw3ls text-lg-left text-center"  >
-					<img src="images/quiz.jpg" alt="" class="img-fluid" >
-				</div>
-				<div class="col-lg-8 right-abw3ls my-lg-0 my-sm-5 my-4" style="background-color: #f0d47de6;"></br>
-					<h5 class="card-title">
-								<a href="single.html" class="text-dark">Blog title here</a>
-							</h5></br>
-					<p class="card-text">Morbi eget dui elit. In lectus eros, convallis vel dolor vitae, semper sodales risus. Donec convallis maximus neque
-								vel cursus.</p>
-							<!--<a href="single.html" class="btn btn-primary blog-button mt-3">Read More</a>-->
-					
-				</div>
-				
-			</div>
-			</br>
-			<div class="row about-head-wthree-2"  style="border-radius:10px 10px;border:1px solid #ddd;-webkit-box-shadow: 10px 0px 15px 0px rgba(207,207,209,1);
--moz-box-shadow: 10px 0px 15px 0px rgba(207,207,209,1);
-box-shadow: 10px 0px 15px 0px rgba(207,207,209,1);" >
-
-				<div class="col-lg-4 left-abw3ls text-lg-left text-center" >
-					<img src="images/quiz3.jpg" alt="" class="img-fluid">
-				</div>
-				<div class="col-lg-8 right-abw3ls my-lg-0 my-sm-5 my-4" style="background-color: #f0d47de6"></br>
-					<h5 class="card-title">
-								<a href="single.html" class="text-dark">Blog title here</a>
-							</h5></br>
-					<p class="card-text">Morbi eget dui elit. In lectus eros, convallis vel dolor vitae, semper sodales risus. Donec convallis maximus neque
-								vel cursus.</p>
-							<!--<a href="single.html" class="btn btn-primary blog-button mt-3">Read More</a>-->
-					
-				</div>
-				
-			</div>
-			</br>
-			<div class="row about-head-wthree-2"  style="border-radius:10px 10px;border:1px solid #ddd;-webkit-box-shadow: 10px 0px 15px 0px rgba(207,207,209,1);
--moz-box-shadow: 10px 0px 15px 0px rgba(207,207,209,1);
-box-shadow: 10px 0px 15px 0px rgba(207,207,209,1);">
-
-				<div class="col-lg-4 left-abw3ls text-lg-left text-center"  >
-					<img src="images/quiz.jpg" alt="" class="img-fluid" >
-				</div>
-				<div class="col-lg-8 right-abw3ls my-lg-0 my-sm-5 my-4" style="background-color: #f0d47de6;"></br>
-					<h5 class="card-title">
-								<a href="single.html" class="text-dark">Blog title here</a>
-							</h5></br>
-					<p class="card-text">Morbi eget dui elit. In lectus eros, convallis vel dolor vitae, semper sodales risus. Donec convallis maximus neque
-								vel cursus.</p>
-							<!--<a href="single.html" class="btn btn-primary blog-button mt-3">Read More</a>-->
-					
-				</div>
-				
-			</div>
-		</div>
-	</div>
-	
-	
-
-
 	<!-- //video and events -->
-
-
-	<!-- news -->
-	
-
-	
+    <!-- news -->
 	<!-- //testimonials -->
-
-
-<!--	<div class="card col-md-6 mt-5 mb-5">
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="100000">
-    <div class="w-100 carousel-inner" role="listbox">
-      <div class="carousel-item active">
-        <div class="carousel-caption">
-          <div class="row">
-            <div class="col-sm-3">
-              <img src="http://via.placeholder.com/200x200" alt="" class="rounded-circle img-fluid"/>
-            </div>
-            <div class="col-sm-9">
-              <h3>Gives me hope</h3>
-              <small>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</small>
-              <small class="smallest mute">- Yayo Dudemous</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-caption">
-          <div class="row">
-            <div class="col-sm-3">
-              <img src="http://via.placeholder.com/200x200" alt="" class="rounded-circle img-fluid">
-            </div>
-            <div class="col-sm-9">
-              <h3>You will love it.</h3>
-              <small>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</small>
-              <small class="smallest mute">- Yayo Dudemous</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-caption">
-          <div class="row">
-            <div class="col-sm-3">
-              <img src="http://via.placeholder.com/200x200" alt="" class="rounded-circle img-fluid">
-            </div>
-            <div class="col-sm-9">
-              <h3>Velvet pouch!</h3>
-              <small>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</small>
-              <small class="smallest mute">- Yayo Dudemous</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="float-right navi">
-    <a class="" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon ico" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon ico" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-    </div>
-  </div>
-</div>-->
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
 		aria-labelledby="exampleModalLabel">
 		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-
-				</div>
-				<div class="modal-body">
-					<p id="fullDesc"></p>
-				</div>
-				<!-- <div class="modal-footer">
-										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-										<button type="button" class="btn btn-primary">Send message</button>
-									</div> -->
-			</div>
+				<div class="modal-content">
+									<div class="modal-header">
+									<span id="boxTitle">
+									</span>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										 
+									</div>
+									<div class="modal-body">
+										<p id="fullDesc"></p>
+									</div>
+									   
+										 <div id="fileAtt">
+									 </div>
+								</div>
 		</div>
 	</div>
 	<!-- brands -->
-	
-	
-
-    
-    <script type="text/javascript">jssor_1_slider_init();</script>
+	<script type="text/javascript">jssor_1_slider_init();</script>
 	<!-- footer -->
-		<div w3-include-html="footer.html">
+		<div log-include-html="footer.html">
 	
 </div>
 <script>
@@ -582,6 +332,7 @@ $(document).ready(function(){
 		})
 </script>
 
+
 	
 	<script>
 		$(document).ready(function(){
@@ -592,8 +343,8 @@ $(document).ready(function(){
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  	
-		  $(".nav-item").css("color" , "#fff !important");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  	
+		  $(".nav-item").css("color" , "#f4e8c7 !important");  
 	  }
   })
 })
@@ -608,7 +359,7 @@ $(document).ready(function(){
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  
 		 
 		/*   $("a").removeClass("text-white"); */
 		  //$(".nav-item").css("color" , "#000 !important");  
@@ -618,29 +369,7 @@ $(document).ready(function(){
 })
 		</script>
 
-
-
-
-	<script>
-		$(document).ready(function() {
-			$(window).scroll(function() {
-				var scroll = $(window).scrollTop();
-				if (scroll < 200) {
-					$(".navbar-nav").css("background", "");
-				}
-
-				else {
-					$(".navbar-collapse").css("background", "#fff");
-
-					/*   $("a").removeClass("text-white"); */
-					//$(".nav-item").css("color" , "#000 !important");  
-				}
-			})
-		})
-	</script>
-
-
-	<script type="text/javascript">
+<script type="text/javascript">
 		function getData() {
 
 			/* $
@@ -664,9 +393,9 @@ $(document).ready(function(){
 	    	  '					style="border-bottom: 2px solid #000;padding: 0px;">'
 															+ field.shortDesc
 															+ '.</a><br>'
-															+ '			<button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc(\''
-															+ field.fullDesc
-															+ '\')" class="btn btn-primary btn-sm">Read'
+															+ '			<button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc('
+															+ field.id
+															+ ')" class="btn btn-primary btn-sm">Read'
 															+ '				More</button>'
 															+ '			</p>';
 
@@ -699,9 +428,9 @@ $(document).ready(function(){
 	    	  '					style="border-bottom: 2px solid #000;padding: 0px;">'
 															+ field.shortDesc
 															+ '.</a><br>'
-															+ '			<button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc(\''
-															+ field.fullDesc
-															+ '\')" class="btn btn-primary btn-sm">Read'
+															+ '			<button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDescNotice('
+															+ field.id
+															+ ')" class="btn btn-primary btn-sm">Read'
 															+ '				More</button>'
 															+ '			</p>';
 
@@ -730,9 +459,9 @@ $(document).ready(function(){
 	    	  '					style="border-bottom: 2px solid #000;padding: 0px;">'
 															+ field.shortDesc
 															+ '.</a><br>'
-															+ '			<button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc(\''
-															+ field.fullDesc
-															+ '\')" class="btn btn-primary btn-sm">Read'
+															+ '			<button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDescEvent('
+															+ field.id
+															+ ')" class="btn btn-primary btn-sm">Read'
 															+ '				More</button>'
 															+ '			</p>';
 
@@ -747,10 +476,85 @@ $(document).ready(function(){
 
 		}
 
-		function setFullDesc(data) {
-			$("#fullDesc").text(data);
-		}
+
+		function setFullDesc(id)
+		{
+			$("#fileAtt").empty();
+			document.getElementById('boxTitle').innerHTML = '';
+				document.getElementById('fullDesc').innerHTML = '';
+
+			  $
+			  .getJSON(
+			  		'getAnnouncementById',
+			  		{
+			  			id : id,
+			  			ajax : 'true',
+			  		},function(result){
+			  			
+			  			document.getElementById('boxTitle').innerHTML = result.title;
+			  			document.getElementById('fullDesc').innerHTML = result.fullDesc;
+			  			if(result.file){
+			  				var str='<a style="color: blue;" href="${pageContext.request.contextPath}/kvnimages/'+result.file+'" download>Click here to download File  &#8595;</a>';
+				$("#fileAtt").append(str);
+			  			}
+			  		})
+			 
+					
+			}
+			
+
+		function setFullDescNotice(id)
+		{
+			$("#fileAtt").empty();
+			document.getElementById('boxTitle').innerHTML = '';
+				document.getElementById('fullDesc').innerHTML = '';
+
+			  $
+			  .getJSON(
+			  		'getNoticeById',
+			  		{
+			  			id : id,
+			  			ajax : 'true',
+			  		},function(result){
+			  			
+			  			document.getElementById('boxTitle').innerHTML = result.title;
+			  			document.getElementById('fullDesc').innerHTML = result.fullDesc;
+			  			if(result.file){
+			  				var str='<a style="color: blue;" href="${pageContext.request.contextPath}/kvnimages/'+result.file+'" download>Click here to download File  &#8595;</a>';
+				$("#fileAtt").append(str);
+			  			}
+			  		})
+			 
+					
+			}
+
+		function setFullDescEvent(id)
+		{
+			$("#fileAtt").empty();
+			document.getElementById('boxTitle').innerHTML = '';
+				document.getElementById('fullDesc').innerHTML = '';
+
+			  $
+			  .getJSON(
+			  		'getEventById',
+			  		{
+			  			id : id,
+			  			ajax : 'true',
+			  		},function(result){
+			  			
+			  			document.getElementById('boxTitle').innerHTML = result.title;
+			  			document.getElementById('fullDesc').innerHTML = result.fullDesc;
+			  			if(result.file){
+			  				var str='<a style="color: blue;" href="${pageContext.request.contextPath}/kvnimages/'+result.file+'" download>Click here to download File  &#8595;</a>';
+				$("#fileAtt").append(str);
+			  			}
+			  		})
+			 
+					
+			}
+			
 	</script>
+		
 		
 </body>
 

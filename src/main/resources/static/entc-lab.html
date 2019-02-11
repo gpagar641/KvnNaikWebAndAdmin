@@ -46,7 +46,7 @@ function includeHTML() {
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
     
-    file = elmnt.getAttribute("w3-include-html");
+    file = elmnt.getAttribute("log-include-html");
     if (file) {
       
       xhttp = new XMLHttpRequest();
@@ -55,7 +55,7 @@ function includeHTML() {
           if (this.status == 200) {elmnt.innerHTML = this.responseText;}
           if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
          
-          elmnt.removeAttribute("w3-include-html");
+          elmnt.removeAttribute("log-include-html");
           includeHTML();
         }
       }      
@@ -95,88 +95,20 @@ ul.breadcrumb li a:hover {
 </style>
 <body>
 
-
-	<div w3-include-html="header.html">
+<div log-include-html="header.html">
 	
 </div>
 <script>
 	includeHTML();
 </script>
 	<!-- header -->
-	<!--
-		<div class="middle-w3ls-nav py-2">
-			<div class="container">
-				<div class="row">
-					
-					<div class="col-lg-8 right-info-agiles mt-lg-0 mt-sm-3 mt-1">
-						<div class="row">
-							<div class="col-sm-4 nav-middle">
-								<i class="far fa-envelope-open text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">kvnnaik@gmail.com</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 nav-middle mt-sm-0 mt-2">
-								<i class="fas fa-phone-volume text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">0253 - 2576692</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 top-login-butt text-right mt-sm-2">
-								<a href="login.html" class="button-head-mow3 text-white">Login</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>-->
-		<!-- //middle header -->
-						
-					
 	
-
-
-	<!-- banner -->
-	<div class="banner-agile-2">
-	<!--<div class="hero-text">
-    <h1>Laboratory</h1>
- 		<ul class="breadcrumb">
-  			<li><a href="#">Home</a></li>
-  				<li><a href="#">Laboratory</a></li>
-  				
-  			
-		</ul>
-
-  --> 
- <!--<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index.html">Home</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">About</li>
-		</ol>
-	</nav>-->
- </div>
-			<!-- navigation -->
-		
+		<!-- //middle header -->
+		<!-- banner -->
+		<!-- navigation -->
 		<!-- //navigation -->
-		
-	</div>
-	<!-- breadcrumb -->
-	<!--<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index.html">Home</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">Gallery</li>
-		</ol>
-	</nav>-->
+		<!-- breadcrumb -->
+	
 	<!-- breadcrumb -->
 	<!-- //banner -->
 	<!-- //banner -->
@@ -186,120 +118,153 @@ ul.breadcrumb li a:hover {
 	<section class="gallery py-5">
 		<div class="container py-xl-5 py-lg-3">
 			<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5"> <i class="fas fa-graduation-cap"></i> our
-				<span class="font-weight-bold"> gallery </span> <i class="fas fa-graduation-cap"></i>
+				<span class="font-weight-bold"> Lab </span> <i class="fas fa-graduation-cap"></i>
 			</h3>
-			<div class="inner-sec pt-md-4" >
-				<div class="row proj_gallery_grid">
-					<div class="col-sm-4 section_1_gallery_grid">
-						<a href="images/ab.jpg">
-							<div class="section_1_gallery_grid1" >
-								<img src="images/ab1.jpg" alt=" " class="img-fluid" id="my-gallery"/>
-								<div class="proj_gallery_grid1_pos">
-									<h3>LoGMIEER</h3>
-									<p>Add some text here</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-sm-4 section_1_gallery_grid my-sm-0 my-4">
-						<a href="images/n2.jpg">
-							<div class="section_1_gallery_grid1">
-								<img src="images/n2.jpg" alt=" " class="img-fluid" id="my-gallery"/>
-								<div class="proj_gallery_grid1_pos">
-									<h3>LoGMIEER</h3>
-									<p>Add some text here</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-sm-4 section_1_gallery_grid">
-						<a href="images/n3.jpg">
-							<div class="section_1_gallery_grid1">
-								<img src="images/n3.jpg" alt=" " class="img-fluid" id="my-gallery"/>
-								<div class="proj_gallery_grid1_pos">
-									<h3>LoGMIEER</h3>
-									<p>Add some text here</p>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="row proj_gallery_grid mt-4">
-					<div class="col-sm-4 section_1_gallery_grid">
-						<a href="images/am1.jpg">
-							<div class="section_1_gallery_grid1">
-								<img src="images/am1.jpg" alt=" " class="img-fluid" id="my-gallery"/>
-								<div class="proj_gallery_grid1_pos">
-									<h3>LoGMIEER</h3>
-									<p>Add some text here</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-sm-4 section_1_gallery_grid  my-sm-0 my-4">
-						<a href="images/am2.jpg">
-							<div class="section_1_gallery_grid1">
-								<img src="images/am2.jpg" alt=" " class="img-fluid" id="my-gallery"/>
-								<div class="proj_gallery_grid1_pos">
-									<h3>LoGMIEER</h3>
-									<p>Add some text here</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-sm-4 section_1_gallery_grid">
-						<a href="images/ap-2.jpg">
-							<div class="section_1_gallery_grid1">
-								<img src="images/ap-2.jpg" alt=" " class="img-fluid" id="my-gallery"/>
-								<div class="proj_gallery_grid1_pos">
-									<h3>LoGMIEER</h3>
-									<p>Add some text here</p>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="row proj_gallery_grid mt-4">
-					<div class="col-sm-4 section_1_gallery_grid">
-						<a href="images/am4.jpg">
-							<div class="section_1_gallery_grid1">
-								<img src="images/am4.jpg" alt=" " class="img-fluid" id="my-gallery"/>
-								<div class="proj_gallery_grid1_pos">
-									<h3>LoGMIEER</h3>
-									<p>Add some text here</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-sm-4 section_1_gallery_grid  my-sm-0 my-4">
-						<a href="images/n1.jpg">
-							<div class="section_1_gallery_grid1">
-								<img src="images/n1.jpg" alt=" " class="img-fluid" id="my-gallery"/>
-								<div class="proj_gallery_grid1_pos">
-									<h3>LoGMIEER</h3>
-									<p>Add some text here</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-sm-4 section_1_gallery_grid">
-						<a href="images/am3.jpg">
-							<div class="section_1_gallery_grid1">
-								<img src="images/am3.jpg" alt=" " class="img-fluid" id="my-gallery"/>
-								<div class="proj_gallery_grid1_pos">
-									<h3>LoGMIEER</h3>
-									<p>Add some text here</p>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
+				<div class="container" id="my-table" >
+										<div class="table-responsive">
+                                         <table class="table" align="center" id="customers"  >
+											
+											
+													   <thead class="thead-dark">
+													    <tr>
+													      <th style="width:10%">Sr.No.</th>
+													      <th style="width:30%">Name of Lab</th>
+													    
+													      <th style="width:10%">Location</th>
+													       <th style="width:30%">Lab In charge</th>
+													    <th style="width:10%">Cost(Rs.)</th>
+													   <th style="width:10%">Available Area</th>
+													       
+													    </tr>
+													  </thead>
+													  <tbody>
+													    <tr>
+													    <td>1</td>
+													     <td>Basic Electronics Lab</td>
+													      <td>322</td>
+													     <td> Prof. P. S. Sonawane</td>
+													      <td> 321337</td>
+													     <td> 103.55</td>
+													      </tr>
+													      <tr>
+													    <td>2</td>
+													     <td>Digital Electronics Lab</td>
+													      <td>323</td>
+													     <td>Prof. S. S. Punde</td>
+													      <td>365473.75</td>
+													     <td>74.43</td>
+													      </tr>
+													      <tr>
+													    <td>3</td>
+													     <td>Software Lab-I</td>
+													      <td>324</td>
+													     <td>Prof. A. V. Gangurde</td>
+													      <td>1283928.8</td>
+													     <td>84.35</td>
+													      </tr>
+													      <tr>
+													    <td>4</td>
+													     <td>Software Lab-II </td>
+													      <td>325</td>
+													     <td>Prof. S. A. Shevgekar</td>
+													      <td>457871.9</td>
+													     <td>84.35</td>
+													      </tr>
+													    <tr>
+													    <td>5</td>
+													     <td>Power Electronics Lab </td>
+													      <td>328</td>
+													     <td>Prof. P. N. Sonawane</td>
+													      <td>360240.5</td>
+													     <td>79.04</td>
+													      </tr>
+													     <tr>
+													    <td>6</td>
+													     <td>Communication Lab </td>
+													      <td>410</td>
+													     <td>Prof. S. S. Pagar</td>
+													      <td>810758</td>
+													     <td>68.15</td>
+													      </tr>
+													      <tr>
+													    <td>7</td>
+													     <td>Audio-Video Lab </td>
+													      <td>224</td>
+													     <td>Prof.B. U. Parihar</td>
+													      <td>641250</td>
+													     <td>73.6</td>
+													      </tr>
+													      <tr>
+													    <td>8</td>
+													     <td>Electronic Devices & Circuits  Lab </td>
+													      <td>408</td>
+													     <td>Prof.B. U. Parihar</td>
+													      <td>522771</td>
+													     <td>101.15</td>
+													      </tr>
+													     <tr>
+													    <td>9</td>
+													     <td>Class Room-1 </td>
+													      <td>319</td>
+													     <td></td>
+													     <td></td>
+													      <td>67.47</td>
+													    
+													      </tr>
+													    <tr>
+													    <td>10</td>
+													     <td> Class Room-2</td>
+													      <td>320</td>
+													     <td></td>
+													     <td></td>
+													      <td>82.03</td>
+													     </tr>
+													     <tr>
+													    <td>11</td>
+													     <td> Class Room-3</td>
+													      <td>327</td>
+													     <td></td>
+													     <td></td>
+													      <td>85.98</td>
+													   
+													      </tr>
+													    <tr>
+													    <td>12</td>
+													     <td>Tutorial Room  </td>
+													      <td>225</td>
+													     <td></td>
+													      <td></td>
+													     <td>34.91</td>
+													      </tr>
+													      <tr>
+													    <td>13</td>
+													     <td>HOD Cabin  </td>
+													      <td>326</td>
+													     <td></td>
+													      <td></td>
+													     <td>14.2</td>
+													      </tr>
+													    <tr>
+													    <td></td>
+													     <td>Total  </td>
+													      <td></td>
+													     <td></td>
+													      <td>5421867</td>
+													     <td></td>
+													      </tr>
+													  </tbody>
+											</table><br><br>
+										</div>
+
+
+</div>
+			
 		</div>
 	</section>
 	<!--//gallery-->
 
-	<div w3-include-html="footer.html">
+	<!-- //footer -->
+	<div log-include-html="footer.html">
 	
 </div>
 <script>
@@ -346,7 +311,7 @@ ul.breadcrumb li a:hover {
 
 	<!-- //Js files -->
 
-	<script>
+<script>
 		$(document).ready(function(){
   			$(window).scroll(function(){
   				var scroll = $(window).scrollTop();
@@ -362,6 +327,9 @@ ul.breadcrumb li a:hover {
   				})
 		})
 </script>
+
+
+	
 	<script>
 		$(document).ready(function(){
   $(window).scroll(function(){
@@ -371,8 +339,8 @@ ul.breadcrumb li a:hover {
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  	
-		  $(".nav-item").css("color" , "#fff !important");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  	
+		  $(".nav-item").css("color" , "#f4e8c7 !important");  
 	  }
   })
 })
@@ -387,7 +355,7 @@ ul.breadcrumb li a:hover {
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  
 		 
 		/*   $("a").removeClass("text-white"); */
 		  //$(".nav-item").css("color" , "#000 !important");  

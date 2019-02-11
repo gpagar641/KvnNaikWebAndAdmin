@@ -47,7 +47,7 @@ function includeHTML() {
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
     
-    file = elmnt.getAttribute("w3-include-html");
+    file = elmnt.getAttribute("log-include-html");
     if (file) {
       
       xhttp = new XMLHttpRequest();
@@ -56,7 +56,7 @@ function includeHTML() {
           if (this.status == 200) {elmnt.innerHTML = this.responseText;}
           if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
          
-          elmnt.removeAttribute("w3-include-html");
+          elmnt.removeAttribute("log-include-html");
           includeHTML();
         }
       }      
@@ -96,166 +96,114 @@ ul.breadcrumb li a:hover {
 </style>
 
 <body>
-<div w3-include-html="header.html">
+<div log-include-html="header.html">
 	
 </div>
 <script>
 	includeHTML();
 </script>
 	<!-- header -->
-	
-		<!-- top header -->
-		<!--
-		<div class="middle-w3ls-nav py-2">
-			<div class="container">
-				<div class="row">
-					
-					<div class="col-lg-8 right-info-agiles mt-lg-0 mt-sm-3 mt-1">
-						<div class="row">
-							<div class="col-sm-4 nav-middle">
-								<i class="far fa-envelope-open text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">kvnnaik@gmail.com</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 nav-middle mt-sm-0 mt-2">
-								<i class="fas fa-phone-volume text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">0253 - 2576692</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 top-login-butt text-right mt-sm-2">
-								<a href="login.html" class="button-head-mow3 text-white">Login</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>-->
-		<!-- //middle header -->
-						
-					
-	
-
-
+	<!-- top header -->
+	<!-- //middle header -->
 	<!-- banner -->
-	<div class="banner-agile-2">
-	<!--<div class="hero-text">
-    <h1>Placement</h1>
- 		<ul class="breadcrumb">
-  			<li><a href="#">Home</a></li>
-  				<li><a href="#">Placement</a></li>
-  				
-  			
-		</ul>
-
-   -->
- <!--<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index.html">Home</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">About</li>
-		</ol>
-	</nav>-->
- </div>
-			<!-- navigation -->
-		
-		<!-- //navigation -->
-		
-	</div>
+	<!-- navigation -->
+	<!-- //navigation -->
 	<!-- breadcrumb -->
-	<!--<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index.html">Home</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">Placement</li>
-		</ol>
-	</nav>-->
 	<!-- breadcrumb -->
 	<!-- //banner -->
 	<!-- //banner -->
-
 	<!-- history -->
-	
 	<!-- //history -->
-
 	<!-- mission -->
-						
-
-
-	
 	<!-- //mission -->
 	<!--Carousel Wrapper new-->
-	
 	<!--/.Carousel Wrapper-->
-	
-
-
-
-	
-	
-			
-
-<!-- -->
-<div class="about-page py-5">
+	<div class="about-page py-5">
 		<div class="container py-xl-5 py-lg-3">
 <h3 class="title text-capitalize font-weight-light text-dark text-center mb-5"> <i class="fas fa-graduation-cap"></i> Our Placed <span class="font-weight-bold"> Students </span> <i class="fas fa-graduation-cap"></i>
 			</h3>
 			</div>
 			</div>
-		
-
-										<div class="container-fluid" id="my-table" >
-											<table class="table table-bordered">
+						<div class="container-fluid" id="my-table" >
+							<div class="table-responsive">
+						<table class="table" align="center" id="customers" >
+											
 													   <thead class="thead-dark">
 													    <tr>
-													      <th scope="col">Sr.No.</th>
-													      <th scope="col">Name</th>
-													      <th scope="col">Company</th>
-													      <th scope="col">Designation</th>
-													       <th scope="col">Branch</th>
-													    </tr>
+													      <th >Sr.No.</th>
+													      <th>Date</th>
+													      <th >Name</th>
+													     <th >Company</th>
+													      <th >Designation</th>
+													      <th >Branch</th>
+													      <th>Place</th>
+													       </tr>
 													  </thead>
-													  <tbody>
 													    <tr>
-													    <td>1</td>
-
-													      <td>Mark</td>
-													      <td>Mark</td>
-													      <td>Otto</td>
-													       <td>xyz</td>
-													      
-													    </tr>
-													    <tr>
+													     <td>1</td>
+													     <td>25/4/2016
+														 </td>
+													     <td>Rushikesh Raut
+														 </td>
+													     <td>Jeevak Meditools Pvt. Ltd
+														 </td>
+														 <td>Trainee Engineer
+														</td>
+													     <td>Mechanical
+														 </td>
+													     <td>Nasik</td>
+													     </tr>
+													      <tr>
 													     <td>2</td>
-													      <td>Jacob</td>
-													      <td>Thornton</td>
-													      <td>@fat</td>
-													       <td>xyz</td>
-													    </tr>
-													    <tr>
-													       <td>3</td>
+													     <td>20/8/2016</td>
+													     <td>Akash Upadhye</td>
+													     <td>Avegatesta Solutions 
+														 </td>
+														 <td>Technical Enginnner
 
-													      <td>Larry the Bird</td>
-													      <td>@twitter</td>
-													      <td>@facebook</td>
-													       <td>xyz</td>
-													    </tr>
+														</td>
+													     <td>Mechanical
+														 </td>
+													     <td>Nasik</td>
+													     </tr>
+													      
+													      <tr>
+													     <td>3</td>
+													     <td>30/11/2016
+
+
+														 </td>
+													     <td>Dhananjay Gawande
+
+														 </td>
+													     <td>Unnati Engg Pvt. Ltd
+
+ 
+
+														 </td>
+														 <td>Trainee Engineer
+
+
+														</td>
+													     <td>Mechanical
+														 </td>
+													     <td>Banglore
+</td>
+													     </tr>
+													    
+													   
 													  </tbody>
 											</table>
 										
-										
-										
-										</div>
-										</br>
+									<br>
+									<br>
+
+									</div>
+
+</div>
+
+
+
 
 
 
@@ -266,7 +214,7 @@ ul.breadcrumb li a:hover {
 	<!--Actvities contemt-->
 	
 <!-- footer -->
-	<div w3-include-html="footer.html">
+	<div log-include-html="footer.html">
 	
 </div>
 <script>
@@ -345,6 +293,9 @@ ul.breadcrumb li a:hover {
   				})
 		})
 </script>
+
+
+	
 	<script>
 		$(document).ready(function(){
   $(window).scroll(function(){
@@ -354,8 +305,8 @@ ul.breadcrumb li a:hover {
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  	
-		  $(".nav-item").css("color" , "#fff !important");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  	
+		  $(".nav-item").css("color" , "#f4e8c7 !important");  
 	  }
   })
 })
@@ -370,7 +321,7 @@ ul.breadcrumb li a:hover {
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  
 		 
 		/*   $("a").removeClass("text-white"); */
 		  //$(".nav-item").css("color" , "#000 !important");  

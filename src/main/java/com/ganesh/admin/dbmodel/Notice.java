@@ -21,6 +21,9 @@ public class Notice {
 	@Column(name="dept_id",length=11)
 	private int deptId;
 	
+	@Column(name="dept_name",length=200)
+	private String deptName;
+	
 	@Column(name="title",length=200)
 	private String title;
 	
@@ -119,12 +122,22 @@ public class Notice {
 		this.deptId = deptId;
 	}
 
+	public String getDeptName() {
+		return deptName;
+	}
+
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
+	}
+
 	@Override
 	public String toString() {
-		return "Notice [id=" + id + ", deptId=" + deptId + ", title=" + title + ", shortDesc=" + shortDesc
-				+ ", fullDesc=" + fullDesc + ", file=" + file + ", delStatus=" + delStatus + ", status=" + status
-				+ ", date=" + date + "]";
+		return "Notice [id=" + id + ", deptId=" + deptId + ", deptName=" + deptName + ", title=" + title
+				+ ", shortDesc=" + shortDesc + ", fullDesc=" + fullDesc + ", file=" + file + ", delStatus=" + delStatus
+				+ ", status=" + status + ", date=" + date + "]";
 	}
+
+	 
 
 	
 	 

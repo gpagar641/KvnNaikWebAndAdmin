@@ -46,7 +46,7 @@ function includeHTML() {
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
     
-    file = elmnt.getAttribute("w3-include-html");
+    file = elmnt.getAttribute("log-include-html");
     if (file) {
       
       xhttp = new XMLHttpRequest();
@@ -55,7 +55,7 @@ function includeHTML() {
           if (this.status == 200) {elmnt.innerHTML = this.responseText;}
           if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
          
-          elmnt.removeAttribute("w3-include-html");
+          elmnt.removeAttribute("log-include-html");
           includeHTML();
         }
       }      
@@ -96,7 +96,7 @@ ul.breadcrumb li a:hover {
 <body>
 
 
-<div w3-include-html="header.html">
+<div log-include-html="header.html">
 	
 </div>
 <script>
@@ -105,93 +105,31 @@ ul.breadcrumb li a:hover {
 	<!-- header -->
 	
 		<!-- top header -->
-		<!--
-		<div class="middle-w3ls-nav py-2">
-			<div class="container">
-				<div class="row">
-					
-					<div class="col-lg-8 right-info-agiles mt-lg-0 mt-sm-3 mt-1">
-						<div class="row">
-							<div class="col-sm-4 nav-middle">
-								<i class="far fa-envelope-open text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">kvnnaik@gmail.com</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 nav-middle mt-sm-0 mt-2">
-								<i class="fas fa-phone-volume text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">0253 - 2576692</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 top-login-butt text-right mt-sm-2">
-								<a href="login.html" class="button-head-mow3 text-white">Login</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>-->
+		
 		<!-- //middle header -->
-						
-					
-	
-
-<div class="banner-agile-2">
-	<!--<div class="hero-text">
-    <h1>Activities</h1>
- 		<ul class="breadcrumb">
-  			<li><a href="#">Home</a></li>
-  				<li><a href="#">Activities</a></li>
-  				
-  			
-		</ul>
--->
-   
- <!--<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index.html">Home</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">About</li>
-		</ol>
-	</nav>-->
- </div>
-			<!-- navigation -->
+		<!-- navigation -->
 		
 		<!-- //navigation -->
 		
-	</div>
+	
 	<!-- breadcrumb -->
-	<!--<nav aria-label="breadcrumb">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="index.html">Home</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">Activities</li>
-		</ol>
-	</nav>-->
+	
 	<!-- breadcrumb -->
 	<!-- //banner -->
 	<!-- //banner -->
 
-	<!-- history -->
+	<!-- history -->				
+					
 	<div class="about-page py-5">
 		<div class="container py-xl-5 py-lg-3">
 			<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5"> <i class="fas fa-graduation-cap"></i> Activities <i class="fas fa-graduation-cap"></i>
 				
 			</h3>
 			<div class="row about-head-wthree">
-				<div class="col-lg-6 left-abw3ls">
+				<div class="col-lg-6 left-ablogls">
 					<img src="images/ap-11.jpg" alt="" class="img-fluid">
 				</div>
-				<div class="col-lg-6 right-abw3ls mt-lg-0 mt-sm-5 mt-4">
+				<div class="col-lg-6 right-ablogls mt-lg-0 mt-sm-5 mt-4">
 					<h5 class="font-italic border-bottom text-center font-weight-bold pb-3 mb-4">Activities for students</h5>
 					<p>LoGMIEER is situated in Nashik in Maharashtra state of India. it is accredited from AICTE and it is affiliated to University of Pune. KVNNIEER, Nashik offers 5 courses across 1 streams namely Engineering and across 1 degrees like B.Tech.Hostel facility is not available for its students.  </p>
 					<p class="mt-3">Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi, Eiusmod tempor
@@ -219,7 +157,7 @@ ul.breadcrumb li a:hover {
 	
 			
 
-<!-- -->
+
 <div class="about-page py-5">
 		<div class="container py-xl-5 py-lg-3">
 			<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5"> <i class="fas fa-graduation-cap"></i> Announcement <i class="fas fa-graduation-cap"></i>
@@ -281,8 +219,13 @@ ul.breadcrumb li a:hover {
 	<!--Actvities contemt-->
 	
 <!-- footer -->
+	<div log-include-html="footer.html">
 	
-	
+</div>
+<script>
+	includeHTML();
+</script>
+	<!-- //footer -->
 	<script>
 		$(document).ready(function(){
  		 $('.dropdown-submenu a.test').on("click", function(e){
@@ -293,7 +236,7 @@ ul.breadcrumb li a:hover {
 });
 </script>
 
-<!-- //footer -->
+
 
 
 	<!-- Js files -->
@@ -357,6 +300,9 @@ ul.breadcrumb li a:hover {
   				})
 		})
 </script>
+
+
+	
 	<script>
 		$(document).ready(function(){
   $(window).scroll(function(){
@@ -366,8 +312,8 @@ ul.breadcrumb li a:hover {
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  	
-		  $(".nav-item").css("color" , "#fff !important");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  	
+		  $(".nav-item").css("color" , "#f4e8c7 !important");  
 	  }
   })
 })
@@ -382,7 +328,7 @@ ul.breadcrumb li a:hover {
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  
 		 
 		/*   $("a").removeClass("text-white"); */
 		  //$(".nav-item").css("color" , "#000 !important");  
@@ -391,6 +337,7 @@ ul.breadcrumb li a:hover {
   })
 })
 		</script>
+
 
 </body>
 

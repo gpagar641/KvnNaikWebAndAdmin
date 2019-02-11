@@ -4,8 +4,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Novus Admin Panel an Admin Panel Category Flat Bootstrap
-	Responsive Website Template | Validation :: w3layouts</title>
+<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/LOGMIEER PNG LOGO.png" />
+<title>Logmieer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords"
@@ -58,12 +58,42 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 <!--//Metis Menu -->
 
 
+<style type="text/css">
 
+.image {
+    position:relative;
+    width:400px;
+    height:400px;
+}
+.image img {
+    width:100%;
+    vertical-align:top;
+}
+.image:after {
+    content:'\A';
+    position:absolute;
+    width:100%; height:100%;
+    top:0; left:0;
+    background:rgba(0,0,0,0.6);
+    opacity:0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+.image:hover:after {
+    opacity:1;
+}
+
+</style>
 
 </head>
-<body class="cbp-spmenu-push">
+<body class=" " style="background-image: url('${pageContext.request.contextPath}/resources/images/kvn.jpg'); background-size: cover;
 
-	<div class="main-content">
+top: 0;
+left: 0;
+width: 100%;
+height:100vh;">
+
+	<div class=" ">
 
 		 
 
@@ -74,12 +104,12 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 		<!-- main content start-->
 		<div id="">
-			<div class="main-page login-page" style="width: 30% !important;">
+			<div class="  login-page" style="width: 30% !important;margin-top: 13%;">
 			<!-- 	<h3 class="title1">Sign In</h3> -->
 	 <p style="text-align: center; color: green;" id="messageAnimation">${msg}</p>
 			
-				<div class="widget-shadow">
-					<div class="login-top">
+				<div class="widget-shadow" style="border-radius: 10px;">
+					<div class="login-top" >
  						<h4>Sign in </h4>
  					</div>
 					<div class="login-body">
@@ -108,7 +138,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 
 
-		 <jsp:include page="include/footer.jsp" /> 
+		<%--  <jsp:include page="include/footer.jsp" />  --%>
 	</div>
 
 	<script

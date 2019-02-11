@@ -21,12 +21,14 @@ public interface EventRepository extends JpaRepository<Event, Integer>{
 	
 	@Modifying
 	@Transactional
-	@Query("update  Event m set  m.status=1 WHERE m.id=:id")
-	int approve(@Param("id")int id );
+	@Query("update  Event m set  m.status=:status WHERE m.id=:id")
+	int approve(@Param("status")int status,@Param("id")int id );
 	
 	@Modifying
 	@Transactional
 	@Query("update  Event m set  m.delStatus=1 WHERE m.id=:id")
 	int delete(@Param("id")int id );
+
+	List<Event> findByDeptIdAndStatusAndDelStatusOrderByIdDesc(int deptId, int i, int j);
 	
 }
