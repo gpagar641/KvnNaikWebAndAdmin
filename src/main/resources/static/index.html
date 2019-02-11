@@ -4,7 +4,7 @@
 <html lang="zxx">
 
 <head>
-<title></title>
+<title>Logmieer</title>
 <!-- Meta tag Keywords -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -268,7 +268,7 @@
 
 		/*#region responsive code begin*/
 
-		var MAX_WIDTH = 980;
+		var MAX_WIDTH = 1920 !important;
 
 		function ScaleSlider() {
 			var containerElement = jssor_1_slider.$Elmt.parentNode;
@@ -354,7 +354,7 @@
 		for (i = 0; i < z.length; i++) {
 			elmnt = z[i];
 
-			file = elmnt.getAttribute("w3-include-html");
+			file = elmnt.getAttribute("log-include-html");
 			if (file) {
 
 				xhttp = new XMLHttpRequest();
@@ -367,7 +367,7 @@
 							elmnt.innerHTML = "Page not found.";
 						}
 
-						elmnt.removeAttribute("w3-include-html");
+						elmnt.removeAttribute("log-include-html");
 						includeHTML();
 					}
 				}
@@ -384,100 +384,175 @@
 
 <body onload="getData()">
 
-	<div w3-include-html="header.html"></div>
+	<div log-include-html="header.html"></div>
 	<script>
 		includeHTML();
 	</script>
 
 	<!-- header -->
-	<!--<header>
-		
-		
-		<!--<div class="middle-w3ls-nav py-2">
-			<div class="container">
-				<div class="row">
-					
-					<div class="col-lg-8 right-info-agiles mt-lg-0 mt-sm-3 mt-1">
-						<div class="row">
-							<div class="col-sm-4 nav-middle">
-								<i class="far fa-envelope-open text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a style="margin-left:-15px" href="mailto:mail@example.com">kvnnaik@gmail.com</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 nav-middle mt-sm-0 mt-2">
-								<i class="fas fa-phone-volume text-center mr-md-4 mr-sm-2 mr-4"></i>
-								<div class="agile-addresmk">
-									<p>
-										
-										<a  style="margin-left:-15px" href="mailto:mail@example.com">0253 - 2576692</a>
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-4 col-6 top-login-butt text-right mt-sm-2">
-								<a href="login.html" class="button-head-mow3 text-white">Login</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>-->
+	
 	<!-- //middle header -->
 
 	<!-- //header -->
 
 	<!-- banner -->
-	<div class="banner-agile">
-		<ul class="slider">
-			<li class="active">
-				<div class="banner-w3ls-1"></div>
-			</li>
-			<li>
-				<div class="banner-w3ls-2"></div>
-			</li>
-			<li>
-				<div class="banner-w3ls-3"></div>
-			</li>
-			<li>
-				<div class="banner-w3ls-4"></div>
-			</li>
-			<!--<li class="prev">
-				<div class="banner-w3ls-5">
-				</div>
-			</li>-->
-		</ul>
-		<ul class="pager">
-			<li data-index="0" class="active"></li>
-			<li data-index="1"></li>
-			<li data-index="2"></li>
-			<li data-index="3"></li>
-			<li data-index="4"></li>
-		</ul>
-		<div class="banner-text-posi-w3ls">
-			<div class="banner-text-whtree">
-				<h3 class="text-capitalize text-white p-4"
-					style="font-family: philosopher;">
-					your bright future <b>is our mission!</b>
-				</h3>
-				<!--<p class="px-4 py-3 text-dark">Become top-of-the-flight specialist after graduating!</p>-->
-				<p class="px-4 py-3 text-dark">Preparing students for successful
-					future...</p>
-				<!--<a href="about.html" class="button-agiles text-capitalize text-white mt-sm-5 mt-4">read more</a>-->
-			</div>
-		</div>
+	 <script src="js/jssor.slider-27.5.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jssor_1_slider_init = function() {
 
-		<!-- navigation -->
+            var jssor_1_SlideshowTransitions = [
+              {$Duration:100,$Opacity:2}
+            ];
 
-		<!-- //navigation -->
+            var jssor_1_options = {
+              $AutoPlay: 1,
+              $SlideshowOptions: {
+                $Class: $JssorSlideshowRunner$,
+                $Transitions: jssor_1_SlideshowTransitions,
+                $TransitionsOrder: 1
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
 
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
 
+            /*#region responsive code begin*/
 
-	</div>
+            var MAX_WIDTH = 1920;
+
+            function ScaleSlider() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
+
+                if (containerWidth) {
+
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+
+            ScaleSlider();
+
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*#endregion responsive code end*/
+        };
+    </script>
+    <style>
+        /*jssor slider loading skin spin css*/
+        .jssorl-009-spin img {
+            animation-name: jssorl-009-spin;
+            animation-duration: 1.6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes jssorl-009-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /*jssor slider bullet skin 051 css*/
+        .jssorb051 .i {position:absolute;cursor:pointer;}
+        .jssorb051 .i .b {fill:#fff;fill-opacity:0.5;}
+        .jssorb051 .i:hover .b {fill-opacity:.7;}
+        .jssorb051 .iav .b {fill-opacity: 1;}
+        .jssorb051 .i.idn {opacity:.3;}
+
+        /*jssor slider arrow skin 051 css*/
+        .jssora051 {display:block;position:absolute;cursor:pointer;}
+        .jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
+        .jssora051:hover {opacity:.8;}
+        .jssora051.jssora051dn {opacity:.5;}
+        .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+    </style>
+ 
+    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
+        </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:700px;overflow:hidden;">
+            <div>
+                <img data-u="image" src="images/banner1.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="images/banner2.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="images/banner3.jpg" />
+            </div>
+           
+        </div>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb051" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+            <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                </svg>
+            </div>
+        </div>
+        <!-- Arrow Navigator -->
+        <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+            </svg>
+        </div>
+        <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+            </svg>
+        </div>
+    </div>
+
+    <script type="text/javascript">jssor_1_slider_init();</script>
 	<!-- //banner -->
 
+	<!-- about -->
+	<!--<div class="about py-5" style="background-color: #eddddd">
+		<div class="container py-xl-5 py-lg-3">
+			<h3
+				class="title text-capitalize font-weight-light text-dark text-center mb-5"
+				style="font-family: titilliummaps29l400_wt, sans-serif;">
+				<i class="fas fa-graduation-cap"></i> Welcome to <span
+					class="font-weight-bold"> LoGMIEER </span> <i
+					class="fas fa-graduation-cap"></i>
+			</h3>
+			<div class="row pt-md-4">
+				<div class="col-lg-6 about_right">
+					
+					<p class="text-right my-4 pr-4 border-right">Loknete Gopinathji Munde Institute Of Engineering Education & Research is situated in Nashik in Maharashtra state of India. It is accredited from AICTE
+						and it is affiliated to University of Pune. KVNNIEER, Nashik
+						offers 5 courses across 1 streams namely Engineering. Currently,
+						the KVNNIEER has the five branches of engineering i.e. Civil,
+						Computer, Electrical, Electronics & Telecommunication and
+						Mechanical Engineering with an intake capacity of sixty students
+						in each, totaling three hundred plus. The institute has developed
+						mostly in all the dimensions in a very short span of time. </p>
+					
+					<a href="about.html" class="btn btn-primary">Read More</a>
+					</button>
+					
+				</div>
+				<div class="col-lg-6 left-img-agikes mt-lg-0 mt-sm-4 mt-3 text-right" id="kvn-welcome">
+					<img src="images/stud.jpg" alt="" class="img-fluid" />
+
+					
+				</div>
+			</div>
+		</div>
+	</div>-->
+	<!-- //about -->
 	<!-- about -->
 	<div class="about py-5" style="background-color: #eddddd">
 		<div class="container py-xl-5 py-lg-3">
@@ -489,65 +564,44 @@
 					class="fas fa-graduation-cap"></i>
 			</h3>
 			<div class="row pt-md-4">
+				
 				<div class="col-lg-6 about_right">
-					<!--<h3 class="text-capitalize text-right font-weight-light ">Welcome to
-						<span class="font-weight-bold">LoGMIEER</span>
-					</h3>-->
-					<p class="text-right my-4 pr-4 border-right">K.V.N. Naik
-						Institute Of Engineering Education & Research is situated in
-						Nashik in Maharashtra state of India. it is accredited from AICTE
-						and it is affiliated to University of Pune. KVNNIEER, Nashik
-						offers 5 courses across 1 streams namely Engineering.Currently,
-						the KVNNIEER has the five branches of engineering i.e. Civil,
-						Computer, Electrical,Electronics & Telecommunication and
-						Mechanical Engineering, with an intake capacity of sixty students
-						in each, totaling three hundred plus. The institute has developed
-						mostly in all the dimensions in a very short span of time.</p>
-					<!--<button href="about.html" type="button" class="btn btn-primary btn-sm">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i>-->
-					<a href="about.html" class="btn btn-primary">Read More</a>
-					</button>
-					<!--<div class="about_left-list">
-						<h6 class="mb-lg-3 mb-2 font-weight-bold text-dark">Our Benefits</h6>
-						<ul class="list-unstyled">
-							<li class="mb-2">
-								<i class="fas fa-arrow-alt-circle-right" id="555"></i> Duis aute irure dolor in reprehe</li>
-							<li class="mb-2">
-								<i class="fas fa-arrow-alt-circle-right"></i> unt in culpa qui officia deserunt</li>
-							<li class="mb-2">
-								<i class="fas fa-arrow-alt-circle-right"></i> Nemo enim ipsam voluptatem quia</li>
-							<li class="mb-2">
-								<i class="fas fa-arrow-alt-circle-right"></i> quis nostrum exercitationem ullam</li>
-							<li class="mb-2">
-								<i class="fas fa-arrow-alt-circle-right"></i> corporis suscipit laboriosam</li>
-						</ul>
-					</div>-->
-				</div>
-				<div
-					class="col-lg-6 left-img-agikes mt-lg-0 mt-sm-4 mt-3 text-right">
-					<img src="images/welcome.jpg" alt="" class="img-fluid" />
 
-					<!--<div class="about-bottom text-center p-sm-5 p-4">
-						<ul>
-							<li>
-								<h5>60+</h5>
-								<p class="text-light font-weight-bold">Teachers</p>
-							</li>
-							<li>
-								<h5>2000+</h5>
-								<p class="text-light font-weight-bold">Students</p>
-							</li>
-							<li>
-								<h5>80+</h5>
-								<p class="text-light font-weight-bold">Courses</p>
-							</li>
-						</ul>
-					</div>-->
+					<h4 class="title text-capitalize font-weight-light text-dark text-center " > Our  Vision </h4>
+			
+					
+					<p class="about-wrap">"Create Academic and Technical Excellence for Creating Quality Engineers"</p>
+					<h4 class="title text-capitalize font-weight-light text-dark text-center mt-5"> Our  Mission </h4>
+					
+					
+						<p class="about-wrap">
+
+<i class="far fa-thumbs-up"></i> To provide infrastructure with all modern facilities required for good academics. <br>
+
+<i class="far fa-thumbs-up"></i>To provide a stress free and projective academic environment for teaching and learning for students & faculty.<br>
+
+<i class="far fa-thumbs-up"></i>Strategic extension, field action and advocacy through training and capacity building.<br>
+
+<i class="far fa-thumbs-up"></i>To Promote Research & Technology for Social Financial and Technological Advancement of the Society.</p>
+					
+				</div>
+
+				<div class="col-lg-6 about_right">
+					
+					<img src="images/stud.jpg" alt="" class="img-fluid" style="margin-top: 25%"  />
+
+					
+					
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- //about -->
 
+
+
+
+<!--  -->
 	<div class="news-section py-5">
 		<div class="container py-xl-5 py-lg-3">
 			<h3
@@ -556,7 +610,7 @@
 					class="font-weight-bold"> news </span> <i
 					class="fas fa-graduation-cap"></i>
 			</h3>
-			<div class="row news-grids-w3l pt-md-4">
+			<div class="row news-grids-logl pt-md-4">
 				<div class="col-md-4 news-grid">
 					<a href="blog.html"> <img src="images/ann.jpg"
 						class="img-fluid" alt="" />
@@ -569,51 +623,18 @@
 							<div class="clearfix"></div>
 						</div>
 						<div class="detail-bottom">
-							<!-- <h6 class="my-3">
-								 <a href="blog.html" class="text-dark">
-									Eiusmod tempor incididunt ut labore sed do eiusmod
-								</a>  
-							</h6> -->
+							
 							<marquee direction="up" width="100%" BEHAVIOR="ALTERNATE"
 							 	onmouseover="stop();" onmouseout="start();" id="announcement">
-							<!-- <p>	<b style="background: #ffff00; text-align: center;"><a
-									href="#" style="color: #252525;">News</a></b><a href="#"><p
-										style="border-bottom: 2px solid #000;">NSS Special Camp
-										2018-19 Online Proposal & Planning Meeting.</a><br>
-								<button type="button" class="btn btn-primary btn-sm">Read
-									More</button>
-								</p>
-								<b style="background: #ffff00; text-align: center;"><a
-									href="#" style="color: #252525;">News</a></b><a href="#"><p
-										style="border-bottom: 2px solid #000;">The Charge of
-										Finance and Accounts Officer...</a><br>
-								<button type="button" class="btn btn-primary btn-sm">Read
-									More</button>
-								</p>
-								<b style="background: #ffff00; text-align: center;"><a
-									href="#" style="color: #252525;">News</a></b><a href="#"><p
-										style="border-bottom: 2px solid #000;">Quotations are
-										Invited For Impedance Analyzer_Physics Department.</a><br>
-								<button type="button" class="btn btn-primary btn-sm">Read
-									More</button>
-								</p>
-								<b style="background: #ffff00; text-align: center;"><a
-									href="#" style="color: #252525;">News</a></b><a href="#"><p
-										style="border-bottom: 2px solid #000;">Hands-on Training
-										in O&M of Batteries for Solar Photovoltaic Systems by School
-										of Energy Studies, SPPU.</a><br>
-								<button type="button" class="btn btn-primary btn-sm">Read
-									More</button>
-								</p> -->
+							
 							</marquee>
 
-							<!--<marquee direction="up" width = "100%"><b style="background: red;text-align: center;">News2</b><p style="border-bottom: 2px solid red;">The Charge of Finance and Accounts Officer...</p></marquee>
-							<marquee direction="up" width = "100%"><b style="background: red;text-align: center;">News3</b><p style="border-bottom: 2px solid red;">Quotations are Invited For Impedance Analyzer_Physics Department.</p></marquee>-->
+							
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4 news-grid my-md-0 my-sm-5 my-4">
-					<a href="blog.html"> <img src="images/notice.jpg"
+					<a href="blog.html"> <img src="images/notice-board.png"
 						class="img-fluid" alt="" />
 					</a>
 					<div class="news-text" id="dd">
@@ -625,10 +646,7 @@
 							<div class="clearfix"></div>
 						</div>
 						<div class="detail-bottom">
-							<!-- <h6 class="my-3">
-								<a href="blog.html" class="text-dark"> Eiusmod tempor
-									incididunt ut labore sed do eiusmod </a>
-							</h6> -->
+							
 							<marquee direction="up" width="100%" BEHAVIOR="ALTERNATE"
 							 	onmouseover="stop();" onmouseout="start();" id="noticeBoard">
 							 
@@ -651,50 +669,13 @@
 							<div class="clearfix"></div>
 						</div>
 						<div class="detail-bottom">
-							<!-- <h6 class="my-3">
-								<a href="blog.html" class="text-dark"> Eiusmod tempor
-									incididunt ut labore sed do eiusmod </a>
-							</h6> -->
-							<!-- <marquee direction="up" width="100%" BEHAVIOR="ALTERNATE"
-								onmouseover="stop();" onmouseout="start();">
-								<b style="background: #ffff00; text-align: center;"><a
-									href="#" style="color: #252525;">News</a></b><a href=""><p
-										style="border-bottom: 2px solid #000;">NSS Special Camp
-										2018-19 Online Proposal & Planning Meeting.</a><br>
-								<button type="button" class="btn btn-primary btn-sm">Read
-									More</button>
-								</p>
-								<b style="background: #ffff00; text-align: center;"><a
-									href="#" style="color: #252525;">News</a></b><a href=""><p
-										style="border-bottom: 2px solid #000;">The Charge of
-										Finance and Accounts Officer...</a><br>
-								<button type="button" class="btn btn-primary btn-sm">Read
-									More</button>
-								</p>
-								<b style="background: #ffff00; text-align: center;"><a
-									href="#" style="color: #252525;">News</a></b><a href=""><p
-										style="border-bottom: 2px solid #000;">Quotations are
-										Invited For Impedance Analyzer_Physics Department.</a><br>
-								<button type="button" class="btn btn-primary btn-sm">Read
-									More</button>
-								</p>
-								<b style="background: #ffff00; text-align: center;"><a
-									href="#" style="color: #252525;">News</a></b><a href=""><p
-										style="border-bottom: 2px solid #000;">
-										Hands-on Training in O&M of Batteries for Solar Photovoltaic
-										Systems by School of Energy Studies, SPPU.<br></a>
-								<button type="button" class="btn btn-primary btn-sm">Read
-									More</button>
-								</p>
-							</marquee> -->
-
+							
 
 <marquee direction="up" width="100%" BEHAVIOR="ALTERNATE"
 							 	onmouseover="stop();" onmouseout="start();" id="campEvent">
 							 
 							</marquee>
-							<!--<marquee direction="up" width = "100%"><b style="background: red;text-align: center;">News2</b><p style="border-bottom: 2px solid red;">The Charge of Finance and Accounts Officer...</p></marquee>
-							<marquee direction="up" width = "100%"><b style="background: red;text-align: center;">News3</b><p style="border-bottom: 2px solid red;">Quotations are Invited For Impedance Analyzer_Physics Department.</p></marquee>-->
+							
 						</div>
 					</div>
 				</div>
@@ -703,7 +684,41 @@
 	</div>
 	<!-- //news -->
 	<!-- Stats-->
-	<div class="stats-w3layouts py-5">
+	<!--
+	<div class="container-fluid stats-loglayouts">
+		<h3
+			class="title text-capitalize font-weight-light text-white text-center mb-5">
+			<i class="fas fa-graduation-cap"></i> Our <span
+				class="font-weight-bold"> Achivement </span> <i
+				class="fas fa-graduation-cap"></i>
+		</h3>
+  <div class="row">
+    <div class="col-md-4">
+      <img src="images/counter-icon-002.png">
+						<div class='numscroller font-weight-bold my-2' data-slno='1'
+							data-min='0' data-max='05' data-delay='.5' data-increment="1">05</div>
+						<p class="text-uppercase text-white border-top pt-4 mt-3">approved
+							courses</p>
+    </div>
+    <div class="col-md-4">
+      <img src="images/counter-icon-003.png">
+						<div class='numscroller font-weight-bold my-2' data-slno='1'
+							data-min='0' data-max='75' data-delay='.5' data-increment="1">75</div>
+						<p class="text-uppercase text-white border-top pt-4 mt-3">certified
+							teachers</p>
+    </div>
+    <div class="col-md-4">
+      <img src="images/counter-icon-004.png">
+						<div class='numscroller font-weight-bold my-2' data-slno='1'
+							data-min='0' data-max='1200' data-delay='.5' data-increment="1">1200</div>
+						<p class="text-uppercase text-white border-top pt-4 mt-3">graduate
+							students</p>
+    </div>
+  </div>
+</div>
+-->
+
+	<div class="stats-loglayouts py-5">
 		<h3
 			class="title text-capitalize font-weight-light text-white text-center mb-5">
 			<i class="fas fa-graduation-cap"></i> Our <span
@@ -715,13 +730,9 @@
 			<div class="stats-info">
 
 				<div class="row">
-					<!--<div class="col-md-3 col-6 stats-grid-w3-agile text-center px-xl-5 px-3">
-					<img src="images/counter-icon-001.png">
-						<div class='numscroller font-weight-bold my-2' data-slno='1' data-min='0' data-max='1280' data-delay='.5' data-increment="1">1280</div>
-						<p class="text-uppercase text-white border-top pt-4 mt-3">happy students</p>
-					</div>-->
+					
 					<div
-						class="col-md-4 col-6 stats-grid-w3-agile text-center  px-xl-5 px-3">
+						class="col-md-4 col-6 stats-grid-log-agile text-center  px-xl-5 px-3">
 						<img src="images/counter-icon-002.png">
 						<div class='numscroller font-weight-bold my-2' data-slno='1'
 							data-min='0' data-max='05' data-delay='.5' data-increment="1">05</div>
@@ -729,7 +740,7 @@
 							courses</p>
 					</div>
 					<div
-						class="col-md-4 col-6 stats-grid-w3-agile text-center mt-md-0 mt-5  px-xl-5 px-3">
+						class="col-md-4 col-6 stats-grid-log-agile text-center mt-md-0  px-xl-5 px-3">
 						<img src="images/counter-icon-003.png">
 						<div class='numscroller font-weight-bold my-2' data-slno='1'
 							data-min='0' data-max='75' data-delay='.5' data-increment="1">75</div>
@@ -737,7 +748,7 @@
 							teachers</p>
 					</div>
 					<div
-						class="col-md-4 col-6 stats-grid-w3-agile text-center mt-md-0 mt-5  px-xl-5 px-3">
+						class="col-md-4 col-6 stats-grid-log-agile text-center mt-md-0   px-xl-5 px-3">
 						<img src="images/counter-icon-004.png">
 						<div class='numscroller font-weight-bold my-2' data-slno='1'
 							data-min='0' data-max='1200' data-delay='.5' data-increment="1">1200</div>
@@ -779,7 +790,7 @@
 						</a>
 					</div>
 					<h6 class="small-heading text-capitalize text-center mt-4">
-						<a href="language.html" class="text-dark">About LoGMIEER <i
+						<a href="about.html" class="text-dark">About LoGMIEER <i
 							class="fas fa-long-arrow-alt-right ml-1"></i>
 						</a>
 					</h6>
@@ -790,7 +801,7 @@
 					<!-- Left to right -->
 					<!-- normal -->
 					<div class="ih-item circle effect16 left_to_right mx-auto">
-						<a href="communication.html">
+						<a href="timetable.html">
 							<div class="img">
 								<img src="images/c3-1.jpg" alt="img"
 									class="img-fluid rounded-circle">
@@ -805,7 +816,7 @@
 						</a>
 					</div>
 					<h6 class="small-heading text-capitalize text-center mt-4">
-						<a href="communication.html" class="text-dark">Examination <i
+						<a href="timetable.html" class="text-dark">Examination <i
 							class="fas fa-long-arrow-alt-right ml-1"></i>
 						</a>
 					</h6>
@@ -831,7 +842,7 @@
 						</a>
 					</div>
 					<h6 class="small-heading text-capitalize text-center mt-4">
-						<a href="business.html" class="text-dark">Admissions <i
+						<a href="fe.html" class="text-dark">Admissions <i
 							class="fas fa-long-arrow-alt-right ml-1"></i>
 						</a>
 					</h6>
@@ -844,7 +855,7 @@
 					<!-- Left to right -->
 					<!-- normal -->
 					<div class="ih-item circle effect16 left_to_right mx-auto">
-						<a href="tpo.html">
+						<a href="tpo-news.html">
 							<div class="img">
 								<img src="images/gallery.jpg" alt="img"
 									class="img-fluid rounded-circle">
@@ -859,7 +870,7 @@
 						</a>
 					</div>
 					<h6 class="small-heading text-capitalize text-center mt-4">
-						<a href="software.html" class="text-dark">T & P Cell <i
+						<a href="tpo-news.html" class="text-dark">T & P Cell <i
 							class="fas fa-long-arrow-alt-right ml-1"></i>
 						</a>
 					</h6>
@@ -885,7 +896,7 @@
 						</a>
 					</div>
 					<h6 class="small-heading text-capitalize text-center mt-4">
-						<a href="social_media.html" class="text-dark">Management <i
+						<a href="managementbody.html" class="text-dark">Management <i
 							class="fas fa-long-arrow-alt-right ml-1"></i>
 						</a>
 					</h6>
@@ -911,7 +922,7 @@
 						</a>
 					</div>
 					<h6 class="small-heading text-capitalize text-center mt-4">
-						<a href="photography.html" class="text-dark">Gallery <i
+						<a href="gallery.html" class="text-dark">Gallery <i
 							class="fas fa-long-arrow-alt-right ml-1"></i>
 						</a>
 					</h6>
@@ -932,7 +943,7 @@
 					class="font-weight-bold"> Facilities</span> <i
 					class="fas fa-graduation-cap"></i>
 			</h3>
-			<div class="row agileits-w3layouts-grid pt-md-4">
+			<div class="row agileits-loglayouts-grid pt-md-4">
 				<div class="col-lg-4 services-agile-1">
 					<div class="row wthree_agile_us">
 						<div class="col-lg-3 col-md-2 col-3  agile-why-text">
@@ -944,11 +955,7 @@
 							<h6 class="text-capitalize text-white font-weight-bold mb-3">Quality
 								Education</h6>
 
-							<!--<a class="btn mt-3 service-button p-0" href="about.html" role="button">Read More
-								<i class="fas fa-long-arrow-alt-right ml-1"></i>
-							</a>-->
-
-						</div>
+							</div>
 					</div>
 				</div>
 				<div class="col-lg-4 services-agile-1 my-lg-0 my-5">
@@ -961,9 +968,7 @@
 						<div class="col-9 agile-why-text-2">
 							<h6 class="text-capitalize text-white font-weight-bold mb-3">E-Library</h6>
 
-							<!--<a class="btn mt-3 service-button p-0" href="about.html" role="button">Read More
-								<i class="fas fa-long-arrow-alt-right ml-1"></i>
-							</a>-->
+							
 
 						</div>
 					</div>
@@ -979,20 +984,18 @@
 							<h6 class="text-capitalize text-white font-weight-bold mb-3">Qualified
 								Teachers</h6>
 
-							<!--<a class="btn mt-3 service-button p-0" href="about.html" role="button">Read More
-								<i class="fas fa-long-arrow-alt-right ml-1"></i>
-							</a>-->
+							
 
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row agileits-w3layouts-grid mt-5">
+			<div class="row agileits-loglayouts-grid mt-5">
 				<div class="col-lg-4 services-agile-1">
 					<div class="row wthree_agile_us">
 						<div class="col-lg-3 col-md-2 col-3  agile-why-text">
 							<div class="wthree_features_grid text-center p-3 border rounded">
-								<!--<i class="far fa-calendar-alt"></i>-->
+								
 								<i class="fa fa-user"></i>
 							</div>
 						</div>
@@ -1000,9 +1003,7 @@
 							<h6 class="text-capitalize text-white font-weight-bold mb-3">Workshops
 								& Seminars</h6>
 
-							<!--<a class="btn mt-3 service-button p-0" href="about.html" role="button">Read More
-								<i class="fas fa-long-arrow-alt-right ml-1"></i>
-							</a>-->
+							
 
 						</div>
 					</div>
@@ -1018,9 +1019,7 @@
 							<h6 class="text-capitalize text-white font-weight-bold mb-3">Research
 								& Developement</h6>
 
-							<!--<a class="btn mt-3 service-button p-0" href="about.html" role="button">Read More
-								<i class="fas fa-long-arrow-alt-right ml-1"></i>
-							</a>-->
+							
 
 						</div>
 					</div>
@@ -1035,9 +1034,7 @@
 						<div class="col-9 agile-why-text-2">
 							<h6 class="text-capitalize text-white font-weight-bold mb-3">Hostel</h6>
 
-							<!--<a class="btn mt-3 service-button p-0" href="about.html" role="button">Read More
-								<i class="fas fa-long-arrow-alt-right ml-1"></i>
-							</a>-->
+							
 
 						</div>
 					</div>
@@ -1046,127 +1043,8 @@
 		</div>
 	</div>
 	<!-- //what we do -->
-	<!--
-	<section>
-		<div class="container-fluid">
-		<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5">our
-						<span class="font-weight-bold">video</span>
-					</h3>
-					<iframe src="https://player.vimeo.com/video/58123228"></iframe>-->
-	<!--<iframe width="100%" height="315" src="https://www.youtube.com/embed/D-rh5Yf7QPE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		</div>
-	</section>
-
-
-	<!-- mission -->
-	<!--<h3 class="title text-capitalize font-weight-light text-dark text-center mb-5"> <i class="fas fa-graduation-cap"></i> Upcoming
-						<span class="font-weight-bold">Events</span> <i class="fas fa-graduation-cap"></i>
-					</h3>-->
-	<!--<div class="about-page-2 py-5" >
-		<div class="container-fluid py-xl-5 py-lg-3">
-			<div class="row about-head-wthree-2">
-
-				<div class="col-lg-4 left-abw3ls text-lg-left text-center" >
-					<img src="images/event-01.jpg" alt="" class="img-fluid" >
-				</div>
-				<div class="col-lg-8 right-abw3ls my-lg-0 my-sm-5 my-4"></br></br></br>
-					<h5 class="card-title">
-								<a href="single.html" class="text-dark">Blog title here</a>
-							</h5></br>
-					<p class="card-text">Morbi eget dui elit. In lectus eros, convallis vel dolor vitae, semper sodales risus. Donec convallis maximus neque
-								vel cursus.</p>
-							<a href="single.html" class="btn btn-primary blog-button mt-3">Read More</a>
-					
-				</div>
-				
-			</div>
-		</div>
-	</div>-->
-	<div class="about-page-2 py-5">
-		<h3
-			class="title text-capitalize font-weight-light text-dark text-center mb-5">
-			<i class="fas fa-graduation-cap"></i> Upcoming <span
-				class="font-weight-bold">Events</span> <i
-				class="fas fa-graduation-cap"></i>
-		</h3>
-		<div class="container py-xl-5 py-lg-3" id="upcommingEvent">
-		<!-- 	<div class="row about-head-wthree-2"
-				style="border-radius: 10px 10px; border: 1px solid #ddd; -webkit-box-shadow: 10px 0px 15px 0px rgba(207, 207, 209, 1); -moz-box-shadow: 10px 0px 15px 0px rgba(207, 207, 209, 1); box-shadow: 10px 0px 15px 0px rgba(207, 207, 209, 1);">
-
-				<div class="col-lg-4 left-abw3ls text-lg-left text-center">
-					<img src="images/quiz.jpg" alt="" class="img-fluid">
-				</div>
-				<div class="col-lg-8 right-abw3ls my-lg-0 my-sm-5 my-4"
-					style="background-color: #f0d47de6;">
-					</br>
-					<h5 class="card-title">
-						<a href="single.html" class="text-dark">Blog title here</a>
-					</h5>
-					</br>
-					<p class="card-text">Morbi eget dui elit. In lectus eros,
-						convallis vel dolor vitae, semper sodales risus. Donec convallis
-						maximus neque vel cursus.</p>
-					<a href="single.html" class="btn btn-primary blog-button mt-3">Read More</a>
-
-				</div>
-
-			</div>
-			</br>
-			<div class="row about-head-wthree-2"
-				style="border-radius: 10px 10px; border: 1px solid #ddd; -webkit-box-shadow: 10px 0px 15px 0px rgba(207, 207, 209, 1); -moz-box-shadow: 10px 0px 15px 0px rgba(207, 207, 209, 1); box-shadow: 10px 0px 15px 0px rgba(207, 207, 209, 1);">
-
-				<div class="col-lg-4 left-abw3ls text-lg-left text-center">
-					<img src="images/quiz3.jpg" alt="" class="img-fluid">
-				</div>
-				<div class="col-lg-8 right-abw3ls my-lg-0 my-sm-5 my-4"
-					style="background-color: #f0d47de6">
-					</br>
-					<h5 class="card-title">
-						<a href="single.html" class="text-dark">Blog title here</a>
-					</h5>
-					</br>
-					<p class="card-text">Morbi eget dui elit. In lectus eros,
-						convallis vel dolor vitae, semper sodales risus. Donec convallis
-						maximus neque vel cursus.</p>
-					<a href="single.html" class="btn btn-primary blog-button mt-3">Read More</a>
-
-				</div>
-
-			</div>
-			</br>
-			<div class="row about-head-wthree-2"
-				style="border-radius: 10px 10px; border: 1px solid #ddd; -webkit-box-shadow: 10px 0px 15px 0px rgba(207, 207, 209, 1); -moz-box-shadow: 10px 0px 15px 0px rgba(207, 207, 209, 1); box-shadow: 10px 0px 15px 0px rgba(207, 207, 209, 1);">
-
-				<div class="col-lg-4 left-abw3ls text-lg-left text-center">
-					<img src="images/quiz.jpg" alt="" class="img-fluid">
-				</div>
-				<div class="col-lg-8 right-abw3ls my-lg-0 my-sm-5 my-4"
-					style="background-color: #f0d47de6;">
-					</br>
-					<h5 class="card-title">
-						<a href="single.html" class="text-dark">Blog title here</a>
-					</h5>
-					</br>
-					<p class="card-text">Morbi eget dui elit. In lectus eros,
-						convallis vel dolor vitae, semper sodales risus. Donec convallis
-						maximus neque vel cursus.</p>
-				 
-				</div>
-
-			</div>
-			<br> -->
-		</div>
-	</div>
-
-
-
-
 	<!-- //video and events -->
-
-
 	<!-- news -->
-
-
 	<!-- testimonials -->
 	<div class="testimonials py-5">
 		<div class="container py-xl-5 py-lg-3">
@@ -1188,180 +1066,358 @@
 								<img src="images/t11.jpg" alt=" " class="img-fluid"
 									id="image-zoom" />
 								<figcaption>
-									Akash Ahire <span>Oracle DBA</span> <span>Company Name</span>
+									Mr.Akash Ahire <span>Oracle DBA</span> <span>Zensar</span>
 								</figcaption>
 							</figure>
 					</a>
 					</li>
 					<li class="mis-slide"><a href="#" class="mis-container">
 							<figure>
+								<img src="images/t-0022.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Mr.Ajit Bhamare<span>Founder</span> <span>IMPULSE Plastotech</span>
+								</figcaption>
+							</figure>
+					</a></li>
+					<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
 								<img src="images/t22.jpg" alt=" " class="img-fluid"
 									id="image-zoom" />
 								<figcaption>
-									Ashish Vishwakarma <span>Software Developer</span> <span>Company
-										Name</span>
+									Mr.Ashish Vishwakarma <span>Software Developer</span> <span>Datamatics Global Services Limited</span>
+								</figcaption>
+							</figure>
+					</a></li>
+
+					<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/t-0033.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Mr.Ashish Kadam<span>Software Developer</span> <span>SNWN Tech  Solutions</span>
+								</figcaption>
+							</figure>
+					</a></li>
+							<li class="mis-slide"><a href="link" class="mis-container">
+							<figure>
+								<img src="images/t33.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Mr.Abhishek Nalkande <span>Java Developer</span> <span>Alter Techsoft</span>
 								</figcaption>
 							</figure>
 					</a></li>
 					<li class="mis-slide"><a href="link" class="mis-container">
 							<figure>
-								<img src="images/t33.jpg" alt=" " class="img-fluid"
+								<img src="images/t-0044.jpg" alt=" " class="img-fluid"
 									id="image-zoom" />
 								<figcaption>
-									Abhishek Nalkande <span>Java Developer</span> <span>Company
-										Name</span>
+									Mr.Attar Imtiyaz <span></span> <span>WNS,Nashik </span>
 								</figcaption>
 							</figure>
 					</a></li>
+
+
+
+
 					<li class="mis-slide"><a href="#" class="mis-container">
 							<figure>
 								<img src="images/t44.jpg" alt=" " class="img-fluid"
 									id="image-zoom" />
 								<figcaption>
-									Swapnil Derle <span>System Engineer</span> <span>Company
-										Name</span>
+									Mr.Swapnil Derle <span>System Engineer</span> <span>Infosys Technologies</span>
 								</figcaption>
 							</figure>
 					</a></li>
+					<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/deepakh.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Mr.Deepak Handore<span></span> <span>Nexcomm Asia pvt  ltd,Banglore</span>
+								</figcaption>
+							</figure>
+					</a></li>
+
+
 					<li class="mis-slide"><a href="#" class="mis-container">
 							<figure>
 								<img src="images/t55.jpg" alt=" " class="img-fluid"
 									id="image-zoom" />
 								<figcaption>
-									Mr.Gauresh Suryawanshi <span>Founder of V3 Data Solution</span>
-									<span>Company Name</span>
+									Mr.Gauresh Suryawanshi <span>Founder </span>
+									<span>V3 Data Solution</span>
 								</figcaption>
 							</figure>
 					</a></li>
+					<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/heenas.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>Ms.Heena Sayyad <span> </span>
+									<span>Net Manav  Technology,Nashik</span>
+								</figcaption>
+							</figure>
+					</a></li>
+
+
+
 					<li class="mis-slide"><a href="#" class="mis-container">
 							<figure>
 								<img src="images/t66.jpg" alt=" " class="img-fluid"
 									id="image-zoom" />
 								<figcaption>
-									Gayatri Pawar <span>Software Engineer</span> <span>Company
-										Name</span>
+									Ms.Gayatri Pawar <span>Software Engineer</span> <span>NVIDIA</span>
 								</figcaption>
 							</figure>
 					</a></li>
+
+					<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/manoharc.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Mr.Manohar Chaure  <span></span> <span> Thermo Fisher  Scientific India</span>
+								</figcaption>
+							</figure>
+					</a></li>
+
+
 					<li class="mis-slide"><a href="#" class="mis-container">
 							<figure>
 								<img src="images/t77.jpg" alt=" " class="img-fluid"
 									id="image-zoom" />
 								<figcaption>
-									Gokul Sonawane <span>Software Programmer</span> <span>Company
-										Name</span>
+									Mr.Gokul Sonawane <span>Software Programmer</span> <span>Infibeam Avenues</span>
 								</figcaption>
 							</figure>
 					</a></li>
+
+						<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/nikhil.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Mr.Nikhil Randhir  <span></span> <span>Orchid  Scitific,Ambad,Nashik</span>
+								</figcaption>
+							</figure>
+					</a></li>
+
+
 					<li class="mis-slide"><a href="#" class="mis-container">
 							<figure>
 								<img src="images/t88.jpg" alt=" " class="img-fluid"
 									id="image-zoom" />
 								<figcaption>
-									Atharva Karmase <span>Web Developer</span> <span>Company
-										Name</span>
+									Mr.Atharva Karmase <span>Web Developer</span> <span>Supra International</span>
 								</figcaption>
 							</figure>
 					</a></li>
+
+					<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/niranjan.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Mr.Niranjan Bagad  <span></span> <span>Hitachi  Vantara,Pune </span>
+								</figcaption>
+							</figure>
+					</a></li>
+
+
+
 					<li class="mis-slide"><a href="#" class="mis-container">
 							<figure>
 								<img src="images/t011.jpg" alt=" " class="img-fluid"
 									id="image-zoom" />
 								<figcaption>
-									Abhishek Katyare <span>Programmer Analyst</span> <span>Company
-										Name</span>
+									Mr.Abhishek Katyare <span>Programmer Analyst</span> <span>Cognizant Technology Solutions</span>
 								</figcaption>
 							</figure>
 					</a></li>
+
+						<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/sheetalp.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Ms.Sheetal Pawar   <span></span> <span>Meditec Pvt Ltd,Ambad,Nashik</span>
+								</figcaption>
+							</figure>
+					</a></li>
+
+
+					<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/t-0011.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Ms.Rameahwari Patil <span>Data Scientist</span> <span>SMACera Technologies</span>
+								</figcaption>
+							</figure>
+					</a></li>
+
+					<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/rushikesh.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Mr.Rushikesh Raut <span></span> <span>Tata  Teleservices ltd</span>
+								</figcaption>
+							</figure>
+					</a></li>
+
+					<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/t-99.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Mr.Lalit Jadhav <span>Database Group Lead</span> <span>Network Components Private Limited</span>
+								</figcaption>
+							</figure>
+					</a></li>
+					<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/santoshw.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Mr.Santosh Wagh       <span>Founder</span> <span>BABIR  Industries,Mumbai</span>
+								</figcaption>
+							</figure>
+					</a></li>
+
+
+
 					<li class="mis-slide"><a href="#" class="mis-container">
 							<figure>
 								<img src="images/t022.jpg" alt=" " class="img-fluid"
 									id="image-zoom" />
 								<figcaption>
-									Kishor Lokhande <span>Full Stack Developer (Java)</span> <span>Company
-										Name</span>
+									Mr.Kishor Lokhande <span>Full Stack Developer (Java)</span> <span>S2 Infotech International Ltd.</span>
 								</figcaption>
 							</figure>
 					</a></li>
 					<li class="mis-slide"><a href="#" class="mis-container">
 							<figure>
-								<img src="images/t033.jpg" alt=" " class="img-fluid"
+								<img src="images/nshaikh.jpg" alt=" " class="img-fluid"
 									id="image-zoom" />
 								<figcaption>
-									Sunil Joshi <span>Founder Of V3 data solution</span> <span>Company
-										Name</span>
+									Ms.Shaikh Nooreen  <span></span> <span>Microworld  Engg Solutions,Nashik</span>
 								</figcaption>
 							</figure>
 					</a></li>
+
+
+
+
+					<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/t033.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Mr.Sunil Joshi <span>Founder </span> <span>V3 Data Solution</span>
+								</figcaption>
+							</figure>
+					</a></li>
+
+					<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/surajs.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>Mr.Suraj Somwanshi 
+									 <span></span> <span>Reliance Corporate  IT Park Ltd,Nashik</span>
+								</figcaption>
+							</figure>
+					</a></li>
+
+
+
+					<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/pal-jadhav.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Ms.Pallavi Jadhav <span>Java Developer</span> <span>V3 Data Solution</span>
+								</figcaption>
+							</figure>
+					</a></li>
+					<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/tejas-joshi.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Mr.Tejas Joshi<span></span> <span>Sunrise  Business Group</span>
+								</figcaption>
+							</figure>
+					</a></li>
+
+
+					<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/t-044.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Ms.Anjali Wagh <span>Software Engineer</span> <span>Zimetrics Technology</span>
+								</figcaption>
+							</figure>
+					</a></li>
+					<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/t-066.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Ms.Shireen Khan <span>Salesforce Developer</span> <span>Spark-e-gnite</span>
+								</figcaption>
+							</figure>
+					</a></li>
+					
+					
+					<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/t-077.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Mr.Sufiyan Shaikh <span>Associate Technical Engineer</span> <span>CMS IT Services</span>
+								</figcaption>
+							</figure>
+					</a></li>
+					<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/t-088.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Mr.Sanket Shinde<span>.Net Developer</span> <span>Marketplace Technology</span>
+								</figcaption>
+							</figure>
+					</a></li>
+					<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/t-055.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Mr.Vivekkumar Singh <span>Software Engineer</span> <span>Alba Smart Automation</span>
+								</figcaption>
+							</figure>
+					</a></li>
+					<li class="mis-slide"><a href="#" class="mis-container">
+							<figure>
+								<img src="images/t-88.jpg" alt=" " class="img-fluid"
+									id="image-zoom" />
+								<figcaption>
+									Mr.Ravindra Sonawane <span>Sr. Test Engineer</span> <span>Quality Kiosk Pvt Ltd</span>
+								</figcaption>
+							</figure>
+					</a></li>
+					
 				</ol>
 			</div>
 		</div>
 	</div>
 
 	<!-- //testimonials -->
-
-
-	<!--	<div class="card col-md-6 mt-5 mb-5">
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="100000">
-    <div class="w-100 carousel-inner" role="listbox">
-      <div class="carousel-item active">
-        <div class="carousel-caption">
-          <div class="row">
-            <div class="col-sm-3">
-              <img src="http://via.placeholder.com/200x200" alt="" class="rounded-circle img-fluid"/>
-            </div>
-            <div class="col-sm-9">
-              <h3>Gives me hope</h3>
-              <small>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</small>
-              <small class="smallest mute">- Yayo Dudemous</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-caption">
-          <div class="row">
-            <div class="col-sm-3">
-              <img src="http://via.placeholder.com/200x200" alt="" class="rounded-circle img-fluid">
-            </div>
-            <div class="col-sm-9">
-              <h3>You will love it.</h3>
-              <small>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</small>
-              <small class="smallest mute">- Yayo Dudemous</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-caption">
-          <div class="row">
-            <div class="col-sm-3">
-              <img src="http://via.placeholder.com/200x200" alt="" class="rounded-circle img-fluid">
-            </div>
-            <div class="col-sm-9">
-              <h3>Velvet pouch!</h3>
-              <small>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</small>
-              <small class="smallest mute">- Yayo Dudemous</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="float-right navi">
-    <a class="" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon ico" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon ico" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-    </div>
-  </div>
-</div>-->
-
-	<!-- brands -->
-	<div class="brands-w3ls py-md-5 py-4">
+<!-- brands -->
+	<div class="brands-logls py-md-5 py-4">
 		<div class="container py-xl-3">
 			<h3
 				class="title text-capitalize font-weight-light text-dark text-center mb-5">
@@ -1371,37 +1427,62 @@
 			</h3>
 			<marquee>
 				<ul class="list-unstyled">
-					<li><i class="fab fa-supple" style="color: #252525"></i></li>
-					<li><i class="fab fa-angrycreative" style="color: #252525"></i>
-					</li>
-					<li><i class="fab fa-aviato" style="color: #252525"></i></li>
-					<li><i class="fab fa-aws" style="color: #252525"></i></li>
-					<li><i class="fab fa-cpanel" style="color: #252525"></i></li>
-					<li><i class="fab fa-hooli" style="color: #252525"></i></li>
-					<li><i class="fab fa-node" style="color: #252525"></i></li>
+					<li>
+						<img src="images/client-01.jpg" class="img-fluid"></li>
+					<li><img src="images/client-02.jpg" class="img-fluid"></li>
+					<li><img src="images/client-03.jpg" class="img-fluid"></li>
+					<li><img src="images/client-04.jpg" class="img-fluid"></li>
+					<li><img src="images/client-05.jpg" class="img-fluid"></li>
+					<li><img src="images/client-06.jpg" class="img-fluid"></li>
+					<li><img src="images/client-07.jpg" class="img-fluid"></li>
+					<li><img src="images/client-08.jpg" class="img-fluid"></li>
+					<li><img src="images/client-09.jpg" class="img-fluid"></li>
+					<li><img src="images/client-10.jpg" class="img-fluid"></li>
+					<li><img src="images/client-11.jpg" class="img-fluid"></li>
+					<li><img src="images/client-12.jpg" class="img-fluid"></li>
+					<li><img src="images/client-13.jpg" class="img-fluid"></li>
+					<li><img src="images/client-14.jpg" class="img-fluid"></li>
+					<li><img src="images/client-15.jpg" class="img-fluid"></li>
+					<li><img src="images/client-16.jpg" class="img-fluid"></li>
+					<li><img src="images/client-17.jpg" class="img-fluid"></li>
+					<li><img src="images/client-18.jpg" class="img-fluid"></li>
+					<li><img src="images/client-19.jpg" class="img-fluid"></li>
+					<li><img src="images/client-20.jpg" class="img-fluid"></li>
+					<li><img src="images/client-21.jpg" class="img-fluid"></li>
+					<li><img src="images/client-22.jpg" class="img-fluid"></li>
+					<li><img src="images/client-23.jpg" class="img-fluid"></li>
+					<li><img src="images/client-24.jpg" class="img-fluid"></li>
+					<li><img src="images/client-25.jpg" class="img-fluid"></li>
+					<li><img src="images/client-26.jpg" class="img-fluid"></li>
+					<li><img src="images/client-27.jpg" class="img-fluid"></li>
+					<li><img src="images/client-28.jpg" class="img-fluid"></li>
+					<li><img src="images/client-29.jpg" class="img-fluid"></li>
+					<li><img src="images/client-30.jpg" class="img-fluid"></li>
+					<li><img src="images/client-31.jpg" class="img-fluid"></li>
 				</ul>
 			</marquee>
 		</div>
 	</div>
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	 
+	<!-- //brands -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
+									<span id="boxTitle">
+									</span>
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 										 
 									</div>
 									<div class="modal-body">
 										<p id="fullDesc"></p>
 									</div>
-									<!-- <div class="modal-footer">
-										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-										<button type="button" class="btn btn-primary">Send message</button>
-									</div> -->
+									   
+										 <div id="fileAtt">
+									 </div>
 								</div>
 							</div>
 						</div>
-	<!-- //brands -->
-
 
 
 	<script type="text/javascript">
@@ -1409,7 +1490,7 @@
 	</script>
 	<!-- footer -->
 
-	<div w3-include-html="footer.html"></div>
+	<div log-include-html="footer.html"></div>
 	<script>
 		includeHTML();
 	</script>
@@ -1489,36 +1570,38 @@
 
 
 	<script>
-		$(document).ready(function() {
-			$(window).scroll(function() {
-				var scroll = $(window).scrollTop();
-				if (scroll > 000) {
-					$(".navbar").css("top", "-10px");
-				}
+		$(document).ready(function(){
+  			$(window).scroll(function(){
+  				var scroll = $(window).scrollTop();
+	  				if (scroll > 000)
+	  				 {
+	     						$(".navbar").css("top" , "-10px");
+	     				}
 
-				else {
-					$(".navbar").css("top", "00px");
-				}
-			})
+	  				else
+	  				{
+		   						$(".navbar").css("top" , "00px");
+		 			 }
+  				})
 		})
-	</script>
+</script>
 
 
-
+	
 	<script>
-		$(document).ready(function() {
-			$(window).scroll(function() {
-				var scroll = $(window).scrollTop();
-				if (scroll > 200) {
-					$(".navbar-nav").css("background", "");
-				}
+		$(document).ready(function(){
+  $(window).scroll(function(){
+  	var scroll = $(window).scrollTop();
+	  if (scroll > 200) {
+	    $(".navbar-nav").css("background" , "");
+	  }
 
-				else {
-					$(".navbar-collapse").css("background", "#fff");
-					$(".nav-item").css("color", "#fff !important");
-				}
-			})
-		})
+	  else{
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  	
+		  $(".nav-item").css("color" , "#f4e8c7 !important");  
+	  }
+  })
+})
 	</script>
 
 	<script>
@@ -1530,7 +1613,7 @@
 	  }
 
 	  else{
-		  $(".navbar-collapse").css("background" , "#fff");  
+		  $(".navbar-collapse").css("background" , "#f4e8c7");  
 		 
 		/*   $("a").removeClass("text-white"); */
 		  //$(".nav-item").css("color" , "#000 !important");  
@@ -1539,6 +1622,7 @@
   })
 })
 		</script>
+
 
 
 	<script type="text/javascript">
@@ -1557,12 +1641,12 @@ function getData() {
 	      $.each(result, function(i, field){
 	    	  
 
-	    	  var myvar = '<p>	<b style="background: #ffff00; text-align: center;"><a'+
-	    	  '				 style="color: #252525;">News</a></b><a ><p'+
-	    	  '					style="border-bottom: 2px solid #000;padding: 0px;">'+field.shortDesc+'.</a><br>'+
-	    	  '			<button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc(\''+field.fullDesc+'\')" class="btn btn-primary btn-sm">Read'+
-	    	  '				More</button>'+
-	    	  '			</p>';
+	    	  var myvar = "<p>	<b style=\"background: #ffff00; text-align: center;\"><a"+
+	    	  "				 style=\"color: #252525;\">News</a></b><a ><p"+
+	    	  "					style=\"border-bottom: 2px solid #000;padding: 0px;\">"+field.shortDesc+".</a><br>"+
+	    	  "			<button onclick=setFullDesc("+field.id+") data-toggle=\"modal\" data-target=\"#exampleModal\" class=\"btn btn-primary btn-sm\">Read"+
+	    	  "				More</button>"+
+	    	  "			</p>";
 	    	  	
 
 	    	 // alert("j");
@@ -1586,7 +1670,7 @@ function getData() {
 	    	  var myvar = '<p>	<b style="background: #ffff00; text-align: center;"><a'+
 	    	  '				 style="color: #252525;">News</a></b><a ><p'+
 	    	  '					style="border-bottom: 2px solid #000;padding: 0px;">'+field.shortDesc+'.</a><br>'+
-	    	  '			<button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc(\''+field.fullDesc+'\')" class="btn btn-primary btn-sm">Read'+
+	    	  '			<button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDescNotice('+field.fullDesc+')" class="btn btn-primary btn-sm">Read'+
 	    	  '				More</button>'+
 	    	  '			</p>';
 	    	  	
@@ -1612,7 +1696,7 @@ function getData() {
 	    	  var myvar = '<p>	<b style="background: #ffff00; text-align: center;"><a'+
 	    	  '				 style="color: #252525;">News</a></b><a ><p'+
 	    	  '					style="border-bottom: 2px solid #000;padding: 0px;">'+field.shortDesc+'.</a><br>'+
-	    	  '			<button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDesc(\''+field.fullDesc+'\')" class="btn btn-primary btn-sm">Read'+
+	    	  '			<button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="setFullDescEvent('+field.id+')" class="btn btn-primary btn-sm">Read'+
 	    	  '				More</button>'+
 	    	  '			</p>';
 	    	  	
@@ -1627,44 +1711,83 @@ function getData() {
 
 	
 }
- $
-		  .getJSON(
-			  		'getUpcommingEvent',
-			  		{
-			  			deptId : 1,
-			  			ajax : 'true',
-			  		}, function(result){
-    $.each(result, function(i, field){
-var myvar = '<div class="row about-head-wthree-2"'+
-'				style="border-radius: 10px 10px; border: 1px solid #ddd; -webkit-box-shadow: 10px 0px 15px 0px rgba(207, 207, 209, 1); -moz-box-shadow: 10px 0px 15px 0px rgba(207, 207, 209, 1); box-shadow: 10px 0px 15px 0px rgba(207, 207, 209, 1);">'+
-''+
-'				<div class="col-lg-4 left-abw3ls text-lg-left text-center">'+
-'					<img src="images/quiz.jpg" alt="" class="img-fluid">'+
-'				</div>'+
-'				<div class="col-lg-8 right-abw3ls my-lg-0 my-sm-5 my-4"'+
-'					style="background-color: #f0d47de6;">'+
-'					</br>'+
-'					<h5 class="card-title">'+
-'						<a href="single.html" class="text-dark">Blog title here</a>'+
-'					</h5>'+
-'					</br>'+
-'					<p class="card-text">Morbi eget dui elit. In lectus eros,'+
-'						convallis vel dolor vitae, semper sodales risus. Donec convallis'+
-'						maximus neque vel cursus.</p>'+
-'				 '+
-'				</div>'+
-''+
-'			</div>';
-$("#upcommingEvent").append(myvar);
-    });  
-    
-});
-
-
-function setFullDesc(data)
+ 
+function setFullDesc(id)
 {
-	 $("#fullDesc").text(data);
+	$("#fileAtt").empty();
+	document.getElementById('boxTitle').innerHTML = '';
+		document.getElementById('fullDesc').innerHTML = '';
+
+	  $
+	  .getJSON(
+	  		'getAnnouncementById',
+	  		{
+	  			id : id,
+	  			ajax : 'true',
+	  		},function(result){
+	  			
+	  			document.getElementById('boxTitle').innerHTML = result.title;
+	  			document.getElementById('fullDesc').innerHTML = result.fullDesc;
+	  			if(result.file){
+	  				var str='<a style="color: blue;" href="http://logmieer.com/kvnimages/'+result.file+'" download>Click here to download File  &#8595;</a>';
+		$("#fileAtt").append(str);
+	  			}
+	  		})
+	 
+			
 	}
+	
+
+function setFullDescNotice(id)
+{
+	$("#fileAtt").empty();
+	document.getElementById('boxTitle').innerHTML = '';
+		document.getElementById('fullDesc').innerHTML = '';
+
+	  $
+	  .getJSON(
+	  		'getNoticeById',
+	  		{
+	  			id : id,
+	  			ajax : 'true',
+	  		},function(result){
+	  			
+	  			document.getElementById('boxTitle').innerHTML = result.title;
+	  			document.getElementById('fullDesc').innerHTML = result.fullDesc;
+	  			if(result.file){
+	  				var str='<a style="color: blue;" href="http://logmieer.com/kvnimages/'+result.file+'" download>Click here to download File  &#8595;</a>';
+		$("#fileAtt").append(str);
+	  			}
+	  		})
+	 
+			
+	}
+
+function setFullDescEvent(id)
+{
+	$("#fileAtt").empty();
+	document.getElementById('boxTitle').innerHTML = '';
+		document.getElementById('fullDesc').innerHTML = '';
+
+	  $
+	  .getJSON(
+	  		'getEventById',
+	  		{
+	  			id : id,
+	  			ajax : 'true',
+	  		},function(result){
+	  			
+	  			document.getElementById('boxTitle').innerHTML = result.title;
+	  			document.getElementById('fullDesc').innerHTML = result.fullDesc;
+	  			if(result.file){
+	  				var str='<a style="color: blue;" href="http://logmieer.com/kvnimages/'+result.file+'" download>Click here to download File  &#8595;</a>';
+		$("#fileAtt").append(str);
+	  			}
+	  		})
+	 
+			
+	}
+	
 </script>
 
 
